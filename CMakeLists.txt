@@ -1,5 +1,5 @@
 ##---------------------------------------------------------------------------
-## Author:      nohal aka. Pavel Kalian
+## Author:      SaltyPaws aka. Walbert Schulpen
 ## Copyright:
 ## License:     wxWidgets License
 ##---------------------------------------------------------------------------
@@ -22,7 +22,12 @@ MESSAGE (STATUS "*** Building ${PACKAGE_NAME} ***")
 
 #SET(CMAKE_BUILD_TYPE Debug)
 
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/src)
+INCLUDE_DIRECTORIES(
+	${CMAKE_SOURCE_DIR}/include 
+	${CMAKE_SOURCE_DIR}/src
+)
+
+
 
 # require proper c++
 #ADD_DEFINITIONS( "-Wall -ansi -pedantic -Wno-variadic-macros" )
@@ -56,9 +61,6 @@ INCLUDE(${wxWidgets_USE_FILE})
 
 FIND_PACKAGE(Gettext REQUIRED)
 
-IF(UNIX)
-    FIND_PACKAGE(TinyXML)
-ENDIF(UNIX)
 
 # For convenience we define the sources as a variable. You can add
 # header files and cpp/c files and CMake will sort them out
@@ -66,20 +68,27 @@ ENDIF(UNIX)
 
 
 SET(SRC_SAR
-            src/sar_pi.h
-            src/sar_pi.cpp
+            src/SAR_pi.h
+            src/SAR_pi.cpp
             src/icons.h
             src/icons.cpp
-	    src/sargui.h
-	    src/sargui.cpp
-	    src/sargui_impl.cpp
-	    src/sargui_impl.h
-##	    src/mygridtablebase.cpp
-##	    src/mygridtablebase.h
-##	    src/soundinggridtable.cpp
-##	    src/soundinggridtable.h
-##	    src/libspatialite-amalgamation-3.0.1/spatialite.c
-##	    src/libspatialite-amalgamation-3.0.1/sqlite3.c
+	    src/SARgui.h
+	    src/SARgui.cpp
+	    src/SARgui_impl.cpp
+	    src/SARgui_impl.h
+	    src/NavFunc.h
+	    src/NavFunc.cpp
+	    src/vincente.h
+	    src/vincente.cpp
+	)
+
+SET(SRC_FROM_OCPN 	
+#	../../../include/cutil.h
+#	../../../src/cutil.c
+	../../../include/georef.h
+	../../../src/georef.c
+#	../../../include/gpxdocument.h
+#	../../../src/gpxdocument.cpp	    	
 	)
 
 SET(SRC_TINYXML
@@ -94,12 +103,12 @@ IF(TINYXML_FOUND)
     INCLUDE_DIRECTORIES(${TINYXML_INCLUDE_DIR})
     ADD_DEFINITIONS(-DTIXML_USE_STL)
 ELSE(TINYXML_FOUND)
-    message (STATUS "tinyxml library not found")
+    message (STATUS "tsarinyxml library not found")
     SET(SRC_SAR ${SRC_SAR} ${SRC_TINYXML})
     ADD_DEFINITIONS(-DTIXML_USE_STL)
 ENDIF(TINYXML_FOUND)
 
-ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_SAR})
+ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_SAR} ${SRC_FROM_OCPN})
 
 IF(WIN32)
   SET(OPENCPN_IMPORT_LIB "../../${CMAKE_CFG_INTDIR}/${PARENT}")
@@ -111,10 +120,6 @@ ENDIF(WIN32)
 TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} ${ICONV_LIBRARIES} )
 
 TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} ${wxWidgets_LIBRARIES} )
-
-IF(TINYXML_FOUND)
-   TARGET_LINK_LIBRARIES(${PACKAGE_NAME} ${TINYXML_LIBRARIES} )
-ENDIF(TINYXML_FOUND)
 
 IF(APPLE)
  FIND_PACKAGE(ZLIB REQUIRED)

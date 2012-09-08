@@ -31,14 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/NavFunc.cpp" />
+		<Unit filename="src/NavFunc.h" />
+		<Unit filename="src/SAR_pi.cpp" />
+		<Unit filename="src/SAR_pi.h" />
+		<Unit filename="src/SARgui.cpp" />
+		<Unit filename="src/SARgui.h" />
+		<Unit filename="src/SARgui_impl.cpp" />
+		<Unit filename="src/SARgui_impl.h" />
 		<Unit filename="src/icons.cpp" />
 		<Unit filename="src/icons.h" />
-		<Unit filename="src/sar_pi.cpp" />
-		<Unit filename="src/sar_pi.h" />
-		<Unit filename="src/sargui.cpp" />
-		<Unit filename="src/sargui.h" />
-		<Unit filename="src/sargui_impl.cpp" />
-		<Unit filename="src/sargui_impl.h" />
+		<Unit filename="src/vincente.cpp" />
+		<Unit filename="src/vincente.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

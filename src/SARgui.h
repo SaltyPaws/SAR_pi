@@ -26,8 +26,8 @@
 #include <wx/image.h>
 #include <wx/icon.h>
 #include <wx/statbmp.h>
-#include <wx/notebook.h>
 #include <wx/statbox.h>
+#include <wx/notebook.h>
 #include <wx/dialog.h>
 #include <wx/slider.h>
 #include <wx/radiobut.h>
@@ -105,43 +105,109 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText33121;
 		wxButton* m_button32;
 		wxStaticBitmap* m_bitmap4;
+		wxPanel* m_panel111;
+		wxNotebook* m_notebook11;
+		wxPanel* m_panel13;
+		wxPanel* m_panel62;
+		wxStaticText* m_staticText15112;
+		wxStaticText* m_staticText32213;
+		wxTextCtrl* m_IntervalNM;
+		wxStaticText* m_staticText33213;
+		wxButton* m_button11;
+		wxStaticText* m_staticText32211;
+		wxTextCtrl* m_distance_GC;
+		wxStaticText* m_staticText33211;
+		wxStaticText* m_statictext234;
+		wxTextCtrl* m_distance_RH;
+		wxStaticText* m_staticText332111;
+		wxButton* m_button111;
+		wxButton* m_button6;
+		wxPanel* m_panel12;
+		wxPanel* m_panel61;
+		wxStaticText* m_staticText15111;
+		wxStaticText* m_staticText32212;
+		wxTextCtrl* m_IntervalNM1;
+		wxStaticText* m_staticText33212;
+		wxStaticText* m_staticText322121;
+		wxTextCtrl* m_LatLimit;
+		wxStaticText* m_staticText332121;
+		wxButton* m_button112;
+		wxStaticText* m_staticText322111;
+		wxTextCtrl* m_distance_LC;
+		wxStaticText* m_staticText332112;
+		wxStaticText* m_statictext2341;
+		wxTextCtrl* m_distance_GC1;
+		wxStaticText* m_staticText3321111;
+		wxStaticText* m_statictext23411;
+		wxTextCtrl* m_distance_RH1;
+		wxStaticText* m_staticText33211111;
+		wxButton* m_button1111;
+		wxNotebook* m_wxNotebook234;
 		wxPanel* m_panel11;
 		wxStaticText* m_staticText3231;
-		wxTextCtrl* m_textCtrl2531;
+		wxTextCtrl* m_Lat1;
 		wxStaticText* m_staticText3331;
-		wxTextCtrl* m_textCtrl61;
-		wxStaticText* m_staticText114;
-		wxTextCtrl* m_textCtrl62;
-		wxStaticText* m_staticText115;
 		wxStaticText* m_staticText32311;
-		wxTextCtrl* m_textCtrl25311;
+		wxTextCtrl* m_Lon1;
 		wxStaticText* m_staticText33311;
-		wxTextCtrl* m_textCtrl611;
-		wxStaticText* m_staticText1141;
-		wxTextCtrl* m_textCtrl621;
-		wxStaticText* m_staticText1151;
-		wxButton* m_btnNew;
-		wxButton* m_btnDelete;
-		wxButton* m_btnProperties;
-		wxButton* m_btnZoomTo;
-		wxButton* m_btnMerge;
-		wxButton* m_btnImport;
-		wxButton* m_btnExport;
+		wxStaticText* m_staticText32312;
+		wxTextCtrl* m_Lat2;
+		wxStaticText* m_staticText33312;
+		wxStaticText* m_staticText323111;
+		wxTextCtrl* m_Lon2;
+		wxStaticText* m_staticText333111;
+		wxStaticText* m_staticText323122;
+		wxTextCtrl* m_Route;
+		wxPanel* m_panel15;
+		wxStaticText* m_staticText32313;
+		wxTextCtrl* m_Lat1_d;
+		wxStaticText* m_staticText33313;
+		wxTextCtrl* m_Lat1_m;
+		wxStaticText* m_staticText1143;
+		wxTextCtrl* m_Lat1_s;
+		wxStaticText* m_staticText1153;
+		wxChoice* m_Lat1_NS;
+		wxStaticText* m_staticText323112;
+		wxTextCtrl* m_Lon1_d;
+		wxStaticText* m_staticText333112;
+		wxTextCtrl* m_Lon1_m;
+		wxStaticText* m_staticText11412;
+		wxTextCtrl* m_Lon1_s;
+		wxStaticText* m_staticText11512;
+		wxChoice* m_Lon1_EW;
+		wxStaticText* m_staticText323121;
+		wxTextCtrl* m_Lat2_d;
+		wxStaticText* m_staticText333121;
+		wxTextCtrl* m_Lat2_m;
+		wxStaticText* m_staticText11421;
+		wxTextCtrl* m_Lat2_s;
+		wxStaticText* m_staticText11521;
+		wxChoice* m_Lat2_NS;
+		wxStaticText* m_staticText3231111;
+		wxTextCtrl* m_Lon2_d;
+		wxStaticText* m_staticText3331111;
+		wxTextCtrl* m_Lon2_m;
+		wxStaticText* m_staticText114111;
+		wxTextCtrl* m_Lon2_s;
+		wxStaticText* m_staticText115111;
+		wxChoice* m_Lon2_EW;
+		wxButton* m_button81;
 		
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnNewSurvey( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnDeleteSurvey( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnSurveyProperties( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnZoomToSurvey( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnMergeSurvey( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnImportSurvey( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnExportSurvey( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnGCCalculate( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnExportGC( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnExportRH( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnGCLCalculate( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnExportGCL( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnNoteBookFit( wxNotebookEvent& event ) { event.Skip(); }
+		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:
 		wxBoxSizer* bSframe;
 		
-		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 700,550 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
 		~DlgDef();
 	
 };

@@ -1,7 +1,7 @@
 /******************************************************************************
  *
  * Project:  OpenCPN
- * Purpose:  ROUTE Plugin
+ * Purpose:  SAR Plugin
  * Author:   SaltyPaws
  *
  ***************************************************************************
@@ -24,39 +24,36 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************
  */
+#ifndef ROUTE_NAV_FUNC_H
+#define ROUTE_NAV_FUNC_H
 
-#ifndef _SARGUI_IMPL_H_
-#define _SARGUI_IMPL_H_
+#include <iostream>
+#include <cmath>
+#include <string.h>
+#include <ctype.h>
+#include <stdio.h>
+#include "../../../include/georef.h"
+#include "vincente.h"
 
-#include "sargui.h"
-#include "sar_pi.h"
 
-#include <wx/filedlg.h>
+const inline double Tol(void) { return 1.0e-9; }
 
-class sar_pi;
 
-class CfgDlg : public CfgDlgDef
-{
-public:
-      CfgDlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 496,587 ), long style = wxDEFAULT_DIALOG_STYLE );
-};
+double fromDMStodouble(char *dms);
+void doubletoDMS(double a, char *bufp, int bufplen);
 
-class Dlg : public DlgDef
-{
-public:
-      Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Patterns"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 700,550 ), long style = wxDEFAULT_DIALOG_STYLE );
-      void OnSurveySelection( wxCommandEvent& event );
-      void OnRecordToggle( wxCommandEvent& event );
-	void OnNewSurvey( wxCommandEvent& event );
-	void OnDeleteSurvey( wxCommandEvent& event );
-	void OnSurveyProperties( wxCommandEvent& event );
-	void OnZoomToSurvey( wxCommandEvent& event );
-	void OnMergeSurvey( wxCommandEvent& event );
-	void OnImportSurvey( wxCommandEvent& event );
-	void OnExportSurvey( wxCommandEvent& event );
-	void OnSurveyCancelClick( wxCommandEvent& event );
-	void OnSurveyOkClick( wxCommandEvent& event );
-      sar_pi *plugin;
-};
+double toRad (double degree);
+double toDeg (double radians);
+double sqr (double radians);
 
-#endif
+double radtoNM(double distance_radians);
+double NMtorad(double distance_NM);
+double mtoNM(double metres);
+double NMtom(double NM);
+
+void DestVincenty(double lat1, double lon1, double brng, double dist, double* lat2, double* lon2, double* revAz);
+bool DistVincenty(double lat1, double lon1, double lat2, double lon2, double *dist, double *fwdAz, double *revAz);
+void distRhumb(double lat1,double lon1, double lat2, double lon2, double *distance, double *brng);
+bool destRhumb(double lat1, double lon1, double brng, double dist, double* lat2, double* lon2);
+bool destLoxodrome(double lat1, double lon1, double brng, double dist, double* lat2, double* lon2);
+#endif/* #define ROUTE_NAV_FUNC_H*/

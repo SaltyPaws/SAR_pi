@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src/NavFunc.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/NavFunc.h" open="1" top="1" tabpos="7">
+		<Cursor position="146" topLine="0" />
+	</File>
+	<File name="src/SAR_pi.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="4330" topLine="6" />
+	</File>
+	<File name="src/SAR_pi.h" open="1" top="0" tabpos="4">
+		<Cursor position="1705" topLine="9" />
+	</File>
+	<File name="src/SARgui.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="300" topLine="0" />
+	</File>
+	<File name="src/SARgui.h" open="1" top="0" tabpos="8">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/SARgui_impl.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2126" topLine="0" />
+	</File>
+	<File name="src/SARgui_impl.h" open="1" top="0" tabpos="9">
+		<Cursor position="2309" topLine="13" />
+	</File>
+	<File name="src/icons.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="7765" topLine="0" />
+	</File>
+	<File name="src/icons.h" open="1" top="0" tabpos="10">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/vincente.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/vincente.h" open="1" top="0" tabpos="11">
+		<Cursor position="0" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
