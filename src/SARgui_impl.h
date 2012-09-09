@@ -53,16 +53,11 @@ class Dlg : public DlgDef
 {
 public:
         Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxMAXIMIZE_BOX|wxRESIZE_BORDER );
-        void OnCalculate( wxCommandEvent& event );
         void OnToggle( wxCommandEvent& event );
         void OnConverttoDegree( wxCommandEvent& event );
         void OnNoteBookFit( wxCommandEvent& event );
-        void OnGCCalculate( wxCommandEvent& event );
-        void OnGCLCalculate( wxCommandEvent& event );
-        void OnGCLCalculate( wxCommandEvent& event, bool write_file );
         void OnFit( wxCommandEvent& event );
-        void OnExportGC( wxCommandEvent& event );
-        void OnExportGCL( wxCommandEvent& event );
+
         void OnExportRH( wxCommandEvent& event );
         //void Addpoint(TiXmlElement* Route, double ptlat, double ptlon, wxString ptname, wxString ptsym, wxString pttype);
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);
