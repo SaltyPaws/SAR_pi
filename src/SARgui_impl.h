@@ -58,6 +58,18 @@ public:
         void OnNoteBookFit( wxCommandEvent& event );
         void OnFit( wxCommandEvent& event );
 
+        void OnPSCalc( wxCommandEvent& event );
+        void OnPSGPX( wxCommandEvent& event );
+
+        void OnESCalc( wxCommandEvent& event );
+        void OnESGPX( wxCommandEvent& event );
+
+        void OnSSCalc( wxCommandEvent& event );
+        void OnSSGPX( wxCommandEvent& event );
+
+        void OnORCalc( wxCommandEvent& event );
+        void OnORGPX( wxCommandEvent& event );
+
         void OnExportRH( wxCommandEvent& event );
         //void Addpoint(TiXmlElement* Route, double ptlat, double ptlon, wxString ptname, wxString ptsym, wxString pttype);
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);

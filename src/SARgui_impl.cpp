@@ -60,24 +60,6 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
     else
         Lon1=Lon1 + _T("E");
     m_Lon1->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lon1.mb_str().data())));
-
-    //Lat2
-    /*
-    wxString Lat2 = this->m_Lat2_d->GetValue() + _T(" ")  + this->m_Lat2_m->GetValue() + _T(" ")  + this->m_Lat2_s->GetValue() + _T(" ");//  + this->m_Lat2_NS->GetString();
-    if(this->m_Lat2_NS->GetCurrentSelection()) //S=1
-        Lat2=Lat2 + _T("S");
-    else
-        Lat2=Lat2 + _T("N");
-    m_Lat2->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lat2.mb_str().data())));
-
-    //Lon2
-    wxString Lon2 = this->m_Lon2_d->GetValue() + _T(" ")  + this->m_Lon2_m->GetValue() + _T(" ")  + this->m_Lon2_s->GetValue() + _T(" ") ;// + _T(this->m_Lon2_EW->GetSelection());
-    if(this->m_Lon2_EW->GetCurrentSelection()) //W=1
-        Lon2=Lon2 + _T("W");
-    else
-        Lon2=Lon2 + _T("E");
-    m_Lon2->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lon2.mb_str().data())));
-*/
 }
 
 void Dlg::OnNoteBookFit( wxCommandEvent& event )
@@ -126,6 +108,39 @@ void Dlg::Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString
 }
 
 
+void Dlg::OnPSCalc( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnPSGPX( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnESCalc( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnESGPX( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnSSCalc( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnSSGPX( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+
+void Dlg::OnORCalc( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
+void Dlg::OnORGPX( wxCommandEvent& event )
+{
+                    wxMessageBox(_("Function not yet implemented :p")) ;
+}
 
 
 void Dlg::OnExportRH( wxCommandEvent& event )
