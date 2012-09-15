@@ -131,21 +131,23 @@ void Dlg::OnPSGPX( wxCommandEvent& event )
 }
 void Dlg::OnESCalc( wxCommandEvent& event )
 {
-                   // wxMessageBox(_("Function not yet implemented :p")) ;
-                   Calculate(event, false, 2);
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, false, 2);
 }
 void Dlg::OnESGPX( wxCommandEvent& event )
 {
-                    //wxMessageBox(_("Function not yet implemented :p")) ;
-                    Calculate(event, true, 2);
+    //wxMessageBox(_("Function not yet implemented :p")) ;
+    Calculate(event, true, 2);
 }
 void Dlg::OnSSCalc( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, false, 3);
 }
 void Dlg::OnSSGPX( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, true, 3);
 }
 
 void Dlg::OnORCalc( wxCommandEvent& event )
@@ -165,13 +167,9 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
 3 Sector search
 4 Oil Rig
 */
-
-
 {
-
-
     bool error_occured=false;
-    double dist, fwdAz, revAz;
+   // double dist, fwdAz, revAz;
 
 
     double lat1,lon1;
@@ -232,7 +230,6 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         EndN->LinkEndChild( text6 );
 
         Route->LinkEndChild( Extensions );
-
     }
 
     //Calculate GCL
@@ -259,12 +256,12 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         }
         case 2:            // Note the colon, not a semicolon
         {
-            if (dbg) cout<<"Expanding Square\n";
             //Expanding Square Start
-            double approach=0;
-            double leg_distancex=0;
-            double squares=0;
-            double speed=0;
+            if (dbg) cout<<"Expanding Square\n";
+            double approach=0.0;
+            double leg_distancex=0.0;
+            double squares=0.0;
+            double speed=0.0;
             double SAR_distance=0;
             if(!this->m_Approach_ES->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
             if(!this->m_dx_ES->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
@@ -293,15 +290,15 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
             for ( int x = 1; x <= squares; x++ ) { //Loop over the number of search squares
 
                 double ESdistance=leg_distancex;
-                double ESheading=approach;
+                double ESheading=0;
                 wxString wpt_title;
 
                 for ( int y = 1; y <= 4; y++ ) {//Loop over the points in the square
                     switch ( y ) {
-                        case 1:{ESheading=approach+0.0;multiplier++;break;}
-                        case 2:{ESheading=approach-90.0;break;}
-                        case 3:{ESheading=approach-180.0;multiplier++;break;}
-                        case 4:{ESheading=approach-270.0;break;}
+                        case 1:{ESheading=-approach;multiplier++;break;}
+                        case 2:{ESheading=-approach-90.0;break;}
+                        case 3:{ESheading=-approach-180.0;multiplier++;break;}
+                        case 4:{ESheading=-approach-270.0;break;}
                     }
                     ESdistance=leg_distancex*multiplier;
 
@@ -322,11 +319,77 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         }
         //Expanding Square End
         break;
-      case 3:
-      {
-
-
+    case 3:
+        {
+        //Sector search start
         cout<<"Sector search\n";
+
+        if (dbg) cout<<"Sector Square\n";
+            double approach=0;
+            double leg_distancex=0;
+            double speed=0;
+            double SAR_distance=0;
+            bool two_cycles=false;
+            if(!this->m_Approach_SS->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
+            if(!this->m_dx_SS->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
+            if(!this->m_Speed_SS->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
+            if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
+            if(this->m_Ncycles->GetCurrentSelection()) two_cycles=true;//S=1
+
+            /* Pattern
+            Datum
+            Go Downwind for 1 mile,
+            *** alter 120 degrees to starboard, this course for 1 mile
+            then
+            Alter to starboard 120 degrees and go on this course for 2 miles going through datum
+            then
+            Alter to starboard 120 degrees for 1 mile
+            then
+            Alter to starboard 120 degrees for 2 miles going through datum
+
+            then
+            Alter to starboard 120 degrees for 1 mile
+            then
+            Alter 120 degrees to starboard for 1 mile back to datum
+            then go down the Blue track as follows
+            Alter 30 degrees to starboard for 1 mile
+            then go to the *** above and do the same again
+            */
+
+            //add  datum
+            if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
+            int n=0,nleg=0;
+            //int multiplier=0;
+            double lati, loni;
+            double ESheading=-approach;
+           // int n_legs;
+           // if (two_cycles) n_legs=18 else n_legs=9;
+            for ( int x = 1; x<= ((two_cycles) ? 18 : 9); x++ ) { //Loop over the legs
+                wxString wpt_title;
+                n++;
+                destRhumb(lat1, lon1, ESheading,leg_distancex, &lati, &loni);
+                SAR_distance+=leg_distancex;
+                if ( n % 3!= 0 ) {
+                    ESheading-=120.0;
+                    nleg++;
+                    wpt_title=wxT("");
+                    wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")");
+                    if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+                    }
+
+                if  ( n % 9 ==0 ) {
+                    nleg++;
+                    wpt_title=wxT("");
+                    wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")")
+                    if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+                    if (two_cycles) ESheading-=30;
+                    }
+                 lat1=lati;
+                 lon1=loni;
+             }
+             this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
+             this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
+        //Sector search end
         break;
       }
       case 4:            // Note the colon, not a semicolon

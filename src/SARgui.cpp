@@ -125,11 +125,11 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_staticText32111111->Wrap( -1 );
 	bSizer14111111->Add( m_staticText32111111, 0, wxALL, 5 );
 	
-	wxString m_choice1Choices[] = { _("1"), _("2") };
-	int m_choice1NChoices = sizeof( m_choice1Choices ) / sizeof( wxString );
-	m_choice1 = new wxChoice( m_dx_PS, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_choice1NChoices, m_choice1Choices, 0 );
-	m_choice1->SetSelection( 0 );
-	bSizer14111111->Add( m_choice1, 0, wxALL, 5 );
+	wxString m_NshipsChoices[] = { _("1"), _("2") };
+	int m_NshipsNChoices = sizeof( m_NshipsChoices ) / sizeof( wxString );
+	m_Nships = new wxChoice( m_dx_PS, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_NshipsNChoices, m_NshipsChoices, 0 );
+	m_Nships->SetSelection( 0 );
+	bSizer14111111->Add( m_Nships, 0, wxALL, 5 );
 	
 	
 	bSizer1311->Add( bSizer14111111, 0, 0, 5 );
@@ -156,15 +156,13 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	bSizer3->Add( m_dx_PS, 0, wxALL, 5 );
 	
 	m_bitmap21 = new wxStaticBitmap( m_panel1, wxID_ANY, wxBitmap( wxT("bitmaps/trackln.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
-	m_bitmap21->SetMinSize( wxSize( 290,300 ) );
-	
 	bSizer3->Add( m_bitmap21, 0, wxALL, 5 );
 	
 	
 	m_panel1->SetSizer( bSizer3 );
 	m_panel1->Layout();
 	bSizer3->Fit( m_panel1 );
-	m_notebook1->AddPage( m_panel1, _("SAR: Trackline"), true );
+	m_notebook1->AddPage( m_panel1, _("SAR: Trackline"), false );
 	m_panel2 = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxTAB_TRAVERSAL );
 	m_panel2->SetMinSize( wxSize( -1,335 ) );
 	
@@ -351,6 +349,22 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	
 	bSizer13->Add( bSizer141111122, 1, wxEXPAND, 5 );
 	
+	wxBoxSizer* bSizer141111111;
+	bSizer141111111 = new wxBoxSizer( wxHORIZONTAL );
+	
+	m_staticText321111111 = new wxStaticText( m_panel8, wxID_ANY, _("Number of cycles"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText321111111->Wrap( -1 );
+	bSizer141111111->Add( m_staticText321111111, 0, wxALL, 5 );
+	
+	wxString m_NcyclesChoices[] = { _("1"), _("2") };
+	int m_NcyclesNChoices = sizeof( m_NcyclesChoices ) / sizeof( wxString );
+	m_Ncycles = new wxChoice( m_panel8, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_NcyclesNChoices, m_NcyclesChoices, 0 );
+	m_Ncycles->SetSelection( 0 );
+	bSizer141111111->Add( m_Ncycles, 0, wxALL, 5 );
+	
+	
+	bSizer13->Add( bSizer141111111, 1, wxEXPAND, 5 );
+	
 	wxBoxSizer* bSizer7111;
 	bSizer7111 = new wxBoxSizer( wxHORIZONTAL );
 	
@@ -381,7 +395,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_panel3->SetSizer( bSizer5 );
 	m_panel3->Layout();
 	bSizer5->Fit( m_panel3 );
-	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), false );
+	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), true );
 	m_Approach_OR = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	m_Approach_OR->SetMinSize( wxSize( 300,200 ) );
 	

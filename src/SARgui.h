@@ -66,7 +66,7 @@ class DlgDef : public wxDialog
 		wxTextCtrl* m_Speed_PS;
 		wxStaticText* m_staticText33111111;
 		wxStaticText* m_staticText32111111;
-		wxChoice* m_choice1;
+		wxChoice* m_Nships;
 		wxButton* m_button311;
 		wxButton* m_button3111;
 		wxStaticBitmap* m_bitmap21;
@@ -100,6 +100,8 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText321111122;
 		wxTextCtrl* m_Speed_SS;
 		wxStaticText* m_staticText331111112;
+		wxStaticText* m_staticText321111111;
+		wxChoice* m_Ncycles;
 		wxButton* m_button31121;
 		wxButton* m_button311111;
 		wxStaticBitmap* m_bitmap3;
