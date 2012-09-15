@@ -176,7 +176,7 @@
                         <object class="notebookpage" expanded="1">
                             <property name="bitmap"></property>
                             <property name="label">SAR: Trackline</property>
-                            <property name="select">0</property>
+                            <property name="select">1</property>
                             <object class="wxPanel" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -295,7 +295,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size">-1,-1</property>
                                             <property name="moveable">1</property>
-                                            <property name="name">m_dx_PS</property>
+                                            <property name="name">wx_panel_dome</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -740,7 +740,7 @@
                                                                         <property name="gripper">0</property>
                                                                         <property name="hidden">0</property>
                                                                         <property name="id">wxID_ANY</property>
-                                                                        <property name="label">Leg Distance x           </property>
+                                                                        <property name="label">Leg Distance              </property>
                                                                         <property name="max_size"></property>
                                                                         <property name="maximize_button">0</property>
                                                                         <property name="maximum_size"></property>
@@ -831,7 +831,7 @@
                                                                         <property name="minimize_button">0</property>
                                                                         <property name="minimum_size"></property>
                                                                         <property name="moveable">1</property>
-                                                                        <property name="name">m_textCtrl25112</property>
+                                                                        <property name="name">m_dx_PS</property>
                                                                         <property name="pane_border">1</property>
                                                                         <property name="pane_position"></property>
                                                                         <property name="pane_size"></property>
@@ -1008,7 +1008,7 @@
                                                                         <property name="gripper">0</property>
                                                                         <property name="hidden">0</property>
                                                                         <property name="id">wxID_ANY</property>
-                                                                        <property name="label">Leg Distance y           </property>
+                                                                        <property name="label">Leg Spacing                </property>
                                                                         <property name="max_size"></property>
                                                                         <property name="maximize_button">0</property>
                                                                         <property name="maximum_size"></property>
@@ -1812,7 +1812,7 @@
                                                                         <property name="gripper">0</property>
                                                                         <property name="hidden">0</property>
                                                                         <property name="id">wxID_ANY</property>
-                                                                        <property name="label">Number of Ships      </property>
+                                                                        <property name="label">For Ship Number      </property>
                                                                         <property name="max_size"></property>
                                                                         <property name="maximize_button">0</property>
                                                                         <property name="maximum_size"></property>
@@ -1903,7 +1903,7 @@
                                                                         <property name="minimize_button">0</property>
                                                                         <property name="minimum_size"></property>
                                                                         <property name="moveable">1</property>
-                                                                        <property name="name">m_Nships</property>
+                                                                        <property name="name">m_Nship</property>
                                                                         <property name="pane_border">1</property>
                                                                         <property name="pane_position"></property>
                                                                         <property name="pane_size"></property>
@@ -5358,7 +5358,7 @@
                         <object class="notebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">SAR: Oil Rig</property>
-                            <property name="select">1</property>
+                            <property name="select">0</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>

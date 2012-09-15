@@ -48,13 +48,13 @@ class DlgDef : public wxDialog
 	protected:
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
-		wxPanel* m_dx_PS;
+		wxPanel* wx_panel_dome;
 		wxStaticText* m_staticText1511;
 		wxStaticText* m_staticText3221;
 		wxTextCtrl* m_Approach_PS;
 		wxStaticText* m_staticText3321;
 		wxStaticText* m_staticText32112;
-		wxTextCtrl* m_textCtrl25112;
+		wxTextCtrl* m_dx_PS;
 		wxStaticText* m_staticText33112;
 		wxStaticText* m_staticText321111;
 		wxTextCtrl* m_dy_PS;
@@ -66,7 +66,7 @@ class DlgDef : public wxDialog
 		wxTextCtrl* m_Speed_PS;
 		wxStaticText* m_staticText33111111;
 		wxStaticText* m_staticText32111111;
-		wxChoice* m_Nships;
+		wxChoice* m_Nship;
 		wxButton* m_button311;
 		wxButton* m_button3111;
 		wxStaticBitmap* m_bitmap21;

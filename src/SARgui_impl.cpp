@@ -123,11 +123,13 @@ void Dlg::Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString
 
 void Dlg::OnPSCalc( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, false, 1);
 }
 void Dlg::OnPSGPX( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, true, 1);
 }
 void Dlg::OnESCalc( wxCommandEvent& event )
 {
@@ -251,9 +253,90 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
     4 Oil Rig
     */
     switch ( Pattern ) {
-        case 1:
-        {// Note the colon, not a semicolon
-            cout<<"Parrallel Search\n";
+    case 1:
+        {
+        if (dbg) cout<<"Parrallel Search\n";
+        //Expanding Parallel search Start
+        double approach=0;
+        double leg_distancex=0;
+        double leg_distancey=0;
+        double nlegs=0;
+        double speed=0;
+        double SAR_distance=0;
+        bool First_Ship=false;
+        if(!this->m_Approach_PS->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
+        if(!this->m_dx_PS->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
+        if(!this->m_dy_PS->GetValue().ToDouble(&leg_distancey)){ leg_distancey=1.0;} //leg distance
+        if(!this->m_n_PS->GetValue().ToDouble(&nlegs)){ nlegs=1.0;} //number of legs
+        if(!this->m_Speed_PS->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
+        if(this->m_Nship->GetCurrentSelection()) First_Ship=true;//S=1
+
+
+        if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
+        if (nlegs<0.1) {nlegs=1.0;}//check for negative or small values
+        /*pattern
+        *datum
+        *Start of search
+            datum +approach+90-->-dx/2
+        *Leg1
+        start+approach-->distance
+        pt1+approach+90-->width
+        *leg2
+        pt2+approach+180-->distance
+        pt3+approach-90-->width
+        leg3
+        pt4+approach-->distance
+        pt5+approach+90-->width
+        */
+
+        //add  datum
+        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
+        int n=0;
+        //int multiplier=1;
+        double lati, loni,ESheading=approach+180.0,ESdistance=leg_distancex/2;
+        //calculate start position
+        destRhumb(lat1, lon1, -ESheading,ESdistance, &lati, &loni);
+        lat1=lati;
+        lon1=loni;
+        if (!First_Ship) ESheading=approach+90.0; else ESheading=approach-90.0;
+        destRhumb(lat1, lon1, -ESheading,leg_distancey, &lati, &loni);
+        lat1=lati;
+        lon1=loni;
+
+        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%f"),loni), _T("Start") ,_T("diamond"),_T("WPT"));}
+
+        wxString wpt_title;
+        for ( int x = 1; x <= nlegs; x++ ) { //Loop over the number of legs
+            for ( int y = 1; y <= 2; y++ ) { //Loop over the tracks
+                if (y==1) {
+                    if ( x % 2 != 0 ) ESheading=approach; else ESheading=approach+180.0 ;
+                    ESdistance=leg_distancex;
+                }
+                else {
+                    ESdistance=leg_distancey;
+                    if (!First_Ship) ESheading=approach+90.0; else ESheading=approach-90.0;
+                }
+
+            n++;
+            wpt_title=wxT("");
+            wpt_title << wxT("Leg (") << x << wxT(") Pt(") << y <<wxT(")");
+            destRhumb(lat1, lon1, -ESheading,ESdistance, &lati, &loni);
+            SAR_distance+=ESdistance;
+            if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+            lat1=lati;
+            lon1=loni;
+            }
+        }
+        this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
+        this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
+
+
+
+
+
+
+
+            //Expanding Parallel search End
             break;
         }
         case 2:            // Note the colon, not a semicolon
