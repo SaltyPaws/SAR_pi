@@ -152,11 +152,13 @@ void Dlg::OnSSGPX( wxCommandEvent& event )
 
 void Dlg::OnORCalc( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, false, 4);
 }
 void Dlg::OnORGPX( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+   // wxMessageBox(_("Function not yet implemented :p")) ;
+   Calculate(event, true, 4);
 }
 
 
@@ -325,78 +327,135 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         cout<<"Sector search\n";
 
         if (dbg) cout<<"Sector Square\n";
-            double approach=0;
-            double leg_distancex=0;
-            double speed=0;
-            double SAR_distance=0;
-            bool two_cycles=false;
-            if(!this->m_Approach_SS->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
-            if(!this->m_dx_SS->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
-            if(!this->m_Speed_SS->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
-            if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
-            if(this->m_Ncycles->GetCurrentSelection()) two_cycles=true;//S=1
+        double approach=0;
+        double leg_distancex=0;
+        double speed=0;
+        double SAR_distance=0;
+        bool two_cycles=false;
+        if(!this->m_Approach_SS->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
+        if(!this->m_dx_SS->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
+        if(!this->m_Speed_SS->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
+        if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
+        if(this->m_Ncycles->GetCurrentSelection()) two_cycles=true;//S=1
 
-            /* Pattern
-            Datum
-            Go Downwind for 1 mile,
-            *** alter 120 degrees to starboard, this course for 1 mile
-            then
-            Alter to starboard 120 degrees and go on this course for 2 miles going through datum
-            then
-            Alter to starboard 120 degrees for 1 mile
-            then
-            Alter to starboard 120 degrees for 2 miles going through datum
+        /* Pattern
+        Datum
+        Go Downwind for 1 mile,
+        *** alter 120 degrees to starboard, this course for 1 mile
+        then
+        Alter to starboard 120 degrees and go on this course for 2 miles going through datum
+        then
+        Alter to starboard 120 degrees for 1 mile
+        then
+        Alter to starboard 120 degrees for 2 miles going through datum
 
-            then
-            Alter to starboard 120 degrees for 1 mile
-            then
-            Alter 120 degrees to starboard for 1 mile back to datum
-            then go down the Blue track as follows
-            Alter 30 degrees to starboard for 1 mile
-            then go to the *** above and do the same again
-            */
+        then
+        Alter to starboard 120 degrees for 1 mile
+        then
+        Alter 120 degrees to starboard for 1 mile back to datum
+        then go down the Blue track as follows
+        Alter 30 degrees to starboard for 1 mile
+        then go to the *** above and do the same again
+        */
+        //add  datum
+        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
+        int n=0,nleg=0;
+        double lati, loni;
+        double ESheading=-approach;
+        for ( int x = 1; x<= ((two_cycles) ? 18 : 9); x++ ) { //Loop over the legs
+            wxString wpt_title;
+            n++;
+            destRhumb(lat1, lon1, ESheading,leg_distancex, &lati, &loni);
+            SAR_distance+=leg_distancex;
+            if ( n % 3!= 0 ) {
+                ESheading-=120.0;
+                nleg++;
+                wpt_title=wxT("");
+                wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")");
+                if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+                }
 
-            //add  datum
-            if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
-            int n=0,nleg=0;
-            //int multiplier=0;
-            double lati, loni;
-            double ESheading=-approach;
-           // int n_legs;
-           // if (two_cycles) n_legs=18 else n_legs=9;
-            for ( int x = 1; x<= ((two_cycles) ? 18 : 9); x++ ) { //Loop over the legs
-                wxString wpt_title;
-                n++;
-                destRhumb(lat1, lon1, ESheading,leg_distancex, &lati, &loni);
-                SAR_distance+=leg_distancex;
-                if ( n % 3!= 0 ) {
-                    ESheading-=120.0;
-                    nleg++;
-                    wpt_title=wxT("");
-                    wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")");
-                    if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
-                    }
-
-                if  ( n % 9 ==0 ) {
-                    nleg++;
-                    wpt_title=wxT("");
-                    wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")")
-                    if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
-                    if (two_cycles) ESheading-=30;
-                    }
-                 lat1=lati;
-                 lon1=loni;
-             }
-             this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
-             this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
+            if  ( n % 9 ==0 ) {
+                nleg++;
+                wpt_title=wxT("");
+                wpt_title << wxT("Leg (") << nleg << wxT(")");//" Pt(") << y <<wxT(")")
+                if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+                if (two_cycles) ESheading-=30;
+                }
+             lat1=lati;
+             lon1=loni;
+         }
+         this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
+         this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
         //Sector search end
         break;
       }
-      case 4:            // Note the colon, not a semicolon
-       {
+    case 4:            // Note the colon, not a semicolon
+        {
+        //Oil Rig begin
+        if (dbg) cout<<"Oil Rig\n";
+        double approach=0;
+        double leg_distancex=0;
+        double nlegs=0;
+        double speed=0;
+        double SAR_distance=0;
+        if(!this->m_Approach_OR->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
+        if(!this->m_dx_OR->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
+        if(!this->m_NLegs_OR->GetValue().ToDouble(&nlegs)){ nlegs=1.0;} //number of legs
+        if(!this->m_Speed_SS->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
+        if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
+        if (nlegs<0.1) {nlegs=1.0;}//check for negative or small values
+        /*pattern
+        datum
+        *Leg1
+        datum+approach-->dx
+        pt1+approach+90-->dx
+        *leg2
+        pt2+approach-->dx
+        pt3+approach-90-->dx*3
+        leg3
+        pt4+approach-->dx
+        pt5+approach+90-->dx*7
+        */
 
-
-        cout<<"Oil Rig\n";
+        //add  datum
+        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
+        int n=0;
+        int multiplier=1;
+        double lati, loni,ESheading,ESdistance;
+        bool sign_flipper=false;
+        wxString wpt_title;
+        for ( int x = 1; x <= nlegs; x++ ) { //Loop over the number of legs
+            for ( int y = 1; y <= 2; y++ ) { //Loop over the tracks
+                if (y==1) {
+                    ESheading=approach;
+                    ESdistance=leg_distancex;
+                    }
+                else {
+                    ESdistance=leg_distancex*multiplier;
+                    multiplier+=2;
+                    if (sign_flipper) {
+                           ESheading=approach-90;
+                           sign_flipper=false;
+                        }
+                    else {
+                        ESheading=approach+90;
+                        sign_flipper=true;
+                    }
+                }
+            n++;
+            wpt_title=wxT("");
+            wpt_title << wxT("Leg (") << x << wxT(") Pt(") << y <<wxT(")");
+            destRhumb(lat1, lon1, -ESheading,ESdistance, &lati, &loni);
+            SAR_distance+=ESdistance;
+            if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+            lat1=lati;
+            lon1=loni;
+            }
+        }
+        this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
+        this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
+        //Oil Rig end
         break;
        }
       default:

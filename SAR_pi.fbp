@@ -3838,7 +3838,7 @@
                         <object class="notebookpage" expanded="1">
                             <property name="bitmap">Load From File; /home/brazil/Documenbitmaps/sector-search-296x3001.jpg</property>
                             <property name="label">SAR: Sector Search</property>
-                            <property name="select">1</property>
+                            <property name="select">0</property>
                             <object class="wxPanel" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -5358,7 +5358,7 @@
                         <object class="notebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">SAR: Oil Rig</property>
-                            <property name="select">0</property>
+                            <property name="select">1</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -5394,7 +5394,7 @@
                                 <property name="minimize_button">0</property>
                                 <property name="minimum_size">300,200</property>
                                 <property name="moveable">1</property>
-                                <property name="name">m_Approach_OR</property>
+                                <property name="name">m_panek4</property>
                                 <property name="pane_border">1</property>
                                 <property name="pane_position"></property>
                                 <property name="pane_size"></property>
@@ -5745,7 +5745,7 @@
                                                                         <property name="minimize_button">0</property>
                                                                         <property name="minimum_size"></property>
                                                                         <property name="moveable">1</property>
-                                                                        <property name="name">m_textCtrl253</property>
+                                                                        <property name="name">m_Approach_OR</property>
                                                                         <property name="pane_border">1</property>
                                                                         <property name="pane_position"></property>
                                                                         <property name="pane_size"></property>
@@ -6190,7 +6190,7 @@
                                                                         <property name="gripper">0</property>
                                                                         <property name="hidden">0</property>
                                                                         <property name="id">wxID_ANY</property>
-                                                                        <property name="label">Sector Angle          </property>
+                                                                        <property name="label">Number of Legs   </property>
                                                                         <property name="max_size"></property>
                                                                         <property name="maximize_button">0</property>
                                                                         <property name="maximum_size"></property>
@@ -6281,7 +6281,7 @@
                                                                         <property name="minimize_button">0</property>
                                                                         <property name="minimum_size"></property>
                                                                         <property name="moveable">1</property>
-                                                                        <property name="name">m_Angle_OR</property>
+                                                                        <property name="name">m_NLegs_OR</property>
                                                                         <property name="pane_border">1</property>
                                                                         <property name="pane_position"></property>
                                                                         <property name="pane_size"></property>

@@ -395,14 +395,14 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_panel3->SetSizer( bSizer5 );
 	m_panel3->Layout();
 	bSizer5->Fit( m_panel3 );
-	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), true );
-	m_Approach_OR = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	m_Approach_OR->SetMinSize( wxSize( 300,200 ) );
+	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), false );
+	m_panek4 = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	m_panek4->SetMinSize( wxSize( 300,200 ) );
 	
 	wxBoxSizer* bSizer6;
 	bSizer6 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_panel10 = new wxPanel( m_Approach_OR, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	m_panel10 = new wxPanel( m_panek4, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* bSizer912;
 	bSizer912 = new wxBoxSizer( wxVERTICAL );
 	
@@ -422,8 +422,8 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_staticText323->Wrap( -1 );
 	bSizer143->Add( m_staticText323, 0, wxALL, 5 );
 	
-	m_textCtrl253 = new wxTextCtrl( m_panel10, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer143->Add( m_textCtrl253, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	m_Approach_OR = new wxTextCtrl( m_panel10, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer143->Add( m_Approach_OR, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	m_staticText333 = new wxStaticText( m_panel10, wxID_ANY, _("Degrees"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText333->Wrap( -1 );
@@ -452,12 +452,12 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	wxBoxSizer* bSizer14121;
 	bSizer14121 = new wxBoxSizer( wxHORIZONTAL );
 	
-	m_staticText32121 = new wxStaticText( m_panel10, wxID_ANY, _("Sector Angle          "), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText32121 = new wxStaticText( m_panel10, wxID_ANY, _("Number of Legs   "), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText32121->Wrap( -1 );
 	bSizer14121->Add( m_staticText32121, 0, wxALL, 5 );
 	
-	m_Angle_OR = new wxTextCtrl( m_panel10, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	bSizer14121->Add( m_Angle_OR, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	m_NLegs_OR = new wxTextCtrl( m_panel10, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer14121->Add( m_NLegs_OR, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	m_staticText33121 = new wxStaticText( m_panel10, wxID_ANY, _("Degrees"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText33121->Wrap( -1 );
@@ -504,16 +504,16 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	bSizer912->Fit( m_panel10 );
 	bSizer6->Add( m_panel10, 0, wxALL, 5 );
 	
-	m_bitmap4 = new wxStaticBitmap( m_Approach_OR, wxID_ANY, wxBitmap( wxT("bitmaps/oil_rig.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bitmap4 = new wxStaticBitmap( m_panek4, wxID_ANY, wxBitmap( wxT("bitmaps/oil_rig.jpg"), wxBITMAP_TYPE_ANY ), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bitmap4->SetMinSize( wxSize( 300,300 ) );
 	
 	bSizer6->Add( m_bitmap4, 0, wxALL, 5 );
 	
 	
-	m_Approach_OR->SetSizer( bSizer6 );
-	m_Approach_OR->Layout();
-	bSizer6->Fit( m_Approach_OR );
-	m_notebook1->AddPage( m_Approach_OR, _("SAR: Oil Rig"), false );
+	m_panek4->SetSizer( bSizer6 );
+	m_panek4->Layout();
+	bSizer6->Fit( m_panek4 );
+	m_notebook1->AddPage( m_panek4, _("SAR: Oil Rig"), true );
 	
 	bSframe->Add( m_notebook1, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxEXPAND, 5 );
 	
