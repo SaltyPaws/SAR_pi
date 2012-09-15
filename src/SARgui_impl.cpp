@@ -45,6 +45,18 @@ void Dlg::OnToggle( wxCommandEvent& event )
 
 void Dlg::OnConverttoDegree( wxCommandEvent& event )
 {
+    //set cell values to 0 if they are empty. This ensures conversion goes ok.
+    double test_value;
+    if(!this->m_Lat1_d->GetValue().ToDouble(&test_value)){m_Lat1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
+    if(!this->m_Lat1_m->GetValue().ToDouble(&test_value)){m_Lat1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
+    if(!this->m_Lat1_s->GetValue().ToDouble(&test_value)){m_Lat1_s->SetValue(wxString::Format(wxT("%i"),0 ));}
+
+    if(!this->m_Lon1_d->GetValue().ToDouble(&test_value)){m_Lon1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
+    if(!this->m_Lon1_m->GetValue().ToDouble(&test_value)){m_Lon1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
+    if(!this->m_Lon1_s->GetValue().ToDouble(&test_value)){m_Lon1_s->SetValue(wxString::Format(wxT("%i"),0 ));}
+
+
+
     //Lat1
     wxString Lat1 = this->m_Lat1_d->GetValue() + _T(" ")  + this->m_Lat1_m->GetValue() + _T(" ")  + this->m_Lat1_s->GetValue() + _T(" ");// + this->m_Lon1_EW->GetCurrentSelection();
     if(this->m_Lat1_NS->GetCurrentSelection()) //S=1
@@ -60,6 +72,7 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
     else
         Lon1=Lon1 + _T("E");
     m_Lon1->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lon1.mb_str().data())));
+
 }
 
 void Dlg::OnNoteBookFit( wxCommandEvent& event )
@@ -118,11 +131,13 @@ void Dlg::OnPSGPX( wxCommandEvent& event )
 }
 void Dlg::OnESCalc( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+                   // wxMessageBox(_("Function not yet implemented :p")) ;
+                   Calculate(event, false, 2);
 }
 void Dlg::OnESGPX( wxCommandEvent& event )
 {
-                    wxMessageBox(_("Function not yet implemented :p")) ;
+                    //wxMessageBox(_("Function not yet implemented :p")) ;
+                    Calculate(event, true, 2);
 }
 void Dlg::OnSSCalc( wxCommandEvent& event )
 {
@@ -143,89 +158,227 @@ void Dlg::OnORGPX( wxCommandEvent& event )
 }
 
 
-void Dlg::OnExportRH( wxCommandEvent& event )
-{/*
+void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
+/*
+1 Parrallel Search
+2 Expanding Square
+3 Sector search
+4 Oil Rig
+*/
+
+
+{
+
+
     bool error_occured=false;
-    wxFileDialog dlg(this, _("Export Rhumb Line GPX file as"), wxEmptyString, wxEmptyString, _T("GPX files (*.gpx)|*.gpx|All files (*.*)|*.*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
-    if (dlg.ShowModal() == wxID_CANCEL)
-        error_occured=true;     // the user changed idea...
-    if ((dlg.GetPath() != wxEmptyString) &&(!error_occured)){
-            double dist, fwdAz;//, revAz;
+    double dist, fwdAz, revAz;
 
-            double lat1,lon1,lat2,lon2;
-            if(!this->m_Lat1->GetValue().ToDouble(&lat1)){ error_occured=true;}
-            if(!this->m_Lon1->GetValue().ToDouble(&lon1)){ error_occured=true; }
-            if(!this->m_Lat2->GetValue().ToDouble(&lat2)){ error_occured=true;}
-            if(!this->m_Lon2->GetValue().ToDouble(&lon2)){ error_occured=true; }
 
-            //Validate input ranges
-            if (std::abs(lat1)>90){ error_occured=true; }
-            if (std::abs(lat2)>90){ error_occured=true; }
-            if (std::abs(lon1)>180){ error_occured=true; }
-            if (std::abs(lon2)>180){ error_occured=true; }
+    double lat1,lon1;
+    if(!this->m_Lat1->GetValue().ToDouble(&lat1)){ lat1=0.0;}
+    if(!this->m_Lon1->GetValue().ToDouble(&lon1)){ lon1=0.0;}
+    //if (error_occured) wxMessageBox(_T("error in conversion of input coordinates"));
 
-            DistanceBearingMercator(lat2, lon2, lat1, lon1, &fwdAz, &dist);
+    //error_occured=false;
+    wxString s;
+    if (write_file){
+        wxFileDialog dlg(this, _("Export SAR track GPX file as"), wxEmptyString, wxEmptyString, _T("GPX files (*.gpx)|*.gpx|All files (*.*)|*.*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
+        if (dlg.ShowModal() == wxID_CANCEL)
+            error_occured=true;     // the user changed idea...
+        //dlg.ShowModal();
+        s=dlg.GetPath();
+        //  std::cout<<s<< std::endl;
+        if (dlg.GetPath() == wxEmptyString){ error_occured=true; if (dbg) printf("Empty Path\n");}
+    }
 
-            if (error_occured==true)  {
-                wxLogMessage(_("Error in calculation. Please check input!") );
-                wxMessageBox(_("Error in calculation. Please check input!") );}
+    //Validate input ranges
+    if (!error_occured){
+        if (std::abs(lat1)>90){ error_occured=true; }
+        if (std::abs(lon1)>180){ error_occured=true; }
+        if (error_occured) wxMessageBox(_("error in input range validation"));
+    }
 
-            ////////////////////Start XML
-            TiXmlDocument doc;
-            TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "utf-8", "" );
-            doc.LinkEndChild( decl );
-            TiXmlElement * root = new TiXmlElement( "gpx" );
-            doc.LinkEndChild( root );
-            root->SetAttribute("version", "1.1");
-            root->SetAttribute("creator", "Route_pi by SaltyPaws");
-            root->SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-            root->SetAttribute("xmlns:gpxx","http://www.garmin.com/xmlschemas/GpxExtensions/v3" );
-            root->SetAttribute("xsi:schemaLocation", "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd");
-            root->SetAttribute("xmlns:opencpn","http://www.opencpn.org");
+    //Start GPX
+    TiXmlDocument doc;
+    TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "utf-8", "" );
+    doc.LinkEndChild( decl );
+    TiXmlElement * root = new TiXmlElement( "gpx" );
+    TiXmlElement * Route = new TiXmlElement( "rte" );
+    TiXmlElement * RouteName = new TiXmlElement( "name" );
+    TiXmlText * text4 = new TiXmlText( this->m_Route->GetValue().ToUTF8() );
 
-            TiXmlElement * Route = new TiXmlElement( "rte" );
+    if (write_file){
+        doc.LinkEndChild( root );
+        root->SetAttribute("version", "1.1");
+        root->SetAttribute("creator", "Route_pi by SaltyPaws");
+        root->SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+        root->SetAttribute("xmlns:gpxx","http://www.garmin.com/xmlschemas/GpxExtensions/v3" );
+        root->SetAttribute("xsi:schemaLocation", "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd");
+        root->SetAttribute("xmlns:opencpn","http://www.opencpn.org");
+        Route->LinkEndChild( RouteName );
+        RouteName->LinkEndChild( text4 );
 
-            TiXmlElement * RouteName = new TiXmlElement( "name" );
-            TiXmlText * text4 = new TiXmlText( this->m_Route->GetValue().ToUTF8() );
-            Route->LinkEndChild( RouteName );
-            RouteName->LinkEndChild( text4 );
 
-            //////////////////////Add Points HERE
+        TiXmlElement * Extensions = new TiXmlElement( "extensions" );
 
-            double step_size;
-            bool m_IntervalNM_test=false;
-            if(!this->m_IntervalNM->GetValue().ToDouble(&step_size)){ m_IntervalNM_test=true;}
-            //check step size distance
-            if ((step_size>dist) || (step_size<dist*1/5000) || (m_IntervalNM_test)){
-                m_IntervalNM->SetValue(wxString::Format(wxT("%g"), dist/100));
-                step_size=dist/100;
-            }
-            //start
-            Addpoint(Route,wxString::Format(wxT("%f"),lat1),wxString::Format(wxT("%f"),lon1),_T("Start"),_T("diamond"),_T("WPT"));
-            double lati, loni;
-            for(double in_distance=step_size;in_distance<dist;in_distance=in_distance+step_size)
-                {
-                //DestVincenty( lat1,  lon1,  fwdAz,  in_distance, &lati, &loni, &revAz);
-                if (dbg) std::cout<<"RH lat1 "<<lat1<<" lon1: " <<lon1<<"fwdAZ "<<fwdAz<<" dist " <<in_distance<< std::endl;
-                destLoxodrome(lat1,  lon1,  fwdAz,  in_distance, &lati, &loni);
-                //destRhumb(lat1, lon1, fwdAz,in_distance, &lati, &loni);
-                if (dbg) std::cout<<"Distance: "<<in_distance<<"lat: "<<lati<<" lon: "<<loni<< std::endl;
-                Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wxString::Format(wxT("%d"),(int)in_distance) ,_T("diamond"),_T("WPT"));
+        TiXmlElement * StartN = new TiXmlElement( "opencpn:start" );
+        TiXmlText * text5 = new TiXmlText( "Datum" );
+        Extensions->LinkEndChild( StartN );
+        StartN->LinkEndChild( text5 );
+
+        TiXmlElement * EndN = new TiXmlElement( "opencpn:end" );
+        TiXmlText * text6 = new TiXmlText( "End of grid" );
+        Extensions->LinkEndChild( EndN );
+        EndN->LinkEndChild( text6 );
+
+        Route->LinkEndChild( Extensions );
+
+    }
+
+    //Calculate GCL
+   // double step_size=dist/100;
+
+    if (error_occured){
+        wxLogMessage(_("Error occured, aborting SAR calc!") );
+        //wxMessageBox(_("Route interval > Distance, 0 or negative") );
+        }
+
+
+    //Call SAR routine here
+    /*
+    1 Parrallel Search
+    2 Expanding Square
+    3 Sector search
+    4 Oil Rig
+    */
+    switch ( Pattern ) {
+        case 1:
+        {// Note the colon, not a semicolon
+            cout<<"Parrallel Search\n";
+            break;
+        }
+        case 2:            // Note the colon, not a semicolon
+        {
+            cout<<"Expanding Square\n";
+            //Expanding Square Start
+            double approach=0;
+            double leg_distancex=0;
+            double squares=0;
+            double speed=0;
+            double SAR_distance=0;
+            if(!this->m_Approach_ES->GetValue().ToDouble(&approach)){ approach=0.0;} //approach course
+            if(!this->m_dx_ES->GetValue().ToDouble(&leg_distancex)){ leg_distancex=1.0;} //leg distance
+            if(!this->m_n_ES->GetValue().ToDouble(&squares)){ squares=1.0;} //number of squares
+            if(!this->m_Speed_ES->GetValue().ToDouble(&speed)){ speed=5.0;} // search velocity
+            if (leg_distancex<0.1) {leg_distancex=1.0;}//check for negative or small values
+            if (squares<1) {squares=1;}
+
+            /* Pattern
+            Datum
+            square 1
+            1 Datum+distance-->approach
+            2 pt1+distance-->approach+90
+            3 pt2+distancex2--approach+180
+            4 pt3+distancex2-->approach+270
+            5 pt4+distancex3-->approach
+            6 pt5+distancex3-->approach+90
+            7 pt6+distancex4-->approach+180
+            */
+cout<<"datum\n";
+            //add  datum
+            if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
+            int n=0;
+            cout<<"loop\n";
+            for ( int x = 0; x <= squares; x++ ) {
+                /*double ESdistance=leg_distancex;
+                double ESheading=approach;*/
+std::cout<<"------------->"<<"lat: "<<n<<" lon: "<<x<< std::endl;
+                n++;
+/*
+                destRhumb(lat1, lon1, approach,leg_distancex, &lati, &loni);
+                SAR_distance+=ESdistance;
+                if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%d"),n) ,_T("diamond"),_T("WPT"));}*/
+                for ( int y = 0; y <= 4; y++ ) {
+                     cout << y;
                 }
-            //end
-            Addpoint(Route,wxString::Format(wxT("%f"),lat2),wxString::Format(wxT("%f"),lon2),_T("Finish"),_T("SYMBOL"),_T("WPT"));
-            //////////////////////////Close XML
 
+            }
+
+        }
+
+
+
+            //Expanding Square End
+        break;
+      case 3:            // Note the colon, not a semicolon
+      {
+
+
+        cout<<"Sector search\n";
+        break;
+      }
+      case 4:            // Note the colon, not a semicolon
+       {
+
+
+        cout<<"Oil Rig\n";
+        break;
+       }
+      default:
+      {            // Note the colon, not a semicolon
+        cout<<"Error, bad input, quitting\n";
+        break;
+      }
+    }
+
+
+
+
+
+
+
+   /*     if (write_file){
+            //Start
+            double Lat_int1=0, Lon_int1=0;
+            Addpoint(Route,wxString::Format(wxT("%f"),lat1),wxString::Format(wxT("%f"),lon1), _T("Start") ,_T("diamond"),_T("WPT"));
+            //First arc to interception
+            //retrieve step-size
+
+            Addpoint(Route, wxString::Format(wxT("%f"),Lat_int1), wxString::Format(wxT("%f"),Lon_int1), _T("Lat Limit1") ,_T("diamond"),_T("WPT"));
+       }*/
+
+
+
+       //Write out distance to dialog box
+       //this->m_distance_LC->SetValue(wxString::Format(wxT("%g"), LC_distance));
+
+       //}
+
+
+       if (write_file){
             root->LinkEndChild( Route );
-            wxString s=dlg.GetPath();
-
-            if (!wxFileExists(dlg.GetPath())) {
+            // check if string ends with .gpx or .GPX
+            if (!wxFileExists(s)){
                  s = s + _T(".gpx");
             }
             wxCharBuffer buffer=s.ToUTF8();
             if (dbg) std::cout<< buffer.data()<<std::endl;
-            doc.SaveFile( buffer.data() );
-        }*/
+            doc.SaveFile( buffer.data() );}
+    //} //end of if no error occured
+
+    if (error_occured==true)  {
+        wxLogMessage(_("Error in calculation. Please check input!") );
+        wxMessageBox(_("Error in calculation. Please check input!") );
+    }
+
 }
+
+//void Dlg::Expanding_Square(double lat, double lon, Route){
+
+
+
+
+
+//}
 
 

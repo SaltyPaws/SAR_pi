@@ -4,7 +4,7 @@
 	<File name="src/NavFunc.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/NavFunc.h" open="1" top="1" tabpos="7">
+	<File name="src/NavFunc.h" open="1" top="0" tabpos="7">
 		<Cursor position="146" topLine="0" />
 	</File>
 	<File name="src/SAR_pi.cpp" open="1" top="0" tabpos="1">
@@ -19,11 +19,11 @@
 	<File name="src/SARgui.h" open="1" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/SARgui_impl.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="2126" topLine="0" />
+	<File name="src/SARgui_impl.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="18640" topLine="167" />
 	</File>
 	<File name="src/SARgui_impl.h" open="1" top="0" tabpos="9">
-		<Cursor position="2309" topLine="13" />
+		<Cursor position="2309" topLine="46" />
 	</File>
 	<File name="src/icons.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="7765" topLine="0" />

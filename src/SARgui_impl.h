@@ -70,10 +70,11 @@ public:
         void OnORCalc( wxCommandEvent& event );
         void OnORGPX( wxCommandEvent& event );
 
-        void OnExportRH( wxCommandEvent& event );
-        //void Addpoint(TiXmlElement* Route, double ptlat, double ptlon, wxString ptname, wxString ptsym, wxString pttype);
+        void Calculate( wxCommandEvent& event, bool Export, int Pattern );
+
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);
-        double BrentsMethodSolve(double lowerLimit, double upperLimit, double errorTol);
+
+        void Expanding_Square (double lat, double lon);
         //friend class function;
         SAR_pi *plugin;
 private:
