@@ -37,6 +37,7 @@ Dlg::Dlg( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint&
     dbg=false; //for debug output set to true
 }
 
+
 void Dlg::OnToggle( wxCommandEvent& event )
 {
 
@@ -548,30 +549,6 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
       }
     }
 
-
-
-
-
-
-
-   /*     if (write_file){
-            //Start
-            double Lat_int1=0, Lon_int1=0;
-            Addpoint(Route,wxString::Format(wxT("%f"),lat1),wxString::Format(wxT("%f"),lon1), _T("Start") ,_T("diamond"),_T("WPT"));
-            //First arc to interception
-            //retrieve step-size
-
-            Addpoint(Route, wxString::Format(wxT("%f"),Lat_int1), wxString::Format(wxT("%f"),Lon_int1), _T("Lat Limit1") ,_T("diamond"),_T("WPT"));
-       }*/
-
-
-
-       //Write out distance to dialog box
-       //this->m_distance_LC->SetValue(wxString::Format(wxT("%g"), LC_distance));
-
-       //}
-
-
        if (write_file){
             root->LinkEndChild( Route );
             // check if string ends with .gpx or .GPX
@@ -590,12 +567,37 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
 
 }
 
-//void Dlg::Expanding_Square(double lat, double lon, Route){
+void Dlg::OnCursor(wxCommandEvent& event ){OnCursor();}
+void Dlg::OnCursor(void){
+    this->m_Lat1->SetValue(wxString::Format(wxT("%g"), plugin->GetCursorLat() ));
+    this->m_Lon1->SetValue(wxString::Format(wxT("%g"), plugin->GetCursorLon() ));
+}
 
+void Dlg::OnShip(wxCommandEvent& event ){OnShip();}
+void Dlg::OnShip(void){
+    this->m_Lat1->SetValue(wxString::Format(wxT("%g"), plugin->GetShipLat() ));
+    this->m_Lon1->SetValue(wxString::Format(wxT("%g"), plugin->GetShipLon() ));
+}
 
-
-
-
-//}
+void Dlg::key_shortcut(wxKeyEvent& event) {
+    // of course, it doesn't have to be the control key. You can use others:
+    // http://docs.wxwidgets.org/stable/wx_wxkeyevent.html
+    if(event.GetModifiers() == wxMOD_CONTROL) {
+        switch(event.GetKeyCode()) {
+            case 'C': // can return the upper ASCII value of a key
+                // do whatever you like for a Ctrl+G event here!
+                //wxMessageBox(_("CTRL+G") );
+                OnCursor();
+                break;
+            case WXK_LEFT: // we also have special keycodes for non-ascii values.
+                // get a full list of special keycodes here:
+                // http://docs.wxwidgets.org/stable/wx_keycodes.html
+                wxMessageBox(_("CTRL+Left") );
+                break;
+            default: // do nothing
+                break;
+        }
+    }
+}
 
 

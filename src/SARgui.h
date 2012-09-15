@@ -131,6 +131,9 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText32311;
 		wxTextCtrl* m_Lon1;
 		wxStaticText* m_staticText33311;
+		wxPanel* m_panel14;
+		wxButton* m_button11;
+		wxButton* m_button12;
 		wxStaticText* m_staticText323122;
 		wxTextCtrl* m_Route;
 		wxPanel* m_panel15;
@@ -170,7 +173,10 @@ class DlgDef : public wxDialog
 		virtual void OnSSGPX( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnORCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnORGPX( wxCommandEvent& event ) { event.Skip(); }
+		virtual void key_shortcut( wxKeyEvent& event ) { event.Skip(); }
 		virtual void OnNoteBookFit( wxNotebookEvent& event ) { event.Skip(); }
+		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnCursor( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
 		
 	

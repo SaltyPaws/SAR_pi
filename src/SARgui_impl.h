@@ -70,6 +70,13 @@ public:
         void OnORCalc( wxCommandEvent& event );
         void OnORGPX( wxCommandEvent& event );
 
+        void OnShip( wxCommandEvent& event );
+        void OnCursor( wxCommandEvent& event );
+        void OnShip( void );
+        void OnCursor( void );
+
+        void key_shortcut(wxKeyEvent& event);
+
         void Calculate( wxCommandEvent& event, bool Export, int Pattern );
 
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);
@@ -77,11 +84,14 @@ public:
         void Expanding_Square (double lat, double lon);
         //friend class function;
         SAR_pi *plugin;
+        double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
+
+
 private:
         wxPoint xy;
         wxSize  wh;
         double lat1, lon1, lat2, lon2, targetAz;
-        double F(double x);
+        //double F(double x);
         bool error_found;
         bool dbg;
 };

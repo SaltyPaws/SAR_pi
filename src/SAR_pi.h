@@ -76,9 +76,12 @@ public:
       int GetToolbarToolCount(void);
       void ShowPreferencesDialog( wxWindow* parent );
       void OnToolbarToolCallback(int id);
+      void SetCursorLatLon(double lat, double lon);
+      void SetPositionFix(PlugIn_Position_Fix &pfix);
 
 //    Optional plugin overrides
       void SetColorScheme(PI_ColorScheme cs);
+
 
 //    The override PlugIn Methods
 
@@ -87,6 +90,10 @@ public:
       void SetCalculatorDialogY         (int x){ m_route_dialog_y = x;};
       void SetCalculatorDialogWidth     (int x){ m_route_dialog_width = x;};
       void SetCalculatorDialogHeight    (int x){ m_route_dialog_height = x;};
+      double GetShipLon(void) {return m_ship_lon;}
+      double GetShipLat(void) {return m_ship_lat;}
+      double GetCursorLon(void) {return m_cursor_lon;}
+      double GetCursorLat(void) {return m_cursor_lat;}
 
 
       void OnSurveyDialogClose();
@@ -102,7 +109,7 @@ private:
       int               m_iOpacity;
       int               m_leftclick_tool_id;
       bool              m_ShowHelp;
-;
+      double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 };
 
 #endif

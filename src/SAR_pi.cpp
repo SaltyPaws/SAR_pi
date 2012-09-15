@@ -86,15 +86,18 @@ int SAR_pi::Init(void)
 
       //    This PlugIn needs a toolbar icon, so request its insertion
       m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_rescue, _img_rescue, wxITEM_NORMAL,
-            _("Route"), _T(""), NULL,
+            _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
 
       m_pDialog = NULL;
 
-      return (WANTS_TOOLBAR_CALLBACK   |
+      return (WANTS_CURSOR_LATLON      |
+              WANTS_TOOLBAR_CALLBACK    |
               INSTALLS_TOOLBAR_TOOL     |
+              WANTS_NMEA_EVENTS         |
               WANTS_PREFERENCES         |
               WANTS_CONFIG
+
            );
 }
 
@@ -236,3 +239,18 @@ void SAR_pi::ShowPreferencesDialog( wxWindow* parent )
       delete dialog;
 }
 
+void SAR_pi::SetCursorLatLon(double lat, double lon)
+{
+    /*m_pDialog.SetCursorLat(lat);
+    m_pDialog.SetCursorLon(lon);*/
+    m_cursor_lat=lat;
+    m_cursor_lon=lon;
+    //std::cout<<"Cursor--> Lat: "<<m_cursor_lat<<" Lon: "<<m_cursor_lon<<std::endl;
+}
+
+void SAR_pi::SetPositionFix(PlugIn_Position_Fix &pfix)
+{
+    m_ship_lon = pfix.Lon;
+    m_ship_lat = pfix.Lat;
+    std::cout<<"Ship--> Lat: "<<m_ship_lat<<" Lon: "<<m_ship_lon<<std::endl;
+}
