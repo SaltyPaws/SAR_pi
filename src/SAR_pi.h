@@ -108,7 +108,7 @@ private:
       int               m_display_width, m_display_height;
       int               m_iOpacity;
       int               m_leftclick_tool_id;
-      bool              m_ShowHelp;
+      bool              m_ShowHelp,m_bCaptureCursor,m_bCaptureShip;
       double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 };
 

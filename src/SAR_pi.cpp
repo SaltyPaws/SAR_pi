@@ -191,11 +191,13 @@ bool SAR_pi::LoadConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T( "/Settings/Route_pi" ) );
+            pConf->SetPath ( _T( "/Settings/SAR_pi" ) );
             pConf->Read ( _T ( "Opacity" ),  &m_iOpacity, 255 );
            // pConf->Read       dialog->m_cpConnectorColor->SetColour(m_sConnectorColor);
             m_route_dialog_x =  pConf->Read ( _T ( "DialogPosX" ), 20L );
             m_route_dialog_y =  pConf->Read ( _T ( "DialogPosY" ), 20L );
+            m_bCaptureCursor =  pConf->Read ( _T ( "CaptureCursor" ), true );
+            m_bCaptureShip =  pConf->Read ( _T ( "CaptureShip" ), true );
 
             if((m_route_dialog_x < 0) || (m_route_dialog_x > m_display_width))
                   m_route_dialog_x = 5;
@@ -213,10 +215,12 @@ bool SAR_pi::SaveConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T ( "/Settings/Route_pi" ) );
+            pConf->SetPath ( _T ( "/Settings/SAR_pi" ) );
             pConf->Write ( _T ( "Opacity" ), m_iOpacity );
             pConf->Write ( _T ( "DialogPosX" ),   m_route_dialog_x );
             pConf->Write ( _T ( "DialogPosY" ),   m_route_dialog_y );
+            pConf->Write ( _T ( "CaptureCursor" ), m_bCaptureCursor );
+            pConf->Write ( _T ( "CaptureShip" ),  m_bCaptureShip );
             return true;
       }
       else
@@ -230,10 +234,14 @@ void SAR_pi::ShowPreferencesDialog( wxWindow* parent )
       wxColour cl;
       DimeWindow(dialog);
       dialog->m_sOpacity->SetValue(m_iOpacity);
+      dialog->m_CaptureCursor->SetValue(m_bCaptureCursor);
+      dialog->m_CaptureShip->SetValue(m_bCaptureShip);
 
       if(dialog->ShowModal() == wxID_OK)
       {
             m_iOpacity = dialog->m_sOpacity->GetValue();
+            m_bCaptureCursor = dialog->m_CaptureCursor->GetValue();
+            m_bCaptureShip = dialog->m_CaptureCursor->GetValue();
             SaveConfig();
       }
       delete dialog;
@@ -241,16 +249,18 @@ void SAR_pi::ShowPreferencesDialog( wxWindow* parent )
 
 void SAR_pi::SetCursorLatLon(double lat, double lon)
 {
-    /*m_pDialog.SetCursorLat(lat);
-    m_pDialog.SetCursorLon(lon);*/
-    m_cursor_lat=lat;
-    m_cursor_lon=lon;
+    if (m_bCaptureShip){ //Option to save CPU
+        m_cursor_lat=lat;
+        m_cursor_lon=lon;
+    }
     //std::cout<<"Cursor--> Lat: "<<m_cursor_lat<<" Lon: "<<m_cursor_lon<<std::endl;
 }
 
 void SAR_pi::SetPositionFix(PlugIn_Position_Fix &pfix)
 {
-    m_ship_lon = pfix.Lon;
-    m_ship_lat = pfix.Lat;
-    std::cout<<"Ship--> Lat: "<<m_ship_lat<<" Lon: "<<m_ship_lon<<std::endl;
+    if (m_bCaptureCursor){ //Option to save CPU
+        m_ship_lon = pfix.Lon;
+        m_ship_lat = pfix.Lat;
+        //std::cout<<"Ship--> Lat: "<<m_ship_lat<<" Lon: "<<m_ship_lon<<std::endl;
+    }
 }

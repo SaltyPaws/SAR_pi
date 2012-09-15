@@ -30,10 +30,7 @@
 #include <wx/statbox.h>
 #include <wx/dialog.h>
 #include <wx/slider.h>
-#include <wx/radiobut.h>
 #include <wx/checkbox.h>
-#include <wx/clrpicker.h>
-#include <wx/fontpicker.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -197,98 +194,17 @@ class CfgDlgDef : public wxDialog
 	
 	protected:
 		wxStaticText* m_staticText17;
-		wxStaticText* m_staticText221;
-		wxStaticText* m_staticText18;
-		wxStaticText* m_staticText19;
-		wxStaticText* m_staticText23;
-		wxStaticText* m_staticText21;
-		wxStaticText* m_staticText1;
-		wxStaticText* m_staticText3;
-		wxStaticText* m_staticText2;
-		wxStaticText* m_staticText4;
-		wxStaticText* m_staticText5;
-		wxStaticText* m_staticText6;
-		wxStaticText* m_staticText7;
-		wxStaticText* m_staticText8;
-		wxStaticText* m_staticText9;
-		wxStaticText* m_staticText10;
-		wxStaticText* m_staticText11;
-		wxStaticText* m_staticText12;
-		wxStaticText* m_staticText13;
-		wxStaticText* m_staticText14;
-		wxStaticText* m_staticText15;
-		wxStaticText* m_staticText16;
-		wxStaticText* m_staticText22;
 		wxStdDialogButtonSizer* m_sdbSizer1;
 		wxButton* m_sdbSizer1OK;
 		wxButton* m_sdbSizer1Cancel;
 	
 	public:
 		wxSlider* m_sOpacity;
-		wxRadioButton* m_rbMeters;
-		wxRadioButton* m_rbFeet;
-		wxRadioButton* m_rbFathoms;
-		wxCheckBox* m_cbRenderOverlay;
-		wxRadioButton* m_rbRendedAllSurveys;
-		wxRadioButton* m_rbRenderActiveSurvey;
-		wxCheckBox* m_cbConnectSoundings;
-		wxColourPickerCtrl* m_cpSoundingColor;
-		wxColourPickerCtrl* m_cpConnectorColor;
-		wxColourPickerCtrl* m_cpFontColor;
-		wxFontPickerCtrl* m_fpFont;
-		wxTextCtrl* m_tLOA;
-		wxTextCtrl* m_tBeam;
-		wxTextCtrl* m_tSounderBow;
-		wxTextCtrl* m_tWaterlineOffset;
-		wxTextCtrl* m_tGPSBow;
-		wxTextCtrl* m_tGPSPort;
-		wxTextCtrl* m_tMinDistance;
-		wxTextCtrl* m_tAutoNewDistance;
+		wxCheckBox* m_CaptureShip;
+		wxCheckBox* m_CaptureCursor;
 		
-		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 496,587 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
 		~CfgDlgDef();
-	
-};
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class SurveyMergeDlgDef
-///////////////////////////////////////////////////////////////////////////////
-class SurveyMergeDlgDef : public wxDialog 
-{
-	private:
-	
-	protected:
-		wxStaticText* m_staticText28;
-		wxChoice* m_cMergeWith;
-		wxStdDialogButtonSizer* m_sdbSizer3;
-		wxButton* m_sdbSizer3OK;
-		wxButton* m_sdbSizer3Cancel;
-		
-		// Virtual event handlers, overide them in your derived class
-		virtual void OnMergeCancelClick( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnMergeOkClick( wxCommandEvent& event ) { event.Skip(); }
-		
-	
-	public:
-		
-		SurveyMergeDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Merge surveys"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 525,286 ), long style = wxDEFAULT_DIALOG_STYLE ); 
-		~SurveyMergeDlgDef();
-	
-};
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class MyDialog4
-///////////////////////////////////////////////////////////////////////////////
-class MyDialog4 : public wxDialog 
-{
-	private:
-	
-	protected:
-	
-	public:
-		
-		MyDialog4( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE ); 
-		~MyDialog4();
 	
 };
 
