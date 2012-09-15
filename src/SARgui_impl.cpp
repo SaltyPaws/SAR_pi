@@ -259,7 +259,7 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         }
         case 2:            // Note the colon, not a semicolon
         {
-            cout<<"Expanding Square\n";
+            if (dbg) cout<<"Expanding Square\n";
             //Expanding Square Start
             double approach=0;
             double leg_distancex=0;
@@ -284,33 +284,45 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
             6 pt5+distancex3-->approach+90
             7 pt6+distancex4-->approach+180
             */
-cout<<"datum\n";
+
             //add  datum
             if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lat1), wxString::Format(wxT("%f"),lon1), _T("Datum") ,_T("diamond"),_T("WPT"));}
             int n=0;
-            cout<<"loop\n";
-            for ( int x = 0; x <= squares; x++ ) {
-                /*double ESdistance=leg_distancex;
-                double ESheading=approach;*/
-std::cout<<"------------->"<<"lat: "<<n<<" lon: "<<x<< std::endl;
-                n++;
-/*
-                destRhumb(lat1, lon1, approach,leg_distancex, &lati, &loni);
-                SAR_distance+=ESdistance;
-                if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%d"),n) ,_T("diamond"),_T("WPT"));}*/
-                for ( int y = 0; y <= 4; y++ ) {
-                     cout << y;
+            int multiplier=0;
+            double lati, loni;
+            for ( int x = 1; x <= squares; x++ ) { //Loop over the number of search squares
+
+                double ESdistance=leg_distancex;
+                double ESheading=approach;
+                wxString wpt_title;
+
+                for ( int y = 1; y <= 4; y++ ) {//Loop over the points in the square
+                    switch ( y ) {
+                        case 1:{ESheading=approach+0.0;multiplier++;break;}
+                        case 2:{ESheading=approach-90.0;break;}
+                        case 3:{ESheading=approach-180.0;multiplier++;break;}
+                        case 4:{ESheading=approach-270.0;break;}
+                    }
+                    ESdistance=leg_distancex*multiplier;
+
+                     n++;
+                     wpt_title=wxT("");
+                     wpt_title << wxT("Sq (") << x << wxT(") Pt(") << y <<wxT(")");
+                     destRhumb(lat1, lon1, ESheading,ESdistance, &lati, &loni);
+                     SAR_distance+=ESdistance;
+                     if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
+                     lat1=lati;
+                     lon1=loni;
                 }
 
             }
+            this->m_Distance->SetValue(wxString::Format(wxT("%g"), SAR_distance));
+            this->m_Time->SetValue(wxString::Format(wxT("%g"), SAR_distance/speed));
 
         }
-
-
-
-            //Expanding Square End
+        //Expanding Square End
         break;
-      case 3:            // Note the colon, not a semicolon
+      case 3:
       {
 
 
