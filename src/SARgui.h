@@ -130,7 +130,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText33311;
 		wxPanel* m_panel14;
 		wxButton* m_button11;
-		wxButton* m_button12;
+		wxButton* m_Cursor;
 		wxStaticText* m_staticText323122;
 		wxTextCtrl* m_Route;
 		wxPanel* m_panel15;
@@ -173,7 +173,7 @@ class DlgDef : public wxDialog
 		virtual void key_shortcut( wxKeyEvent& event ) { event.Skip(); }
 		virtual void OnNoteBookFit( wxNotebookEvent& event ) { event.Skip(); }
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnCursor( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
 		
 	

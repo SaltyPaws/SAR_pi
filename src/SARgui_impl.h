@@ -53,7 +53,7 @@ class Dlg : public DlgDef
 {
 public:
         Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxMAXIMIZE_BOX|wxRESIZE_BORDER );
-        void OnToggle( wxCommandEvent& event );
+        //void OnToggle( wxCommandEvent& event );
         void OnConverttoDegree( wxCommandEvent& event );
         void OnNoteBookFit( wxCommandEvent& event );
         void OnFit( wxCommandEvent& event );
@@ -74,8 +74,9 @@ public:
         void OnCursor( wxCommandEvent& event );
         void OnShip( void );
         void OnCursor( void );
-
         void key_shortcut(wxKeyEvent& event);
+        void OnCursorSelect( wxCommandEvent& event );
+        //void mouse_shortcut(wxMouseEvent& event);
 
         void Calculate( wxCommandEvent& event, bool Export, int Pattern );
 

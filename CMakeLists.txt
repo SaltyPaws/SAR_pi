@@ -78,15 +78,15 @@ SET(SRC_SAR
 	    src/SARgui_impl.h
 	    src/NavFunc.h
 	    src/NavFunc.cpp
-	    src/vincente.h
-	    src/vincente.cpp
+#	    src/vincente.h
+#	    src/vincente.cpp
 	)
 
 SET(SRC_FROM_OCPN 	
 #	../../../include/cutil.h
 #	../../../src/cutil.c
-	../../../include/georef.h
-	../../../src/georef.c
+#	../../../include/georef.h
+#	../../../src/georef.c
 #	../../../include/gpxdocument.h
 #	../../../src/gpxdocument.cpp	    	
 	)

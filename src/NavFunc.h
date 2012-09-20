@@ -32,8 +32,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
-#include "../../../include/georef.h"
-#include "vincente.h"
+//#include "../../../include/georef.h"
+//#include "vincente.h"
 
 
 const inline double Tol(void) { return 1.0e-9; }

@@ -37,13 +37,6 @@ Dlg::Dlg( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint&
     dbg=false; //for debug output set to true
 }
 
-
-void Dlg::OnToggle( wxCommandEvent& event )
-{
-
-}
-
-
 void Dlg::OnConverttoDegree( wxCommandEvent& event )
 {
     //set cell values to 0 if they are empty. This ensures conversion goes ok.
@@ -55,8 +48,6 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
     if(!this->m_Lon1_d->GetValue().ToDouble(&test_value)){m_Lon1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
     if(!this->m_Lon1_m->GetValue().ToDouble(&test_value)){m_Lon1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
     if(!this->m_Lon1_s->GetValue().ToDouble(&test_value)){m_Lon1_s->SetValue(wxString::Format(wxT("%i"),0 ));}
-
-
 
     //Lat1
     wxString Lat1 = this->m_Lat1_d->GetValue() + _T(" ")  + this->m_Lat1_m->GetValue() + _T(" ")  + this->m_Lat1_s->GetValue() + _T(" ");// + this->m_Lon1_EW->GetCurrentSelection();
@@ -94,8 +85,6 @@ void Dlg::OnFit( wxCommandEvent& event )
     if (dbg) printf("Resizing window \n");
 }
 
-
-
 void Dlg::Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype){
 //add point
 	TiXmlElement * RoutePoint = new TiXmlElement( "rtept" );
@@ -121,12 +110,12 @@ void Dlg::Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString
 //done adding point
 }
 
-
 void Dlg::OnPSCalc( wxCommandEvent& event )
 {
    // wxMessageBox(_("Function not yet implemented :p")) ;
    Calculate(event, false, 1);
 }
+
 void Dlg::OnPSGPX( wxCommandEvent& event )
 {
    // wxMessageBox(_("Function not yet implemented :p")) ;
@@ -163,7 +152,6 @@ void Dlg::OnORGPX( wxCommandEvent& event )
    // wxMessageBox(_("Function not yet implemented :p")) ;
    Calculate(event, true, 4);
 }
-
 
 void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
 /*
@@ -244,7 +232,6 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         wxLogMessage(_("Error occured, aborting SAR calc!") );
         //wxMessageBox(_("Route interval > Distance, 0 or negative") );
         }
-
 
     //Call SAR routine here
     /*
@@ -584,20 +571,41 @@ void Dlg::key_shortcut(wxKeyEvent& event) {
     // http://docs.wxwidgets.org/stable/wx_wxkeyevent.html
     if(event.GetModifiers() == wxMOD_CONTROL) {
         switch(event.GetKeyCode()) {
-            case 'C': // can return the upper ASCII value of a key
+            case 'S': // can return the upper ASCII value of a key
                 // do whatever you like for a Ctrl+G event here!
                 //wxMessageBox(_("CTRL+G") );
                 OnCursor();
-                break;
+                break;/*
             case WXK_LEFT: // we also have special keycodes for non-ascii values.
                 // get a full list of special keycodes here:
                 // http://docs.wxwidgets.org/stable/wx_keycodes.html
                 wxMessageBox(_("CTRL+Left") );
-                break;
+                break;*/
             default: // do nothing
                 break;
         }
     }
+    event.Skip();
+}
+/*
+void Dlg::mouse_shortcut(wxMouseEvent& event) {
+    // of course, it doesn't have to be the control key. You can use others:
+    // http://docs.wxwidgets.org/stable/wx_wxkeyevent.html
+    if(event.LeftDown() == true) {
+        wxMessageBox(_("CTRL+G") );
+        OnCursor();
+    }
+    //else{
+        event.Skip();
+    //}
+
+}*/
+
+
+void Dlg::OnCursorSelect(wxCommandEvent& event){
+    wxMessageBox(_("In order to copy the cursor location, select either the Lattitude or Longitude coordinate box, and press <CTRL>+S.") );
+   // wxMessageBox(_("While this button is selected, or the cursor is in the lattitude or longitude box, you can copy the cursor location with <CTRL>+S") );
+    event.Skip();
 }
 
 
