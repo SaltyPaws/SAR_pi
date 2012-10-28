@@ -78,8 +78,6 @@ SET(SRC_SAR
 	    src/SARgui_impl.h
 	    src/NavFunc.h
 	    src/NavFunc.cpp
-#	    src/vincente.h
-#	    src/vincente.cpp
 	)
 
 SET(SRC_FROM_OCPN 	

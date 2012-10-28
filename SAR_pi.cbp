@@ -41,8 +41,6 @@
 		<Unit filename="src/SARgui_impl.h" />
 		<Unit filename="src/icons.cpp" />
 		<Unit filename="src/icons.h" />
-		<Unit filename="src/vincente.cpp" />
-		<Unit filename="src/vincente.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
