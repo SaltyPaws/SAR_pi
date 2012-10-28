@@ -33,7 +33,6 @@
 #ifdef WX_PRECOMP
 #include "wx/wx.h"
 #endif
-//#include "parser.h"
 
 #include "SARgui.h"
 #include "SAR_pi.h"
