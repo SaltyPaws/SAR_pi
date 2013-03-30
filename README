@@ -1,31 +1,19 @@
 SAR Plugin for OpenCPN
 =======================================
 
-The purpose of this plugin is to provide Search and Rescue Patterns (SAR) plotting capability to OpenCPN
+The purpose of this plugin is to provide Search and Rescue Patterns (SAR) plotting capability to OpenCPN.
 
 The aims are to:
 
 1. Generate GPX files for a number of SAR patterns
 2. Plot selected SAR patterns directly in OpenCPN
 
-
-
-Development Steps
-=========
-Work with OpenCPN API (Done)
-Add Plugin Icon (Done)
-Set-up GUI (Done)
-Declare class to hold tracks
-Set-up SAR calculating functions
-Write tracks to GPX file
-Set-up config screen
-
 Compiling
 =========
 You have to be able to compile OpenCPN itself - Get the info at http://opencpn.org/ocpn/developers_manual
 
 * go to the plugin subdirectory in your OpenCPN source tree
-* git clone https://github.com/SaltyPaws/route_pi.git
+* git clone https://github.com/SaltyPaws/SAR_pi
 
 Build as normally:
 
@@ -36,6 +24,12 @@ Build as normally:
 * sudo make install
 
 You will have to place the folder "bitmaps" into your build directory to see the images. I have yet to embed these into the sourcecode.
+
+
+ToDo
+=======
+Once the Navobject becomes available to the plugin API, will update to also enable direct route plotting.
+Embed graphics
 
 License
 =======
