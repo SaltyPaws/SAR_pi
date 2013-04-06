@@ -35,6 +35,7 @@
 #endif
 
 #include "SARgui.h"
+#include "bitmaps.h"
 #include "SAR_pi.h"
 #include "NavFunc.h"
 #include "tinyxml.h"

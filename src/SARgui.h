@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Apr 11 2012)
+// C++ code generated with wxFormBuilder (version Oct  8 2012)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO "NOT" EDIT THIS FILE!
@@ -66,7 +66,7 @@ class DlgDef : public wxDialog
 		wxChoice* m_Nship;
 		wxButton* m_button311;
 		wxButton* m_button3111;
-		wxStaticBitmap* m_bitmap21;
+		wxStaticBitmap* m_bitmap_trackln;
 		wxPanel* m_panel2;
 		wxPanel* m_panel7;
 		wxStaticText* m_staticText151;
@@ -84,7 +84,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331111111;
 		wxButton* m_button3112;
 		wxButton* m_button31111;
-		wxStaticBitmap* m_bitmap2;
+		wxStaticBitmap* m_bitmap_exp_sq;
 		wxPanel* m_panel3;
 		wxPanel* m_panel8;
 		wxStaticText* m_staticText15;
@@ -101,7 +101,7 @@ class DlgDef : public wxDialog
 		wxChoice* m_Ncycles;
 		wxButton* m_button31121;
 		wxButton* m_button311111;
-		wxStaticBitmap* m_bitmap3;
+		wxStaticBitmap* m_bitmap_sector;
 		wxPanel* m_panek4;
 		wxPanel* m_panel10;
 		wxStaticText* m_staticText152;
@@ -119,7 +119,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331111113;
 		wxButton* m_button31122;
 		wxButton* m_button311112;
-		wxStaticBitmap* m_bitmap4;
+		wxStaticBitmap* m_bitmap_oil_rig;
 		wxNotebook* m_wxNotebook234;
 		wxPanel* m_panel11;
 		wxStaticText* m_staticText3231;

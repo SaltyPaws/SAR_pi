@@ -34,12 +34,20 @@ CfgDlg::CfgDlg( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 Dlg::Dlg( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : DlgDef( parent, id, title, pos, size, style )
 {
     this->Fit();
+    initialize_bitmaps();
     dbg=false; //for debug output set to true
+
+    //initialise images
+    m_bitmap_oil_rig->SetBitmap(* _img_oil_rig);
+    m_bitmap_trackln->SetBitmap(* _img_trackln);
+    m_bitmap_sector->SetBitmap(* _img_sector);
+    m_bitmap_exp_sq->SetBitmap(* _img_exp_sq);
 }
 
 void Dlg::OnConverttoDegree( wxCommandEvent& event )
 {
-    //set cell values to 0 if they are empty. This ensures conversion goes ok.
+
+   //set cell values to 0 if they are empty. This ensures conversion goes ok.
     double test_value;
     if(!this->m_Lat1_d->GetValue().ToDouble(&test_value)){m_Lat1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
     if(!this->m_Lat1_m->GetValue().ToDouble(&test_value)){m_Lat1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
