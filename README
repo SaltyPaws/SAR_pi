@@ -25,6 +25,10 @@ Build as normally:
 
 You will have to place the folder "bitmaps" into your build directory to see the images. I have yet to embed these into the sourcecode.
 
+Executables
+=========
+Compiled library files can be downloaded/uploaded here:
+https://sourceforge.net/projects/opencpnplugins/
 
 ToDo
 =======
