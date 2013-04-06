@@ -31,6 +31,7 @@
 #include <wx/dialog.h>
 #include <wx/slider.h>
 #include <wx/checkbox.h>
+#include "bitmaps.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -38,10 +39,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class DlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class DlgDef : public wxDialog 
+class DlgDef : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
@@ -160,7 +161,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_Statictext34;
 		wxTextCtrl* m_Time;
 		wxStaticText* m_staticText331121;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnPSCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnPSGPX( wxCommandEvent& event ) { event.Skip(); }
@@ -175,37 +176,37 @@ class DlgDef : public wxDialog
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
 		wxBoxSizer* bSframe;
-		
-		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+
+		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~DlgDef();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class CfgDlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class CfgDlgDef : public wxDialog 
+class CfgDlgDef : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText17;
 		wxStdDialogButtonSizer* m_sdbSizer1;
 		wxButton* m_sdbSizer1OK;
 		wxButton* m_sdbSizer1Cancel;
-	
+
 	public:
 		wxSlider* m_sOpacity;
 		wxCheckBox* m_CaptureShip;
 		wxCheckBox* m_CaptureCursor;
-		
-		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+
+		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~CfgDlgDef();
-	
+
 };
 
 #endif //__SARGUI_H__

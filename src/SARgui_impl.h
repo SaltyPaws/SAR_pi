@@ -37,6 +37,7 @@
 #include "SARgui.h"
 #include "SAR_pi.h"
 #include "NavFunc.h"
+//#include "bitmaps.h"
 #include "tinyxml.h"
 using namespace std;
 

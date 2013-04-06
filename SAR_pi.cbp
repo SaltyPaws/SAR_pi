@@ -39,6 +39,8 @@
 		<Unit filename="src/SARgui.h" />
 		<Unit filename="src/SARgui_impl.cpp" />
 		<Unit filename="src/SARgui_impl.h" />
+		<Unit filename="src/bitmaps.cpp" />
+		<Unit filename="src/bitmaps.h" />
 		<Unit filename="src/icons.cpp" />
 		<Unit filename="src/icons.h" />
 		<Extensions>

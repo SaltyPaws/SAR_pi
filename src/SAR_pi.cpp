@@ -69,6 +69,7 @@ SAR_pi::SAR_pi(void *ppimgr)
 int SAR_pi::Init(void)
 {
       AddLocaleCatalog( _T("opencpn-SAR_pi") );
+      wxImage::AddHandler(new wxPNGHandler);
 
       // Set some default private member parameters
       m_route_dialog_x = 0;
