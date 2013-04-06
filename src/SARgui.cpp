@@ -407,7 +407,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_panel3->SetSizer( bSizer5 );
 	m_panel3->Layout();
 	bSizer5->Fit( m_panel3 );
-	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), false );
+	m_notebook1->AddPage( m_panel3, _("SAR: Sector Search"), true );
 	m_panek4 = new wxPanel( m_notebook1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	m_panek4->SetMinSize( wxSize( 300,200 ) );
 	
@@ -529,7 +529,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_panek4->SetSizer( bSizer6 );
 	m_panek4->Layout();
 	bSizer6->Fit( m_panek4 );
-	m_notebook1->AddPage( m_panek4, _("SAR: Oil Rig"), true );
+	m_notebook1->AddPage( m_panek4, _("SAR: Oil Rig"), false );
 	
 	bSframe->Add( m_notebook1, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxEXPAND, 5 );
 	
