@@ -36,39 +36,16 @@ Dlg::Dlg( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint&
     this->Fit();
     initialize_bitmaps();
     dbg=true; //for debug output set to true
+    //initialise images
+    m_bitmap_oil_rig->SetBitmap(* _img_oil_rig);
+    m_bitmap_trackln->SetBitmap(* _img_trackln);
+    m_bitmap_sector->SetBitmap(* _img_sector);
+    m_bitmap_exp_sq->SetBitmap(* _img_exp_sq);
 }
 
 void Dlg::OnConverttoDegree( wxCommandEvent& event )
 {
 
-    //abusing function :)
-    if (dbg) printf("abusing function :)\n");
-//this->m_bitmap21->DrawBitmap(_img_oil_rig,100,100);
-m_bitmap21->SetBitmap(_img_oil_rig); //This is the line that causes build errors
-
-/* Hi Pavel. I am trying to embed the graphics used in the SAR, into the code. I am struggeling a bit here. I spend a day trying to
- work this one out by myself with online guides. The bitmap I would like to load is encoded in "biymaps.cpp" and is named _img_oil_rig.
- Everytime I get this error:
-
- /home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui_impl.cpp: In member function ‘virtual void Dlg::OnConverttoDegree(wxCommandEvent&)’:
-/home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui_impl.cpp:47:35: error: no matching function for call to ‘wxStaticBitmap::SetBitmap(wxBitmap*&)’
-/home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui_impl.cpp:47:35: note: candidate is:
-In file included from /usr/include/wx-2.8/wx/statbmp.h:60:0,
-                 from /home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui.h:28,
-                 from /home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui_impl.h:37,
-                 from /home/brazil/Documents/code/opencpn/plugins/SAR_pi/src/SARgui_impl.cpp:28:
-/usr/include/wx-2.8/wx/gtk/statbmp.h:39:18: note: virtual void wxStaticBitmap::SetBitmap(const wxBitmap&)
-/usr/include/wx-2.8/wx/gtk/statbmp.h:39:18: note:   no known conversion for argument 1 from ‘wxBitmap*’ to ‘const wxBitmap&’
-
-It should be easy to convert a wxbitmap pointer to a const reference, but I dont know how to do it. Would you be able to help me here?
-
-Much appreceated
-
-Walbert
-*/
-
-
-    //end abuse
     //set cell values to 0 if they are empty. This ensures conversion goes ok.
     double test_value;
     if(!this->m_Lat1_d->GetValue().ToDouble(&test_value)){m_Lat1_d->SetValue(wxString::Format(wxT("%i"),0 ));}

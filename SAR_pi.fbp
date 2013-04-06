@@ -176,7 +176,7 @@
                         <object class="notebookpage" expanded="1">
                             <property name="bitmap"></property>
                             <property name="label">SAR: Trackline</property>
-                            <property name="select">1</property>
+                            <property name="select">0</property>
                             <object class="wxPanel" expanded="1">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -2185,7 +2185,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size">-1,-1</property>
                                             <property name="moveable">1</property>
-                                            <property name="name">m_bitmap21</property>
+                                            <property name="name">m_bitmap_trackln</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -3791,7 +3791,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size">290,300</property>
                                             <property name="moveable">1</property>
-                                            <property name="name">m_bitmap2</property>
+                                            <property name="name">m_bitmap_exp_sq</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -5311,7 +5311,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size">280,300</property>
                                             <property name="moveable">1</property>
-                                            <property name="name">m_bitmap3</property>
+                                            <property name="name">m_bitmap_sector</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>
@@ -5358,7 +5358,7 @@
                         <object class="notebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">SAR: Oil Rig</property>
-                            <property name="select">0</property>
+                            <property name="select">1</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -6917,7 +6917,7 @@
                                             <property name="minimize_button">0</property>
                                             <property name="minimum_size">300,300</property>
                                             <property name="moveable">1</property>
-                                            <property name="name">m_bitmap4</property>
+                                            <property name="name">m_bitmap_oil_rig</property>
                                             <property name="pane_border">1</property>
                                             <property name="pane_position"></property>
                                             <property name="pane_size"></property>

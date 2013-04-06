@@ -29,7 +29,6 @@ You will have to place the folder "bitmaps" into your build directory to see the
 ToDo
 =======
 Once the Navobject becomes available to the plugin API, will update to also enable direct route plotting.
-Embed graphics
 
 License
 =======

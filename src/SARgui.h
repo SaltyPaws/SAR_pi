@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Apr 11 2012)
+// C++ code generated with wxFormBuilder (version Oct  8 2012)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO "NOT" EDIT THIS FILE!
@@ -31,7 +31,6 @@
 #include <wx/dialog.h>
 #include <wx/slider.h>
 #include <wx/checkbox.h>
-#include "bitmaps.h"
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -39,10 +38,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class DlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class DlgDef : public wxDialog
+class DlgDef : public wxDialog 
 {
 	private:
-
+	
 	protected:
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
@@ -67,7 +66,7 @@ class DlgDef : public wxDialog
 		wxChoice* m_Nship;
 		wxButton* m_button311;
 		wxButton* m_button3111;
-		wxStaticBitmap* m_bitmap21;
+		wxStaticBitmap* m_bitmap_trackln;
 		wxPanel* m_panel2;
 		wxPanel* m_panel7;
 		wxStaticText* m_staticText151;
@@ -85,7 +84,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331111111;
 		wxButton* m_button3112;
 		wxButton* m_button31111;
-		wxStaticBitmap* m_bitmap2;
+		wxStaticBitmap* m_bitmap_exp_sq;
 		wxPanel* m_panel3;
 		wxPanel* m_panel8;
 		wxStaticText* m_staticText15;
@@ -102,7 +101,7 @@ class DlgDef : public wxDialog
 		wxChoice* m_Ncycles;
 		wxButton* m_button31121;
 		wxButton* m_button311111;
-		wxStaticBitmap* m_bitmap3;
+		wxStaticBitmap* m_bitmap_sector;
 		wxPanel* m_panek4;
 		wxPanel* m_panel10;
 		wxStaticText* m_staticText152;
@@ -120,7 +119,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331111113;
 		wxButton* m_button31122;
 		wxButton* m_button311112;
-		wxStaticBitmap* m_bitmap4;
+		wxStaticBitmap* m_bitmap_oil_rig;
 		wxNotebook* m_wxNotebook234;
 		wxPanel* m_panel11;
 		wxStaticText* m_staticText3231;
@@ -161,7 +160,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_Statictext34;
 		wxTextCtrl* m_Time;
 		wxStaticText* m_staticText331121;
-
+		
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnPSCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnPSGPX( wxCommandEvent& event ) { event.Skip(); }
@@ -176,37 +175,37 @@ class DlgDef : public wxDialog
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
-
-
+		
+	
 	public:
 		wxBoxSizer* bSframe;
-
-		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
+		
+		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
 		~DlgDef();
-
+	
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class CfgDlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class CfgDlgDef : public wxDialog
+class CfgDlgDef : public wxDialog 
 {
 	private:
-
+	
 	protected:
 		wxStaticText* m_staticText17;
 		wxStdDialogButtonSizer* m_sdbSizer1;
 		wxButton* m_sdbSizer1OK;
 		wxButton* m_sdbSizer1Cancel;
-
+	
 	public:
 		wxSlider* m_sOpacity;
 		wxCheckBox* m_CaptureShip;
 		wxCheckBox* m_CaptureCursor;
-
-		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
+		
+		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
 		~CfgDlgDef();
-
+	
 };
 
 #endif //__SARGUI_H__
