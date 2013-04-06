@@ -27,8 +27,6 @@ INCLUDE_DIRECTORIES(
 	${CMAKE_SOURCE_DIR}/src
 )
 
-
-
 # require proper c++
 #ADD_DEFINITIONS( "-Wall -ansi -pedantic -Wno-variadic-macros" )
 #TODO: Should we use  -fno-stack-protector
