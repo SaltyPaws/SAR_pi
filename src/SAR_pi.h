@@ -37,7 +37,7 @@
 
 #include <wx/fileconf.h>
 
-#include "../../../include/ocpn_plugin.h" //Required for OCPN plugin functions
+#include <opencpn/ocpn_plugin.h> //Required for OCPN plugin functions
 #include "SARgui_impl.h"
 
 #define     PLUGIN_VERSION_MAJOR    0
