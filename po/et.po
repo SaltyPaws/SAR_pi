@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2015-04-21 14:54-0400\n"
+"PO-Revision-Date: 2015-05-19 07:22-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Estonian\n"
 "Language: et_EE\n"
@@ -91,8 +91,10 @@ msgid "SAR: Trackline"
 msgstr "SAR: rajajoon"
 
 #: src/SARgui.cpp:176
-msgid "Expanding Square\n         Search"
-msgstr "Suureneva ruudu\n         otsing"
+msgid "Expanding Square\n"
+"         Search"
+msgstr "Suureneva ruudu\n"
+"         otsing"
 
 #: src/SARgui.cpp:205
 msgid "Leg Distance               "
@@ -275,8 +277,10 @@ msgid "Search and Resque Patterns"
 msgstr "Otsingu ja pääste mustrid"
 
 #: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\nSearch and resque patterns."
-msgstr "Loo GPX-fail koos otsingu\nja pääste mustritega."
+msgid "Creates GPX files with\n"
+"Search and resque patterns."
+msgstr "Loo GPX-fail koos otsingu\n"
+"ja pääste mustritega."
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"

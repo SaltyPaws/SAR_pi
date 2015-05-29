@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2015-04-07 11:23-0400\n"
+"PO-Revision-Date: 2015-05-23 05:02-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -60,11 +60,11 @@ msgstr "n"
 
 #: src/SARgui.cpp:107 src/SARgui.cpp:239
 msgid "Search Speed             "
-msgstr "Velocidade da busca             "
+msgstr "Velocidade de busca             "
 
 #: src/SARgui.cpp:114 src/SARgui.cpp:246 src/SARgui.cpp:345 src/SARgui.cpp:479
 msgid "kts"
-msgstr "kts"
+msgstr "KTs"
 
 #: src/SARgui.cpp:124
 msgid "For Ship Number      "
@@ -91,8 +91,10 @@ msgid "SAR: Trackline"
 msgstr "SAR: Linha de rumo"
 
 #: src/SARgui.cpp:176
-msgid "Expanding Square\n         Search"
-msgstr "Busca\nQuadrado crescente"
+msgid "Expanding Square\n"
+"         Search"
+msgstr "Busca\n"
+"Quadrado crescente"
 
 #: src/SARgui.cpp:205
 msgid "Leg Distance               "
@@ -104,7 +106,7 @@ msgstr "Numero de quadrados"
 
 #: src/SARgui.cpp:283
 msgid "SAR: Expanding Square"
-msgstr "SAR: Quadrados crescentes"
+msgstr "SAR: Expandindo quadrados"
 
 #: src/SARgui.cpp:292
 msgid "Sector Search"
@@ -120,7 +122,7 @@ msgstr "Comprimento da perna          "
 
 #: src/SARgui.cpp:338
 msgid "Search Speed        "
-msgstr "Velocidade da busca        "
+msgstr "Velocidade de busca        "
 
 #: src/SARgui.cpp:355
 msgid "Number of cycles"
@@ -128,7 +130,7 @@ msgstr "Número de ciclos"
 
 #: src/SARgui.cpp:398
 msgid "SAR: Sector Search"
-msgstr "SAR: Busca por sectores"
+msgstr "SAR: Busca por setores"
 
 #: src/SARgui.cpp:409
 msgid "Oil Rig Search"
@@ -275,8 +277,10 @@ msgid "Search and Resque Patterns"
 msgstr "Padrões de Busca e Salvamento"
 
 #: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\nSearch and resque patterns."
-msgstr "Criar ficheiro GPX com\npadrões de busca e slavamento."
+msgid "Creates GPX files with\n"
+"Search and resque patterns."
+msgstr "Criar ficheiro GPX com\n"
+"padrões de busca e slavamento."
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"

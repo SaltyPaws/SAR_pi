@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2015-04-21 14:53-0400\n"
+"PO-Revision-Date: 2015-05-23 05:01-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -91,8 +91,10 @@ msgid "SAR: Trackline"
 msgstr "SAR : Par segments parallèles"
 
 #: src/SARgui.cpp:176
-msgid "Expanding Square\n         Search"
-msgstr "Recherche selon des carrés imbriqués\n     "
+msgid "Expanding Square\n"
+"         Search"
+msgstr "Recherche selon des carrés imbriqués\n"
+"     "
 
 #: src/SARgui.cpp:205
 msgid "Leg Distance               "
@@ -275,8 +277,10 @@ msgid "Search and Resque Patterns"
 msgstr "Recherche et sauvegarde des modèles"
 
 #: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\nSearch and resque patterns."
-msgstr "Création d'un fichier GPX avec\nles modèles recherchés et sauvegardés."
+msgid "Creates GPX files with\n"
+"Search and resque patterns."
+msgstr "Création d'un fichier GPX avec\n"
+"les modèles recherchés et sauvegardés."
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"
