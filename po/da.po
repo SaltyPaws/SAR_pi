@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2015-04-07 11:22-0400\n"
+"PO-Revision-Date: 2015-05-31 23:22-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Danish\n"
 "Language: da_DK\n"
@@ -91,7 +91,8 @@ msgid "SAR: Trackline"
 msgstr "SAR: Spor"
 
 #: src/SARgui.cpp:176
-msgid "Expanding Square\n         Search"
+msgid "Expanding Square\n"
+"         Search"
 msgstr ""
 
 #: src/SARgui.cpp:205
@@ -275,8 +276,10 @@ msgid "Search and Resque Patterns"
 msgstr "Eftersøgningsmønstre"
 
 #: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\nSearch and resque patterns."
-msgstr "Skaber GPX filer med\neftersøgningsmønstre."
+msgid "Creates GPX files with\n"
+"Search and resque patterns."
+msgstr "Skaber GPX filer med\n"
+"eftersøgningsmønstre."
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"
