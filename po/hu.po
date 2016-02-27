@@ -3,16 +3,18 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2014-12-02 08:46-0500\n"
+"PO-Revision-Date: 2015-09-20 20:30-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: hu\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
 
 #: src/SARgui.h:183 src/SAR_pi.cpp:89 src/SAR_pi.cpp:148
 msgid "SAR"
@@ -89,7 +91,8 @@ msgid "SAR: Trackline"
 msgstr ""
 
 #: src/SARgui.cpp:176
-msgid "Expanding Square\n         Search"
+msgid "Expanding Square\n"
+"         Search"
 msgstr ""
 
 #: src/SARgui.cpp:205
@@ -273,7 +276,8 @@ msgid "Search and Resque Patterns"
 msgstr ""
 
 #: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\nSearch and resque patterns."
+msgid "Creates GPX files with\n"
+"Search and resque patterns."
 msgstr ""
 
 #: src/SAR_pi.cpp:232

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2015-06-02 20:34-0400\n"
+"PO-Revision-Date: 2016-02-27 08:04-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -22,24 +22,24 @@ msgstr "SAR"
 
 #: src/SARgui.h:206 src/SARgui_impl.h:48
 msgid "SAR preferences"
-msgstr "SAR voorkeuren"
+msgstr "Voorkeuren SAR"
 
 #: src/SARgui.cpp:27
 msgid "Parallel Search"
-msgstr "Parallel zoek-/npatroon"
+msgstr "Lijn zoekpatroon"
 
 #: src/SARgui.cpp:39 src/SARgui.cpp:188
 msgid "Approach course     "
-msgstr "Naderingskoers"
+msgstr "Naderingskoers   "
 
 #: src/SARgui.cpp:46 src/SARgui.cpp:195 src/SARgui.cpp:311 src/SARgui.cpp:428
 #: src/SARgui.cpp:462
 msgid "Degrees"
-msgstr "Graden"
+msgstr "graden"
 
 #: src/SARgui.cpp:56
 msgid "Leg Distance              "
-msgstr "Tracklengte"
+msgstr "Lijnlengte             "
 
 #: src/SARgui.cpp:63 src/SARgui.cpp:80 src/SARgui.cpp:212 src/SARgui.cpp:328
 #: src/SARgui.cpp:445 src/SARgui.cpp:764
@@ -48,27 +48,27 @@ msgstr "NM"
 
 #: src/SARgui.cpp:73
 msgid "Leg Spacing                "
-msgstr "Trackafstand"
+msgstr "Lijnafstand          "
 
 #: src/SARgui.cpp:90
 msgid "Number of Legs       "
-msgstr "Aantal tracks"
+msgstr "Aantal lijnen        "
 
 #: src/SARgui.cpp:97 src/SARgui.cpp:229
 msgid "n"
-msgstr "n"
+msgstr " "
 
 #: src/SARgui.cpp:107 src/SARgui.cpp:239
 msgid "Search Speed             "
-msgstr "Zoeksnelheid"
+msgstr "Zoeksnelheid        "
 
 #: src/SARgui.cpp:114 src/SARgui.cpp:246 src/SARgui.cpp:345 src/SARgui.cpp:479
 msgid "kts"
-msgstr "Knopen"
+msgstr "knopen"
 
 #: src/SARgui.cpp:124
 msgid "For Ship Number      "
-msgstr "Voor vaartuig nr."
+msgstr "Voor vaartuig nr "
 
 #: src/SARgui.cpp:128 src/SARgui.cpp:359
 msgid "1"
@@ -88,16 +88,16 @@ msgstr "Maak &GPX"
 
 #: src/SARgui.cpp:165
 msgid "SAR: Trackline"
-msgstr "SAR: Trackliijn"
+msgstr "SAR: Lijn zoekpatroon"
 
 #: src/SARgui.cpp:176
 msgid "Expanding Square\n"
 "         Search"
-msgstr "Vierkant zoek-/npatroon"
+msgstr "Vierkant zoekpatroon"
 
 #: src/SARgui.cpp:205
 msgid "Leg Distance               "
-msgstr "Tracklengte"
+msgstr "Lijnlengte             "
 
 #: src/SARgui.cpp:222
 msgid "Number of Squares"
@@ -113,19 +113,19 @@ msgstr "Sector zoekpatroon"
 
 #: src/SARgui.cpp:304 src/SARgui.cpp:421
 msgid "Approach course"
-msgstr "Naderingskoers"
+msgstr "Naderingskoers   "
 
 #: src/SARgui.cpp:321 src/SARgui.cpp:438
 msgid "Leg Distance          "
-msgstr "Tracklengte          "
+msgstr "Lijnlengte             "
 
 #: src/SARgui.cpp:338
 msgid "Search Speed        "
-msgstr "Zoeksnelheid"
+msgstr "Zoeksnelheid        "
 
 #: src/SARgui.cpp:355
 msgid "Number of cycles"
-msgstr "Aantal cycli"
+msgstr "Aantal cycli          "
 
 #: src/SARgui.cpp:398
 msgid "SAR: Sector Search"
@@ -137,11 +137,11 @@ msgstr "Platform zoekpatroon"
 
 #: src/SARgui.cpp:455
 msgid "Number of Legs   "
-msgstr "Aantal tracks   "
+msgstr "Aantal lijnen        "
 
 #: src/SARgui.cpp:472
 msgid "Search Speed         "
-msgstr "Zoeksnelheid         "
+msgstr "Zoeksnelheid        "
 
 #: src/SARgui.cpp:516
 msgid "SAR: Oil Rig"
@@ -149,11 +149,11 @@ msgstr "SAR: Platform zoekpatroon"
 
 #: src/SARgui.cpp:529 src/SARgui.cpp:633
 msgid "Datum (Start of Search)"
-msgstr "Datum (start van zoekpatroon)"
+msgstr "Startpositie van zoekpatroon (datum)"
 
 #: src/SARgui.cpp:540
 msgid "Lattitude  "
-msgstr "Breedte"
+msgstr "Breedte "
 
 #: src/SARgui.cpp:547 src/SARgui.cpp:564 src/SARgui.cpp:648 src/SARgui.cpp:685
 msgid "\\u00b0"
@@ -161,7 +161,7 @@ msgstr "\\u00b0"
 
 #: src/SARgui.cpp:557
 msgid "Longitude"
-msgstr "Lengte"
+msgstr "Lengte   "
 
 #: src/SARgui.cpp:578
 msgid "Ship"
@@ -181,7 +181,7 @@ msgstr "Naam zoekpatroon voor GPX-bestand"
 
 #: src/SARgui.cpp:607
 msgid "Route"
-msgstr "Route"
+msgstr "Route    "
 
 #: src/SARgui.cpp:627
 msgid "Decimal Degree"
@@ -209,7 +209,7 @@ msgstr "Z"
 
 #: src/SARgui.cpp:678
 msgid "Lon"
-msgstr "Len"
+msgstr "Le"
 
 #: src/SARgui.cpp:703
 msgid "E"
@@ -237,7 +237,7 @@ msgstr "Zoekafstand"
 
 #: src/SARgui.cpp:774
 msgid "Search Time        "
-msgstr "Zoektijd"
+msgstr "Zoektijd       "
 
 #: src/SARgui.cpp:781
 msgid "hr"
@@ -273,13 +273,14 @@ msgstr "Laat geselcteerd, zodat u de cursorpositie kunt gebruiken"
 
 #: src/SAR_pi.cpp:154
 msgid "Search and Resque Patterns"
-msgstr "SAR zoekpatronen"
+msgstr "Search and Rescue PlugIn voor zoekpatronen in OpenCPN"
 
 #: src/SAR_pi.cpp:159
 msgid "Creates GPX files with\n"
 "Search and resque patterns."
-msgstr "Maakt GPX-bestanden met\n"
-"SAR zoekpatronen."
+msgstr "SAR PlugIn voor OpenCPN\n"
+"\n"
+"Maakt GPX-bestanden met SAR zoekpatronen."
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"
@@ -287,7 +288,7 @@ msgstr "Routevoorkeuren"
 
 #: src/SARgui_impl.cpp:176
 msgid "Export SAR track GPX file as"
-msgstr "Exporteer GPX-bestand SAR-track als"
+msgstr "Exporteer GPX-zoekpatroonbestand als"
 
 #: src/SARgui_impl.cpp:189
 msgid "error in input range validation"
