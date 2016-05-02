@@ -3,310 +3,308 @@ msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-29 18:59+0100\n"
-"PO-Revision-Date: 2016-02-27 08:04-0500\n"
+"PO-Revision-Date: 2015-09-20 20:30-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
-"Language-Team: French\n"
-"Language: fr_FR\n"
+"Language-Team: Hungarian\n"
+"Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: opencpn\n"
-"X-Crowdin-Language: fr\n"
+"X-Crowdin-Language: hu\n"
 "X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
 
 #: src/SARgui.h:183 src/SAR_pi.cpp:89 src/SAR_pi.cpp:148
 msgid "SAR"
-msgstr "SAR"
+msgstr ""
 
 #: src/SARgui.h:206 src/SARgui_impl.h:48
 msgid "SAR preferences"
-msgstr "Préférences"
+msgstr ""
 
 #: src/SARgui.cpp:27
 msgid "Parallel Search"
-msgstr "Recherche par segments parallèles"
+msgstr ""
 
 #: src/SARgui.cpp:39 src/SARgui.cpp:188
 msgid "Approach course     "
-msgstr "COG de recherche     "
+msgstr ""
 
 #: src/SARgui.cpp:46 src/SARgui.cpp:195 src/SARgui.cpp:311 src/SARgui.cpp:428
 #: src/SARgui.cpp:462
 msgid "Degrees"
-msgstr "Degrés"
+msgstr ""
 
 #: src/SARgui.cpp:56
 msgid "Leg Distance              "
-msgstr "Longueur du segment"
+msgstr ""
 
 #: src/SARgui.cpp:63 src/SARgui.cpp:80 src/SARgui.cpp:212 src/SARgui.cpp:328
 #: src/SARgui.cpp:445 src/SARgui.cpp:764
 msgid "NM"
-msgstr "Nm"
+msgstr ""
 
 #: src/SARgui.cpp:73
 msgid "Leg Spacing                "
-msgstr "Distance entre segments"
+msgstr ""
 
 #: src/SARgui.cpp:90
 msgid "Number of Legs       "
-msgstr "Nombres de segments"
+msgstr ""
 
 #: src/SARgui.cpp:97 src/SARgui.cpp:229
 msgid "n"
-msgstr "n"
+msgstr ""
 
 #: src/SARgui.cpp:107 src/SARgui.cpp:239
 msgid "Search Speed             "
-msgstr "Vitesse de recherche"
+msgstr ""
 
 #: src/SARgui.cpp:114 src/SARgui.cpp:246 src/SARgui.cpp:345 src/SARgui.cpp:479
 msgid "kts"
-msgstr "Noeuds"
+msgstr ""
 
 #: src/SARgui.cpp:124
 msgid "For Ship Number      "
-msgstr "Pour le bateau numéro"
+msgstr ""
 
 #: src/SARgui.cpp:128 src/SARgui.cpp:359
 msgid "1"
-msgstr "1"
+msgstr ""
 
 #: src/SARgui.cpp:128 src/SARgui.cpp:359
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #: src/SARgui.cpp:140 src/SARgui.cpp:256 src/SARgui.cpp:371 src/SARgui.cpp:489
 msgid "Calculate"
-msgstr "Calculer"
+msgstr ""
 
 #: src/SARgui.cpp:143 src/SARgui.cpp:259 src/SARgui.cpp:374 src/SARgui.cpp:492
 msgid "Generate &GPX"
-msgstr "Générer un fichier GPX"
+msgstr ""
 
 #: src/SARgui.cpp:165
 msgid "SAR: Trackline"
-msgstr "SAR : Par segments parallèles"
+msgstr ""
 
 #: src/SARgui.cpp:176
 msgid "Expanding Square\n"
 "         Search"
-msgstr "Recherche selon des carrés imbriqués\n"
-"     "
+msgstr ""
 
 #: src/SARgui.cpp:205
 msgid "Leg Distance               "
-msgstr "Longueur du segment"
+msgstr ""
 
 #: src/SARgui.cpp:222
 msgid "Number of Squares"
-msgstr "Nombre de carrés"
+msgstr ""
 
 #: src/SARgui.cpp:283
 msgid "SAR: Expanding Square"
-msgstr "SAR : Par carrés imbriqués"
+msgstr ""
 
 #: src/SARgui.cpp:292
 msgid "Sector Search"
-msgstr "Recherche par zones triangulaires"
+msgstr ""
 
 #: src/SARgui.cpp:304 src/SARgui.cpp:421
 msgid "Approach course"
-msgstr "COG de recherche"
+msgstr ""
 
 #: src/SARgui.cpp:321 src/SARgui.cpp:438
 msgid "Leg Distance          "
-msgstr "Longueur du segment"
+msgstr ""
 
 #: src/SARgui.cpp:338
 msgid "Search Speed        "
-msgstr "Vitesse de recherche"
+msgstr ""
 
 #: src/SARgui.cpp:355
 msgid "Number of cycles"
-msgstr "Nombre de cycles"
+msgstr ""
 
 #: src/SARgui.cpp:398
 msgid "SAR: Sector Search"
-msgstr "SAR : Par zones triangulaires"
+msgstr ""
 
 #: src/SARgui.cpp:409
 msgid "Oil Rig Search"
-msgstr "Recherche dans un secteur angulaire"
+msgstr ""
 
 #: src/SARgui.cpp:455
 msgid "Number of Legs   "
-msgstr "Nombre de segments"
+msgstr ""
 
 #: src/SARgui.cpp:472
 msgid "Search Speed         "
-msgstr "vitesse de recherche"
+msgstr ""
 
 #: src/SARgui.cpp:516
 msgid "SAR: Oil Rig"
-msgstr "SAR: Dans un secteur angulaire"
+msgstr ""
 
 #: src/SARgui.cpp:529 src/SARgui.cpp:633
 msgid "Datum (Start of Search)"
-msgstr "Position du bateau : Point initial de recherche"
+msgstr ""
 
 #: src/SARgui.cpp:540
 msgid "Lattitude  "
-msgstr "Latitude"
+msgstr ""
 
 #: src/SARgui.cpp:547 src/SARgui.cpp:564 src/SARgui.cpp:648 src/SARgui.cpp:685
 msgid "\\u00b0"
-msgstr "\\u00b0"
+msgstr ""
 
 #: src/SARgui.cpp:557
 msgid "Longitude"
-msgstr "Longitude"
+msgstr ""
 
 #: src/SARgui.cpp:578
 msgid "Ship"
-msgstr "Bateau"
+msgstr ""
 
 #: src/SARgui.cpp:579
 msgid "Copy ship position (GPS fix required)"
-msgstr "Copier la position du bateau (Le GPS doit avoir fait sont \"fixe\")"
+msgstr ""
 
 #: src/SARgui.cpp:583
 msgid "Cursor"
-msgstr "Curseur"
+msgstr ""
 
 #: src/SARgui.cpp:599
 msgid "Search Pattern name for GPX file"
-msgstr "Recherche par nom de modèle pour le fichier GPX"
+msgstr ""
 
 #: src/SARgui.cpp:607
 msgid "Route"
-msgstr "Route"
+msgstr ""
 
 #: src/SARgui.cpp:627
 msgid "Decimal Degree"
-msgstr "Degré décimal"
+msgstr ""
 
 #: src/SARgui.cpp:641
 msgid "Lat "
-msgstr "Lat."
+msgstr ""
 
 #: src/SARgui.cpp:655 src/SARgui.cpp:692
 msgid "'"
-msgstr "'"
+msgstr ""
 
 #: src/SARgui.cpp:662 src/SARgui.cpp:699
 msgid "\""
-msgstr "\""
+msgstr ""
 
 #: src/SARgui.cpp:666
 msgid "N"
-msgstr "N"
+msgstr ""
 
 #: src/SARgui.cpp:666
 msgid "S"
-msgstr "S"
+msgstr ""
 
 #: src/SARgui.cpp:678
 msgid "Lon"
-msgstr "Lon"
+msgstr ""
 
 #: src/SARgui.cpp:703
 msgid "E"
-msgstr "E"
+msgstr ""
 
 #: src/SARgui.cpp:703
 msgid "W"
-msgstr "O"
+msgstr ""
 
 #: src/SARgui.cpp:721
 msgid "Convert to Degree"
-msgstr "Convertir en degré"
+msgstr ""
 
 #: src/SARgui.cpp:731
 msgid "\\u00b0 ' \""
-msgstr "\\u00b0 ' \""
+msgstr ""
 
 #: src/SARgui.cpp:745
 msgid "Results"
-msgstr "Résultats"
+msgstr ""
 
 #: src/SARgui.cpp:757
 msgid "Search Distance"
-msgstr "Longueur de la recherche"
+msgstr ""
 
 #: src/SARgui.cpp:774
 msgid "Search Time        "
-msgstr "Durée de la recherche"
+msgstr ""
 
 #: src/SARgui.cpp:781
 msgid "hr"
-msgstr "hr"
+msgstr ""
 
 #: src/SARgui.cpp:865
 msgid "General settings"
-msgstr "Réglage"
+msgstr ""
 
 #: src/SARgui.cpp:872
 msgid "Opacity"
-msgstr "Opacité"
+msgstr ""
 
 #: src/SARgui.cpp:886
 msgid "CPU saving settings"
-msgstr "Sauvegarde des réglages"
+msgstr ""
 
 #: src/SARgui.cpp:896
 msgid "Capture Ship Position"
-msgstr "Capture de la position du bateau"
+msgstr ""
 
 #: src/SARgui.cpp:898
 msgid "Leave ticked, so you can use ship's position"
-msgstr "Laissez coché, et vous pouvez utiliser la position du navire"
+msgstr ""
 
 #: src/SARgui.cpp:902
 msgid "Capture Cursor Position"
-msgstr "Capture de la position du curseur"
+msgstr ""
 
 #: src/SARgui.cpp:904
 msgid "Leave ticked, so that you can use cursor position."
-msgstr "Laissez coché, et vous pourrez utiliser la position du curseur."
+msgstr ""
 
 #: src/SAR_pi.cpp:154
 msgid "Search and Resque Patterns"
-msgstr "Recherche et sauvegarde des modèles"
+msgstr ""
 
 #: src/SAR_pi.cpp:159
 msgid "Creates GPX files with\n"
 "Search and resque patterns."
-msgstr "Création d'un fichier GPX avec\n"
-"les modèles recherchés et sauvegardés."
+msgstr ""
 
 #: src/SAR_pi.cpp:232
 msgid "Route Preferences"
-msgstr "Préférences de la routes"
+msgstr ""
 
 #: src/SARgui_impl.cpp:176
 msgid "Export SAR track GPX file as"
-msgstr "Exporter la trace de la recherche comme un fichier GPX"
+msgstr ""
 
 #: src/SARgui_impl.cpp:189
 msgid "error in input range validation"
-msgstr "Erreur de validation de données entrées"
+msgstr ""
 
 #: src/SARgui_impl.cpp:232
 msgid "Error occured, aborting SAR calc!"
-msgstr "Une erreur s'est produite. Calcul avorté."
+msgstr ""
 
 #: src/SARgui_impl.cpp:551 src/SARgui_impl.cpp:552
 msgid "Error in calculation. Please check input!"
-msgstr "Erreur dans le calcul. Vérifiez vos entrées."
+msgstr ""
 
 #: src/SARgui_impl.cpp:606
 msgid "In order to copy the cursor location, select either the Lattitude or Longitude coordinate box, and press <CTRL>+S."
-msgstr "Pour copier la position du curseur, sélectionner la latitude et la longitude dans la boite des coordonnées, et appuyer sur la combinaison de touches \"Ctrl\"  et \"S\" du clavier"
+msgstr ""
 
 #: src/SARgui_impl.h:54
 msgid "SAR Plugin by SaltyPaws"
-msgstr "Complément \"SAR\" par Salty Paws"
+msgstr ""
 

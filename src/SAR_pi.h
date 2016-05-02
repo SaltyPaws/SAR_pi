@@ -37,11 +37,10 @@
 
 #include <wx/fileconf.h>
 
-#include "../../../include/ocpn_plugin.h" //Required for OCPN plugin functions
+#include "ocpn_plugin.h" //Required for OCPN plugin functions
 #include "SARgui_impl.h"
 
-#define     PLUGIN_VERSION_MAJOR    0
-#define     PLUGIN_VERSION_MINOR    8
+#include "version.h"
 
 #define     MY_API_VERSION_MAJOR    1
 #define     MY_API_VERSION_MINOR    8
