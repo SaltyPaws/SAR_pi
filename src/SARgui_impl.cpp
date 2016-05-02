@@ -547,7 +547,7 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
        if (write_file){
             root->LinkEndChild( Route );
             // check if string ends with .gpx or .GPX
-            if (!wxFileExists(s)){
+            if (!s.EndsWith(_T(".gpx"))) {
                  s = s + _T(".gpx");
             }
             wxCharBuffer buffer=s.ToUTF8();
