@@ -273,12 +273,12 @@ msgid "Leave ticked, so that you can use cursor position."
 msgstr "La være merket, slik at du kan benytte kursorposisjon."
 
 #: src/SAR_pi.cpp:154
-msgid "Search and Resque Patterns"
+msgid "Search and Rescue Patterns"
 msgstr "Søk og rednings mønstre"
 
 #: src/SAR_pi.cpp:159
 msgid "Creates GPX files with\n"
-"Search and resque patterns."
+"Search and rescue patterns."
 msgstr "Oppretter GPX filer med\n"
 "Søk og rednings mønstre."
 

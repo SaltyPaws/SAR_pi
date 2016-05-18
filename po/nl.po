@@ -272,12 +272,12 @@ msgid "Leave ticked, so that you can use cursor position."
 msgstr "Laat geselcteerd, zodat u de cursorpositie kunt gebruiken"
 
 #: src/SAR_pi.cpp:154
-msgid "Search and Resque Patterns"
+msgid "Search and Rescue Patterns"
 msgstr "Search and Rescue PlugIn voor zoekpatronen in OpenCPN"
 
 #: src/SAR_pi.cpp:159
 msgid "Creates GPX files with\n"
-"Search and resque patterns."
+"Search and rescue patterns."
 msgstr "SAR PlugIn voor OpenCPN\n"
 "\n"
 "Maakt GPX-bestanden met SAR zoekpatronen."

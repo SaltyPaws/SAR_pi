@@ -8,6 +8,12 @@ The aims are to:
 1. Generate GPX files for a number of SAR patterns
 2. Plot selected SAR patterns directly in OpenCPN
 
+Changelog
+=========
+- correct spellelling of Resque (FS#1446)
+
+
+
 Compiling
 =========
 You have to be able to compile OpenCPN itself - Get the info at http://opencpn.org/ocpn/developers_manual

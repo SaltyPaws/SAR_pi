@@ -273,12 +273,12 @@ msgid "Leave ticked, so that you can use cursor position."
 msgstr "Jäta märgistatuks, et saaksite kasutada kursori asukohta."
 
 #: src/SAR_pi.cpp:154
-msgid "Search and Resque Patterns"
+msgid "Search and Rescue Patterns"
 msgstr "Otsingu ja pääste mustrid"
 
 #: src/SAR_pi.cpp:159
 msgid "Creates GPX files with\n"
-"Search and resque patterns."
+"Search and rescue patterns."
 msgstr "Loo GPX-fail koos otsingu\n"
 "ja pääste mustritega."
 

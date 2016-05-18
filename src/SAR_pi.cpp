@@ -151,13 +151,13 @@ wxString SAR_pi::GetCommonName()
 
 wxString SAR_pi::GetShortDescription()
 {
-      return _("Search and Resque Patterns");
+      return _("Search and Rescue Patterns");
 }
 
 wxString SAR_pi::GetLongDescription()
 {
       return _("Creates GPX files with\n\
-Search and resque patterns.");
+Search and rescue patterns.");
 }
 
 int SAR_pi::GetToolbarToolCount(void)

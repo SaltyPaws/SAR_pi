@@ -169,32 +169,33 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
 4 Oil Rig
 */
 {
-    bool error_occured=false;
+    bool error_occurred=false;
+    bool user_canceled=false;
    // double dist, fwdAz, revAz;
 
 
     double lat1,lon1;
     if(!this->m_Lat1->GetValue().ToDouble(&lat1)){ lat1=0.0;}
     if(!this->m_Lon1->GetValue().ToDouble(&lon1)){ lon1=0.0;}
-    //if (error_occured) wxMessageBox(_T("error in conversion of input coordinates"));
+    //if (error_occurred) wxMessageBox(_T("error in conversion of input coordinates"));
 
-    //error_occured=false;
+    //error_occurred=false;
     wxString s;
     if (write_file){
         wxFileDialog dlg(this, _("Export SAR track GPX file as"), wxEmptyString, wxEmptyString, _T("GPX files (*.gpx)|*.gpx|All files (*.*)|*.*"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
         if (dlg.ShowModal() == wxID_CANCEL)
-            error_occured=true;     // the user changed idea...
+             user_canceled=true;     // the user changed idea...
         //dlg.ShowModal();
         s=dlg.GetPath();
         //  std::cout<<s<< std::endl;
-        if (dlg.GetPath() == wxEmptyString){ error_occured=true; if (dbg) printf("Empty Path\n");}
+        if (!user_canceled && s.IsEmpty()){ error_occurred=true; if (dbg) printf("Empty Path\n");}
     }
 
     //Validate input ranges
-    if (!error_occured){
-        if (std::abs(lat1)>90){ error_occured=true; }
-        if (std::abs(lon1)>180){ error_occured=true; }
-        if (error_occured) wxMessageBox(_("error in input range validation"));
+    if (!error_occurred && !user_canceled ){
+        if (std::abs(lat1)>90){ error_occurred=true; }
+        if (std::abs(lon1)>180){ error_occurred=true; }
+        if (error_occurred) wxMessageBox(_("error in input range validation"));
     }
 
     //Start GPX
@@ -206,7 +207,7 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
     TiXmlElement * RouteName = new TiXmlElement( "name" );
     TiXmlText * text4 = new TiXmlText( this->m_Route->GetValue().ToUTF8() );
 
-    if (write_file){
+    if (write_file&& !user_canceled && !error_occurred){
         doc.LinkEndChild( root );
         root->SetAttribute("version", "1.1");
         root->SetAttribute("creator", "Route_pi by SaltyPaws");
@@ -236,8 +237,8 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
     //Calculate GCL
    // double step_size=dist/100;
 
-    if (error_occured){
-        wxLogMessage(_("Error occured, aborting SAR calc!") );
+    if (error_occurred){
+        wxLogMessage(_("Error occurred, aborting SAR calc!") );
         //wxMessageBox(_("Route interval > Distance, 0 or negative") );
         }
 
@@ -248,7 +249,9 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
     3 Sector search
     4 Oil Rig
     */
-    switch ( Pattern ) {
+    
+if (!user_canceled && !error_occurred){
+switch ( Pattern ) {
     case 1:
         {
         if (dbg) cout<<"Parrallel Search\n";
@@ -553,13 +556,13 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
             wxCharBuffer buffer=s.ToUTF8();
             if (dbg) std::cout<< buffer.data()<<std::endl;
             doc.SaveFile( buffer.data() );}
-    //} //end of if no error occured
+    //} //end of if no error occurred
 
-    if (error_occured==true)  {
+    if (error_occurred )  {
         wxLogMessage(_("Error in calculation. Please check input!") );
         wxMessageBox(_("Error in calculation. Please check input!") );
     }
-
+}
 }
 
 void Dlg::OnCursor(wxCommandEvent& event ){OnCursor();}
