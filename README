@@ -10,7 +10,12 @@ The aims are to:
 
 Changelog
 =========
-- correct spellelling of Resque (FS#1446)
+Changes to version 1.1
+- corrected Resque (FS#1446)
+- fix bugs also present in route (error, double gpx)
+- Update for O4.1
+- Update translations
+
 
 
 
