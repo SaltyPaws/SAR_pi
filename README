@@ -16,8 +16,12 @@ Changes to version 1.1
 - Update for O4.1
 - Update translations
 
-
-
+ToDo
+=======
+Once the Navobject becomes available to the plugin API, will update to also enable direct route plotting. 
+Use coordinate input system from route_pi
+Use route export into OCPN from route_pi
+implement right click actions from route_pi
 
 Compiling
 =========
@@ -40,10 +44,6 @@ Executables
 =========
 Compiled library files can be downloaded/uploaded here:
 https://sourceforge.net/projects/opencpnplugins/
-
-ToDo
-=======
-Once the Navobject becomes available to the plugin API, will update to also enable direct route plotting.
 
 License
 =======
