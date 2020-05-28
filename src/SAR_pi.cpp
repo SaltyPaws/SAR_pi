@@ -89,6 +89,12 @@ int SAR_pi::Init(void)
             _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
 
+	  wxMenu dummy_menu;
+	  m_position_menu_id = AddCanvasContextMenuItem
+
+	  (new wxMenuItem(&dummy_menu, -1, _("Select SAR Datum Point")), this);
+	  SetCanvasContextMenuItemViz(m_position_menu_id, true);
+
       m_pDialog = NULL;
 
       return (WANTS_CURSOR_LATLON      |
@@ -97,7 +103,6 @@ int SAR_pi::Init(void)
               WANTS_NMEA_EVENTS         |
               WANTS_PREFERENCES         |
               WANTS_CONFIG
-
            );
 }
 
@@ -249,10 +254,10 @@ void SAR_pi::ShowPreferencesDialog( wxWindow* parent )
 
 void SAR_pi::SetCursorLatLon(double lat, double lon)
 {
-    if (m_bCaptureShip){ //Option to save CPU
+    //if (m_bCaptureShip){ //Option to save CPU
         m_cursor_lat=lat;
         m_cursor_lon=lon;
-    }
+    //}
     //std::cout<<"Cursor--> Lat: "<<m_cursor_lat<<" Lon: "<<m_cursor_lon<<std::endl;
 }
 
@@ -264,3 +269,16 @@ void SAR_pi::SetPositionFix(PlugIn_Position_Fix &pfix)
         //std::cout<<"Ship--> Lat: "<<m_ship_lat<<" Lon: "<<m_ship_lon<<std::endl;
     }
 }
+
+void SAR_pi::OnContextMenuItemCallback(int id)
+{
+	if (!m_pDialog)
+		return;
+
+	if (id == m_position_menu_id) {
+		m_cursor_lat = GetCursorLat();
+		m_cursor_lon = GetCursorLon();
+		m_pDialog->getDatum(m_cursor_lat, m_cursor_lon);
+	}
+}
+

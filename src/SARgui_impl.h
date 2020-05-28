@@ -76,7 +76,11 @@ public:
         void OnCursor( void );
         void key_shortcut(wxKeyEvent& event);
         void OnCursorSelect( wxCommandEvent& event );
-        //void mouse_shortcut(wxMouseEvent& event);
+
+		// For right click datum selection
+		void getDatum(double m_lat, double m_lon);
+        
+		//void mouse_shortcut(wxMouseEvent& event);
 
         void Calculate( wxCommandEvent& event, bool Export, int Pattern );
 
@@ -87,9 +91,11 @@ public:
         SAR_pi *plugin;
         double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 
+		void setDDMM();
 
 private:
-        wxPoint xy;
+        
+	    wxPoint xy;
         wxSize  wh;
         double lat1, lon1, lat2, lon2, targetAz;
         //double F(double x);

@@ -77,6 +77,9 @@ public:
       void OnToolbarToolCallback(int id);
       void SetCursorLatLon(double lat, double lon);
       void SetPositionFix(PlugIn_Position_Fix &pfix);
+	  
+	  // For right click datum selection
+	  void OnContextMenuItemCallback(int id);
 
 //    Optional plugin overrides
       void SetColorScheme(PI_ColorScheme cs);
@@ -94,8 +97,7 @@ public:
       double GetCursorLon(void) {return m_cursor_lon;}
       double GetCursorLat(void) {return m_cursor_lat;}
 
-
-      void OnSurveyDialogClose();
+	  int m_position_menu_id;
 
 private:
       wxFileConfig      *m_pconfig;
@@ -109,6 +111,7 @@ private:
       int               m_leftclick_tool_id;
       bool              m_ShowHelp,m_bCaptureCursor,m_bCaptureShip;
       double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
+	 
 };
 
 #endif

@@ -15,8 +15,8 @@ SET(VERBOSE_NAME SAR)
 SET(TITLE_NAME SAR)
 SET(CPACK_PACKAGE_CONTACT "SaltyPaws")
 
-SET(VERSION_MAJOR "1")
-SET(VERSION_MINOR "1")
+SET(VERSION_MAJOR "2")
+SET(VERSION_MINOR "0")
 
 #SET(CMAKE_BUILD_TYPE Debug)
 
@@ -34,10 +34,10 @@ INCLUDE("cmake/PluginConfigure.cmake")
 
 
 SET(SRC_SAR
-            src/SAR_pi.h
-            src/SAR_pi.cpp
-            src/icons.h
-            src/icons.cpp
+		src/SAR_pi.h
+        src/SAR_pi.cpp
+        src/icons.h
+        src/icons.cpp         
 	    src/SARgui.h
 	    src/SARgui.cpp
 	    src/SARgui_impl.cpp
@@ -49,8 +49,8 @@ SET(SRC_SAR
 	)
 
 INCLUDE_DIRECTORIES(
-  src
-  src/OpenCPN
+	  src
+	  src/OpenCPN
 )
 
 IF(UNIX)

@@ -1,12 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Oct  8 2012)
+// C++ code generated with wxFormBuilder (version Oct 26 2018)
 // http://www.wxformbuilder.org/
 //
-// PLEASE DO "NOT" EDIT THIS FILE!
+// PLEASE DO *NOT* EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef __SARGUI_H__
-#define __SARGUI_H__
+#pragma once
 
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
@@ -20,11 +19,11 @@
 #include <wx/textctrl.h>
 #include <wx/sizer.h>
 #include <wx/choice.h>
-#include <wx/button.h>
-#include <wx/panel.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
+#include <wx/button.h>
+#include <wx/panel.h>
 #include <wx/statbmp.h>
 #include <wx/notebook.h>
 #include <wx/statbox.h>
@@ -38,10 +37,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class DlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class DlgDef : public wxDialog 
+class DlgDef : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxNotebook* m_notebook1;
 		wxPanel* m_panel1;
@@ -133,6 +132,20 @@ class DlgDef : public wxDialog
 		wxButton* m_Cursor;
 		wxStaticText* m_staticText323122;
 		wxTextCtrl* m_Route;
+		wxPanel* m_panelDegreesMinutes;
+		wxStaticText* m_staticText323131;
+		wxTextCtrl* m_Lat1_d1;
+		wxStaticText* m_staticText333131;
+		wxTextCtrl* m_Lat1_m1;
+		wxStaticText* m_staticText11431;
+		wxChoice* m_Lat1_NS1;
+		wxStaticText* m_staticText3231121;
+		wxTextCtrl* m_Lon1_d1;
+		wxStaticText* m_staticText3331121;
+		wxTextCtrl* m_Lon1_m1;
+		wxStaticText* m_staticText114121;
+		wxChoice* m_Lon1_EW1;
+		wxButton* m_button811;
 		wxPanel* m_panel15;
 		wxStaticText* m_staticText32313;
 		wxTextCtrl* m_Lat1_d;
@@ -160,7 +173,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_Statictext34;
 		wxTextCtrl* m_Time;
 		wxStaticText* m_staticText331121;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnPSCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnPSGPX( wxCommandEvent& event ) { event.Skip(); }
@@ -175,37 +188,36 @@ class DlgDef : public wxDialog
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
 		wxBoxSizer* bSframe;
-		
-		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+
+		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~DlgDef();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class CfgDlgDef
 ///////////////////////////////////////////////////////////////////////////////
-class CfgDlgDef : public wxDialog 
+class CfgDlgDef : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText17;
 		wxStdDialogButtonSizer* m_sdbSizer1;
 		wxButton* m_sdbSizer1OK;
 		wxButton* m_sdbSizer1Cancel;
-	
+
 	public:
 		wxSlider* m_sOpacity;
 		wxCheckBox* m_CaptureShip;
 		wxCheckBox* m_CaptureCursor;
-		
-		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+
+		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~CfgDlgDef();
-	
+
 };
 
-#endif //__SARGUI_H__
