@@ -187,7 +187,7 @@ class DlgDef : public wxDialog
 		virtual void OnNoteBookFit( wxNotebookEvent& event ) { event.Skip(); }
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnConverttoDegree( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnConvertToDegree( wxCommandEvent& event ) { event.Skip(); }
 
 
 	public:

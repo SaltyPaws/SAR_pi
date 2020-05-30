@@ -306,6 +306,8 @@ void Dlg::ConvertToDegree()
 		m_Lat1_m1->SetValue(wxString::Format(_T("%.6f"), DDLat1));
 		m_Lon1_m1->SetValue(wxString::Format(_T("%.6f"), DDLon1));
 
+		m_wxNotebook234->SetSelection(0);
+		m_Lat1->SetFocus();
 
 		break;
 	}
@@ -605,27 +607,40 @@ switch ( Pattern ) {
         destRhumb(lat1, lon1, -ESheading,leg_distancez/2, &lati, &loni);
         lat1=lati;
         lon1=loni;
+		
+		wxString wpt_title=wxT("");
 
-        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%f"),loni), _T("Start") ,_T("diamond"),_T("WPT"));}
+		wpt_title << wxT("Start:Leg (") << 1 << wxT(") Pt(") << 1 << wxT(")");
 
-        wxString wpt_title;
+        if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
 
-
+        
 
         for ( int x = 1; x <= nlegs; x++ ) { //Loop over the number of legs
-            for ( int y = 1; y <= 2; y++ ) { //Loop over the tracks
-                if (y==1) {
-                    if ( x % 2 != 0 ) ESheading=approach; else ESheading=approach+180.0 ;
+            for ( int y = 0; y <= 1; y++ ) { //Loop over the tracks
+                if (y==0) {
+					if (x % 2 != 0) {
+						ESheading = approach;
+						wpt_title = wxT("");
+						wpt_title << wxT("Leg (") << x << wxT(") Pt(") << y<< wxT(")");
+					}
+					else {
+						ESheading = approach + 180.0;
+						wpt_title = wxT("");
+						wpt_title << wxT("Leg (") << x+1 << wxT(") Pt(") << y +1 << wxT(")");
+					}
                     ESdistance=leg_distancex;
                 }
                 else {
+					wpt_title = wxT("");
+					wpt_title << wxT("Leg (") << x+1 << wxT(") Pt(") << y << wxT(")");
                     ESdistance=leg_distancey;
                     if (!First_Ship) ESheading=approach+90.0; else ESheading=approach-90.0;
                 }
 
             n++;
-            wpt_title=wxT("");
-            wpt_title << wxT("Leg (") << x << wxT(") Pt(") << y <<wxT(")");
+           
+            
             destRhumb(lat1, lon1, -ESheading,ESdistance, &lati, &loni);
             SAR_distance+=ESdistance;
             if (write_file){Addpoint(Route,wxString::Format(wxT("%f"),lati),wxString::Format(wxT("%f"),loni), wpt_title ,_T("diamond"),_T("WPT"));}
@@ -959,7 +974,7 @@ void Dlg::getDatum(double m_lat, double m_lon) {
 }
 
 
-void Dlg::setDDMM() {
+void Dlg::setDDMM() {  // after entering dd.dddd from cursor, menu, lat
 
 	double DDLat;
 	double DDLon;
@@ -970,9 +985,34 @@ void Dlg::setDDMM() {
 	double MMlat0;
 	double MMlon0;
 
+	double MMlat2;
+	double MMlon2;
+
+	double SSlat1;
+	double SSlon1;
+
 	double value;
 
 	wxString s;
+	wxString s1;
+	wxString m1;
+	wxString d1;
+
+	//set cell values to 0 if they are empty. This ensures conversion goes ok.
+	double test_value;
+	if (!this->m_Lat1_d->GetValue().ToDouble(&test_value)) { m_Lat1_d->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lat1_m->GetValue().ToDouble(&test_value)) { m_Lat1_m->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lat1_s->GetValue().ToDouble(&test_value)) { m_Lat1_s->SetValue(wxString::Format(wxT("%i"), 0)); }
+
+	if (!this->m_Lon1_d->GetValue().ToDouble(&test_value)) { m_Lon1_d->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lon1_m->GetValue().ToDouble(&test_value)) { m_Lon1_m->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lon1_s->GetValue().ToDouble(&test_value)) { m_Lon1_s->SetValue(wxString::Format(wxT("%i"), 0)); }
+
+	if (!this->m_Lat1_d1->GetValue().ToDouble(&test_value)) { m_Lat1_d1->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lat1_m1->GetValue().ToDouble(&test_value)) { m_Lat1_m1->SetValue(wxString::Format(wxT("%i"), 0)); }
+
+	if (!this->m_Lon1_d1->GetValue().ToDouble(&test_value)) { m_Lon1_d1->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lon1_m1->GetValue().ToDouble(&test_value)) { m_Lon1_m1->SetValue(wxString::Format(wxT("%i"), 0)); }
 
 	s = m_Lat1->GetValue();
 	s.ToDouble(&value);
@@ -1013,4 +1053,25 @@ void Dlg::setDDMM() {
 		m_Lon1_EW->SetSelection(1);
 	}
 
+	// set the ddmmss page			
+
+	m_Lat1_d->SetValue(wxString::Format(_T("%i"), abs((int)DDlat1)));
+	m_Lon1_d->SetValue(wxString::Format(_T("%i"), abs((int)DDlon1)));
+
+	m_Lat1_m->SetValue(wxString::Format(_T("%i"), abs((int)MMlat0)));
+	m_Lon1_m->SetValue(wxString::Format(_T("%i"), abs((int)MMlon0)));
+
+	MMlat2 = int(MMlat0);
+	MMlon2 = int(MMlon0);
+
+	SSlat1 = (MMlat0 - MMlat2) * 60;
+	SSlon1 = (MMlon0 - MMlon2) * 60;
+
+	m_Lat1_s->SetValue(wxString::Format(_T("%.6f"), SSlat1));
+	m_Lon1_s->SetValue(wxString::Format(_T("%.6f"), SSlon1));
+
+
 }
+
+
+
