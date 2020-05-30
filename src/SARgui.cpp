@@ -634,8 +634,7 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 
 	wxStaticBoxSizer* sbSizer721;
 
-	wxString degLabel = _("DD.dddddd") + degString + _T(" (no limit to decimals)");
-	sbSizer721 = new wxStaticBoxSizer( new wxStaticBox( m_panelDegreesMinutes, wxID_ANY, degLabel), wxVERTICAL );
+	sbSizer721 = new wxStaticBoxSizer( new wxStaticBox( m_panelDegreesMinutes, wxID_ANY, _("Datum (Start of Search)")), wxVERTICAL );
 
 	wxBoxSizer* bSizer132121;
 	bSizer132121 = new wxBoxSizer( wxVERTICAL );

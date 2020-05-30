@@ -52,9 +52,11 @@ public:
 class Dlg : public DlgDef
 {
 public:
-        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxMAXIMIZE_BOX|wxRESIZE_BORDER );
+        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION| wxDEFAULT_DIALOG_STYLE | wxMINIMIZE_BOX | wxRESIZE_BORDER);
         //void OnToggle( wxCommandEvent& event );
-        void OnConverttoDegree( wxCommandEvent& event );
+        void OnConvertToDegree( wxCommandEvent& event );
+		void ConvertToDegree();
+
         void OnNoteBookFit( wxCommandEvent& event );
         void OnFit( wxCommandEvent& event );
 

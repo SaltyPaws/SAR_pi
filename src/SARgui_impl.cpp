@@ -48,7 +48,12 @@ Dlg::Dlg( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint&
 
 }
 
-void Dlg::OnConverttoDegree( wxCommandEvent& event )
+void Dlg::OnConvertToDegree( wxCommandEvent& event )
+{
+	ConvertToDegree();
+}
+
+void Dlg::ConvertToDegree()
 {
 	double DDLat;
 	double DDLon;
@@ -87,15 +92,15 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
 	wxString m1;
 	wxString d1;
 
-   //set cell values to 0 if they are empty. This ensures conversion goes ok.
-    double test_value;
-    if(!this->m_Lat1_d->GetValue().ToDouble(&test_value)){m_Lat1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
-    if(!this->m_Lat1_m->GetValue().ToDouble(&test_value)){m_Lat1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
-    if(!this->m_Lat1_s->GetValue().ToDouble(&test_value)){m_Lat1_s->SetValue(wxString::Format(wxT("%i"),0 ));}
+	//set cell values to 0 if they are empty. This ensures conversion goes ok.
+	double test_value;
+	if (!this->m_Lat1_d->GetValue().ToDouble(&test_value)) { m_Lat1_d->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lat1_m->GetValue().ToDouble(&test_value)) { m_Lat1_m->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lat1_s->GetValue().ToDouble(&test_value)) { m_Lat1_s->SetValue(wxString::Format(wxT("%i"), 0)); }
 
-    if(!this->m_Lon1_d->GetValue().ToDouble(&test_value)){m_Lon1_d->SetValue(wxString::Format(wxT("%i"),0 ));}
-    if(!this->m_Lon1_m->GetValue().ToDouble(&test_value)){m_Lon1_m->SetValue(wxString::Format(wxT("%i"),0 ));}
-    if(!this->m_Lon1_s->GetValue().ToDouble(&test_value)){m_Lon1_s->SetValue(wxString::Format(wxT("%i"),0 ));}
+	if (!this->m_Lon1_d->GetValue().ToDouble(&test_value)) { m_Lon1_d->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lon1_m->GetValue().ToDouble(&test_value)) { m_Lon1_m->SetValue(wxString::Format(wxT("%i"), 0)); }
+	if (!this->m_Lon1_s->GetValue().ToDouble(&test_value)) { m_Lon1_s->SetValue(wxString::Format(wxT("%i"), 0)); }
 
 	if (!this->m_Lat1_d1->GetValue().ToDouble(&test_value)) { m_Lat1_d1->SetValue(wxString::Format(wxT("%i"), 0)); }
 	if (!this->m_Lat1_m1->GetValue().ToDouble(&test_value)) { m_Lat1_m1->SetValue(wxString::Format(wxT("%i"), 0)); }
@@ -103,7 +108,7 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
 	if (!this->m_Lon1_d1->GetValue().ToDouble(&test_value)) { m_Lon1_d1->SetValue(wxString::Format(wxT("%i"), 0)); }
 	if (!this->m_Lon1_m1->GetValue().ToDouble(&test_value)) { m_Lon1_m1->SetValue(wxString::Format(wxT("%i"), 0)); }
 
-    
+
 	switch (m_wxNotebook234->GetSelection()) {
 	case 0:
 		s = m_Lat1->GetValue();
@@ -305,29 +310,8 @@ void Dlg::OnConverttoDegree( wxCommandEvent& event )
 		break;
 	}
 
-
-
-
-
-	
-	/*  ..................original code .....................................
-	//Lat1
-    wxString Lat1 = this->m_Lat1_d->GetValue() + _T(" ")  + this->m_Lat1_m->GetValue() + _T(" ")  + this->m_Lat1_s->GetValue() + _T(" ");// + this->m_Lon1_EW->GetCurrentSelection();
-    if(this->m_Lat1_NS->GetCurrentSelection()) //S=1
-        Lat1=Lat1 + _T("S");
-    else
-        Lat1=Lat1 + _T("N");
-    m_Lat1->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lat1.mb_str().data())));
-
-    //Lon1
-    wxString Lon1 = this->m_Lon1_d->GetValue() + _T(" ") + this->m_Lon1_m->GetValue() + _T(" ")  + this->m_Lon1_s->GetValue() + _T(" ") ;// + this->m_Lon1_EW->GetString();
-    if(this->m_Lon1_EW->GetCurrentSelection()) //W=1
-        Lon1=Lon1 + _T("W");
-    else
-        Lon1=Lon1 + _T("E");
-    m_Lon1->SetValue(wxString::Format(wxT("%g"), fromDMStodouble((char*)Lon1.mb_str().data())));
-*/
 }
+
 
 void Dlg::OnNoteBookFit( wxCommandEvent& event )
 {
@@ -417,7 +401,7 @@ void Dlg::OnORGPX( wxCommandEvent& event )
 
 void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
 /*
-1 Parrallel Search
+1 Parallel Search
 2 Expanding Square
 3 Sector search
 4 Oil Rig
@@ -427,6 +411,7 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
     bool user_canceled=false;
    // double dist, fwdAz, revAz;
 
+	ConvertToDegree(); 
 
     double lat1,lon1;
     if(!this->m_Lat1->GetValue().ToDouble(&lat1)){ lat1=0.0;}
@@ -484,6 +469,69 @@ void Dlg::Calculate( wxCommandEvent& event, bool write_file, int Pattern  )
         TiXmlText * text6 = new TiXmlText( "End of grid" );
         Extensions->LinkEndChild( EndN );
         EndN->LinkEndChild( text6 );
+
+		TiXmlElement * Speed = new TiXmlElement("opencpn:planned_speed");
+		TiXmlText * textSpeed;
+		wxString mySpeed;
+
+		switch (Pattern) {
+			case 1:
+			{
+				mySpeed = m_Speed_PS->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 2:
+			{
+				mySpeed = m_Speed_ES->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 3:
+			{
+				mySpeed = m_Speed_SS->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 4:
+			{
+				mySpeed = m_Speed_OR->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			default:
+			{
+				mySpeed = "0";
+				textSpeed = new TiXmlText(mySpeed);
+			}
+		}
+		Extensions->LinkEndChild(Speed);
+		Speed->LinkEndChild(textSpeed);
+
+		TiXmlElement * gpxx = new TiXmlElement("gpxx:RouteExtension");
+		TiXmlElement * gpxxDisplayColor = new TiXmlElement("gpxx:DisplayColor");
+		TiXmlText * textDisplayColor;
+		switch (Pattern) {
+			case 1:
+			{
+				if (this->m_Nship->GetCurrentSelection() == 0) {
+					textDisplayColor = new TiXmlText("Green");
+				}
+				if (this->m_Nship->GetCurrentSelection() == 1) {
+					textDisplayColor = new TiXmlText("Red");
+				}
+				break;
+			}
+			default:
+			{
+				textDisplayColor = new TiXmlText("Blue");
+			}
+		}
+		gpxxDisplayColor->LinkEndChild(textDisplayColor);
+		
+		gpxx->LinkEndChild(gpxxDisplayColor);
+		
+		Extensions->LinkEndChild(gpxx);
 
         Route->LinkEndChild( Extensions );
     }
@@ -561,6 +609,9 @@ switch ( Pattern ) {
         if (write_file){Addpoint(Route, wxString::Format(wxT("%f"),lati), wxString::Format(wxT("%f"),loni), _T("Start") ,_T("diamond"),_T("WPT"));}
 
         wxString wpt_title;
+
+
+
         for ( int x = 1; x <= nlegs; x++ ) { //Loop over the number of legs
             for ( int y = 1; y <= 2; y++ ) { //Loop over the tracks
                 if (y==1) {
@@ -884,8 +935,10 @@ void Dlg::OnCursorSelect(wxCommandEvent& event){
 
 	m_wxNotebook234->SetSelection(0);
 	m_Lat1->SetFocus();
+	m_Lat1->Clear();
+	m_Lon1->Clear();
 
-    wxMessageBox(_("To copy the cursor location press <CTRL>+S.") );
+    wxMessageBox(_("To copy the cursor location press <CTRL>+S") );
    // wxMessageBox(_("While this button is selected, or the cursor is in the lattitude or longitude box, you can copy the cursor location with <CTRL>+S") );
     event.Skip();
 }
