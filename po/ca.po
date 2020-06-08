@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-29 18:59+0100\n"
+"POT-Creation-Date: 2020-06-06 14:43+0100\n"
 "PO-Revision-Date: 2015-12-31 15:36-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Catalan\n"
@@ -15,298 +15,315 @@ msgstr ""
 "X-Crowdin-Project: opencpn\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
-
-#: src/SARgui.h:183 src/SAR_pi.cpp:89 src/SAR_pi.cpp:148
-msgid "SAR"
-msgstr "SAR"
-
-#: src/SARgui.h:206 src/SARgui_impl.h:48
-msgid "SAR preferences"
-msgstr "Configuració SAR"
-
-#: src/SARgui.cpp:27
-msgid "Parallel Search"
-msgstr "Cerca Paral·lela"
-
-#: src/SARgui.cpp:39 src/SARgui.cpp:188
-msgid "Approach course     "
-msgstr "Rumb d'aproximació     "
-
-#: src/SARgui.cpp:46 src/SARgui.cpp:195 src/SARgui.cpp:311 src/SARgui.cpp:428
-#: src/SARgui.cpp:462
-msgid "Degrees"
-msgstr "Graus"
-
-#: src/SARgui.cpp:56
-msgid "Leg Distance              "
-msgstr "Longitud del segment              "
-
-#: src/SARgui.cpp:63 src/SARgui.cpp:80 src/SARgui.cpp:212 src/SARgui.cpp:328
-#: src/SARgui.cpp:445 src/SARgui.cpp:764
-msgid "NM"
-msgstr "NM"
-
-#: src/SARgui.cpp:73
-msgid "Leg Spacing                "
-msgstr "Espai entre segments                "
-
-#: src/SARgui.cpp:90
-msgid "Number of Legs       "
-msgstr "Nombre de segments       "
-
-#: src/SARgui.cpp:97 src/SARgui.cpp:229
-msgid "n"
-msgstr "n"
-
-#: src/SARgui.cpp:107 src/SARgui.cpp:239
-msgid "Search Speed             "
-msgstr "Buscar velocitat             "
-
-#: src/SARgui.cpp:114 src/SARgui.cpp:246 src/SARgui.cpp:345 src/SARgui.cpp:479
-msgid "kts"
-msgstr "kts"
-
-#: src/SARgui.cpp:124
-msgid "For Ship Number      "
-msgstr "Per al vaixell número      "
-
-#: src/SARgui.cpp:128 src/SARgui.cpp:359
-msgid "1"
-msgstr "1"
-
-#: src/SARgui.cpp:128 src/SARgui.cpp:359
-msgid "2"
-msgstr "2"
-
-#: src/SARgui.cpp:140 src/SARgui.cpp:256 src/SARgui.cpp:371 src/SARgui.cpp:489
-msgid "Calculate"
-msgstr "Calcula"
-
-#: src/SARgui.cpp:143 src/SARgui.cpp:259 src/SARgui.cpp:374 src/SARgui.cpp:492
-msgid "Generate &GPX"
-msgstr "Genera &GPX"
-
-#: src/SARgui.cpp:165
-msgid "SAR: Trackline"
-msgstr "SAR: Línia de recorregut"
-
-#: src/SARgui.cpp:176
-msgid "Expanding Square\n"
-"         Search"
-msgstr "Recercar Augmentant\n"
-" el Quadrat"
-
-#: src/SARgui.cpp:205
-msgid "Leg Distance               "
-msgstr "Longitud el segment               "
-
-#: src/SARgui.cpp:222
-msgid "Number of Squares"
-msgstr "Nombre de Quadrats"
-
-#: src/SARgui.cpp:283
-msgid "SAR: Expanding Square"
-msgstr "SAR: Quadrats augmentats"
-
-#: src/SARgui.cpp:292
-msgid "Sector Search"
-msgstr "Cerca de Sector"
-
-#: src/SARgui.cpp:304 src/SARgui.cpp:421
-msgid "Approach course"
-msgstr "Rumb d'aproximació"
-
-#: src/SARgui.cpp:321 src/SARgui.cpp:438
-msgid "Leg Distance          "
-msgstr "Longitud del segment          "
-
-#: src/SARgui.cpp:338
-msgid "Search Speed        "
-msgstr "Buscar velocitat        "
-
-#: src/SARgui.cpp:355
-msgid "Number of cycles"
-msgstr "Nombre de cicles"
-
-#: src/SARgui.cpp:398
-msgid "SAR: Sector Search"
-msgstr "SAR: Cerca de Sector"
-
-#: src/SARgui.cpp:409
-msgid "Oil Rig Search"
-msgstr "Cerca de Plataforma petroliera"
-
-#: src/SARgui.cpp:455
-msgid "Number of Legs   "
-msgstr "Nombre de segments   "
-
-#: src/SARgui.cpp:472
-msgid "Search Speed         "
-msgstr "Buscar velocitat         "
-
-#: src/SARgui.cpp:516
-msgid "SAR: Oil Rig"
-msgstr "SAR: Plataforma petroliera"
-
-#: src/SARgui.cpp:529 src/SARgui.cpp:633
-msgid "Datum (Start of Search)"
-msgstr "Datum (Inici de la cerca)"
-
-#: src/SARgui.cpp:540
-msgid "Lattitude  "
-msgstr "Latitud  "
-
-#: src/SARgui.cpp:547 src/SARgui.cpp:564 src/SARgui.cpp:648 src/SARgui.cpp:685
-msgid "\\u00b0"
-msgstr "\\u00b0"
-
-#: src/SARgui.cpp:557
-msgid "Longitude"
-msgstr "Longitud"
-
-#: src/SARgui.cpp:578
-msgid "Ship"
-msgstr "Vaixell"
-
-#: src/SARgui.cpp:579
-msgid "Copy ship position (GPS fix required)"
-msgstr "Copiar posició del vaixell (Necessari GPS fix)"
-
-#: src/SARgui.cpp:583
-msgid "Cursor"
-msgstr "Cursor"
-
-#: src/SARgui.cpp:599
-msgid "Search Pattern name for GPX file"
-msgstr "Buscar nom de plantilla per al fitxer GPX"
-
-#: src/SARgui.cpp:607
-msgid "Route"
-msgstr "Ruta"
-
-#: src/SARgui.cpp:627
-msgid "Decimal Degree"
-msgstr "Graus decimals"
-
-#: src/SARgui.cpp:641
-msgid "Lat "
-msgstr "Lat "
-
-#: src/SARgui.cpp:655 src/SARgui.cpp:692
-msgid "'"
-msgstr "'"
-
-#: src/SARgui.cpp:662 src/SARgui.cpp:699
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid ""
+"   Oil Rig Search\n"
+"(Quadrant Single)"
+msgstr ""
+#
 msgid "\""
 msgstr "\""
-
-#: src/SARgui.cpp:666
-msgid "N"
-msgstr "N"
-
-#: src/SARgui.cpp:666
-msgid "S"
-msgstr "S"
-
-#: src/SARgui.cpp:678
-msgid "Lon"
-msgstr "Lon"
-
-#: src/SARgui.cpp:703
-msgid "E"
-msgstr "E"
-
-#: src/SARgui.cpp:703
-msgid "W"
-msgstr "W"
-
-#: src/SARgui.cpp:721
-msgid "Convert to Degree"
-msgstr "Convertir a graus"
-
-#: src/SARgui.cpp:731
-msgid "\\u00b0 ' \""
-msgstr "\\u00b0 ' \""
-
-#: src/SARgui.cpp:745
-msgid "Results"
-msgstr "Resultats"
-
-#: src/SARgui.cpp:757
-msgid "Search Distance"
-msgstr "Buscar distància"
-
-#: src/SARgui.cpp:774
-msgid "Search Time        "
-msgstr "Buscar temps        "
-
-#: src/SARgui.cpp:781
-msgid "hr"
-msgstr "hr"
-
-#: src/SARgui.cpp:865
-msgid "General settings"
-msgstr "Ajustos generals"
-
-#: src/SARgui.cpp:872
-msgid "Opacity"
-msgstr "Opacitat"
-
-#: src/SARgui.cpp:886
+#
+msgid "'"
+msgstr "'"
+#
+msgid "1"
+msgstr "1"
+#
+msgid "2"
+msgstr "2"
+#
+msgid "Approach course"
+msgstr "Rumb d'aproximació"
+#
+#, fuzzy
+msgid "Approach course    "
+msgstr "Rumb d'aproximació     "
+#
+#, fuzzy
+msgid "Approach course      "
+msgstr "Rumb d'aproximació     "
+#
 msgid "CPU saving settings"
 msgstr "Ajustos d'estalvi de CPU"
-
-#: src/SARgui.cpp:896
-msgid "Capture Ship Position"
-msgstr "Captura posició del vaixell"
-
-#: src/SARgui.cpp:898
-msgid "Leave ticked, so you can use ship's position"
-msgstr "Deixar marcat, per poder utilitzar la posició del vaixell"
-
-#: src/SARgui.cpp:902
+#
 msgid "Capture Cursor Position"
 msgstr "Capturar la posició del Cursor"
-
-#: src/SARgui.cpp:904
-msgid "Leave ticked, so that you can use cursor position."
-msgstr "Deixar marcat, per poder utilitzar la posició del cursor."
-
-#: src/SAR_pi.cpp:154
-msgid "Search and Rescue Patterns"
-msgstr "Plantilles de Cerca i Rescat"
-
-#: src/SAR_pi.cpp:159
-msgid "Creates GPX files with\n"
+#
+msgid "Capture Ship Position"
+msgstr "Captura posició del vaixell"
+#
+msgid "Convert to Degree"
+msgstr "Convertir a graus"
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr "Copiar posició del vaixell (Necessari GPS fix)"
+#
+msgid ""
+"Creates GPX files with\n"
 "Search and rescue patterns."
-msgstr "Crea fitxers GPX amb les plantilles\n"
+msgstr ""
+"Crea fitxers GPX amb les plantilles\n"
 "Cerca i rescat."
-
-#: src/SAR_pi.cpp:232
-msgid "Route Preferences"
-msgstr "Preferències de ruta"
-
-#: src/SARgui_impl.cpp:176
-msgid "Export SAR track GPX file as"
-msgstr "Exportar recorregut SAR del fitxer GPX com a"
-
-#: src/SARgui_impl.cpp:189
-msgid "error in input range validation"
-msgstr "error en la validació de la distància d'entrada"
-
-#: src/SARgui_impl.cpp:232
-msgid "Error occured, aborting SAR calc!"
-msgstr "Error, abandonant càlcul SAR!"
-
-#: src/SARgui_impl.cpp:551 src/SARgui_impl.cpp:552
+#
+msgid "Cursor"
+msgstr "Cursor"
+#
+msgid "Datum (Start of Search)"
+msgstr "Datum (Inici de la cerca)"
+#
+msgid "Decimal Degree"
+msgstr "Graus decimals"
+#
+#, fuzzy
+msgid "Degree, Minutes"
+msgstr "Graus"
+#
+msgid "Degrees"
+msgstr "Graus"
+#
+msgid "E"
+msgstr "E"
+#
+#, fuzzy
+msgid "ES"
+msgstr "S"
+#
+msgid "Error"
+msgstr ""
+#
 msgid "Error in calculation. Please check input!"
 msgstr "Error de càlcul. Si us plau, comproveu l'entrada!"
-
-#: src/SARgui_impl.cpp:606
-msgid "In order to copy the cursor location, select either the Lattitude or Longitude coordinate box, and press <CTRL>+S."
-msgstr "Per poder copiar la ubicació de cursor, seleccioneu caixa de coordenades latitud o longitud i premeu <CTRL>+ S."
-
-#: src/SARgui_impl.h:54
+#
+#, fuzzy
+msgid "Error occurred, aborting SAR calc!"
+msgstr "Error, abandonant càlcul SAR!"
+#
+msgid ""
+"Expanding Square\n"
+"         Search"
+msgstr ""
+"Recercar Augmentant\n"
+" el Quadrat"
+#
+msgid "Export SAR track GPX file as"
+msgstr "Exportar recorregut SAR del fitxer GPX com a"
+#
+msgid "GPX route name (Edit?)"
+msgstr ""
+#
+msgid "General settings"
+msgstr "Ajustos generals"
+#
+msgid "Generate &GPX"
+msgstr "Genera &GPX"
+#
+msgid "Lat "
+msgstr "Lat "
+#
+msgid "Lattitude  "
+msgstr "Latitud  "
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr "Deixar marcat, per poder utilitzar la posició del cursor."
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr "Deixar marcat, per poder utilitzar la posició del vaixell"
+#
+#, fuzzy
+msgid "Leg Distance        "
+msgstr "Longitud del segment          "
+#
+msgid "Leg Space"
+msgstr ""
+#
+#, fuzzy
+msgid "Leg Spacing (S)       "
+msgstr "Espai entre segments                "
+#
+msgid "Lon"
+msgstr "Lon"
+#
+msgid "Longitude"
+msgstr "Longitud"
+#
+msgid "N"
+msgstr "N"
+#
+msgid "NM"
+msgstr "NM"
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+#, fuzzy
+msgid "Number of Legs  "
+msgstr "Nombre de segments   "
+#
+#, fuzzy
+msgid "Number of Legs      "
+msgstr "Nombre de segments       "
+#
+#, fuzzy
+msgid "Number of Legs        "
+msgstr "Nombre de segments       "
+#
+msgid "Number of cycles"
+msgstr "Nombre de cicles"
+#
+msgid "OR"
+msgstr ""
+#
+msgid "Opacity"
+msgstr "Opacitat"
+#
+#, fuzzy
+msgid "PS"
+msgstr "S"
+#
+#, fuzzy
+msgid "Parallel Track Search"
+msgstr "Cerca Paral·lela"
+#
+msgid "Results"
+msgstr "Resultats"
+#
+msgid "Route Preferences"
+msgstr "Preferències de ruta"
+#
+msgid "S"
+msgstr "S"
+#
+msgid "SAR"
+msgstr "SAR"
+#
 msgid "SAR Plugin by SaltyPaws"
 msgstr "Connector SAR per SaltyPaws"
-
+#
+msgid "SAR preferences"
+msgstr "Configuració SAR"
+#
+msgid "SAR: Expanding Square"
+msgstr "SAR: Quadrats augmentats"
+#
+msgid "SAR: Oil Rig"
+msgstr "SAR: Plataforma petroliera"
+#
+#, fuzzy
+msgid "SAR: Parallel Track"
+msgstr "Cerca Paral·lela"
+#
+msgid "SAR: Sector Search"
+msgstr "SAR: Cerca de Sector"
+#
+msgid "Search Distance"
+msgstr "Buscar distància"
+#
+#, fuzzy
+msgid "Search Leg length     "
+msgstr "Buscar temps        "
+#
+#, fuzzy
+msgid "Search Speed       "
+msgstr "Buscar velocitat        "
+#
+#, fuzzy
+msgid "Search Speed           "
+msgstr "Buscar velocitat             "
+#
+msgid "Search Speed             "
+msgstr "Buscar velocitat             "
+#
+#, fuzzy
+msgid "Search Time      "
+msgstr "Buscar temps        "
+#
+msgid "Search and Rescue Patterns"
+msgstr "Plantilles de Cerca i Rescat"
+#
+msgid "Sector Search"
+msgstr "Cerca de Sector"
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr "Vaixell"
+#
+msgid "Ships available           "
+msgstr ""
+#
+msgid "To copy the cursor location press <CTRL>+S"
+msgstr ""
+#
+#, fuzzy
+msgid "Track space (S)          "
+msgstr "Buscar velocitat             "
+#
+#, fuzzy
+msgid "VS"
+msgstr "S"
+#
+msgid "W"
+msgstr "W"
+#
+msgid "Write waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr "error en la validació de la distància d'entrada"
+#
+msgid "hr"
+msgstr "hr"
+#
+msgid "kts"
+msgstr "kts"
+#
+msgid "n"
+msgstr "n"
+#
+#~ msgid "Calculate"
+#~ msgstr "Calcula"
+#
+#~ msgid "For Ship Number      "
+#~ msgstr "Per al vaixell número      "
+#
+#~ msgid ""
+#~ "In order to copy the cursor location, select either the Lattitude or "
+#~ "Longitude coordinate box, and press <CTRL>+S."
+#~ msgstr ""
+#~ "Per poder copiar la ubicació de cursor, seleccioneu caixa de coordenades "
+#~ "latitud o longitud i premeu <CTRL>+ S."
+#
+#~ msgid "Leg Distance              "
+#~ msgstr "Longitud del segment              "
+#
+#~ msgid "Leg Distance               "
+#~ msgstr "Longitud el segment               "
+#
+#~ msgid "Number of Squares"
+#~ msgstr "Nombre de Quadrats"
+#
+#~ msgid "Oil Rig Search"
+#~ msgstr "Cerca de Plataforma petroliera"
+#
+#~ msgid "Route"
+#~ msgstr "Ruta"
+#
+#~ msgid "SAR: Trackline"
+#~ msgstr "SAR: Línia de recorregut"
+#
+#~ msgid "Search Pattern name for GPX file"
+#~ msgstr "Buscar nom de plantilla per al fitxer GPX"
+#
+#~ msgid "Search Speed         "
+#~ msgstr "Buscar velocitat         "
+#
+#~ msgid "\\u00b0"
+#~ msgstr "\\u00b0"
+#
+#~ msgid "\\u00b0 ' \""
+#~ msgstr "\\u00b0 ' \""

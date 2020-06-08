@@ -16,9 +16,13 @@ SET(TITLE_NAME SAR)
 SET(CPACK_PACKAGE_CONTACT "SaltyPaws")
 
 SET(VERSION_MAJOR "2")
-SET(VERSION_MINOR "1")
+SET(VERSION_MINOR "2")
+
+SET(NAME_SUFFIX "ov50")
+SET(CMAKE_CXX_STANDARD 11)
 
 #SET(CMAKE_BUILD_TYPE Debug)
+
 
 # Definitions
 add_definitions (
@@ -30,8 +34,13 @@ add_definitions (
 -DSILENT
 )
 
+OPTION(SAR_USE_SVG "Use SVG graphics" ON)
+
 INCLUDE("cmake/PluginConfigure.cmake")
 
+IF(SAR_USE_SVG)
+  ADD_DEFINITIONS(-DSAR_USE_SVG)
+ENDIF(SAR_USE_SVG)
 
 SET(SRC_SAR
 		src/SAR_pi.h

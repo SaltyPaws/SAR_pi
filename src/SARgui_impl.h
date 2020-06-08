@@ -72,6 +72,10 @@ public:
         void OnORCalc( wxCommandEvent& event );
         void OnORGPX( wxCommandEvent& event );
 
+		void OnSelectNumberShips(wxCommandEvent& event);
+		void Dlg::OnSelectNumberCycles(wxCommandEvent& event);
+
+
         void OnShip( wxCommandEvent& event );
         void OnCursor( wxCommandEvent& event );
         void OnShip( void );
@@ -94,6 +98,7 @@ public:
         double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 
 		void setDDMM();
+		void OnClose(wxCloseEvent& event);
 
 private:
         

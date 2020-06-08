@@ -60,10 +60,23 @@ extern "C" DECL_EXP void destroy_pi(opencpn_plugin* p)
 //---------------------------------------------------------------------------------------------------------
 
 SAR_pi::SAR_pi(void *ppimgr)
-      :opencpn_plugin_18(ppimgr)
+      :opencpn_plugin_116(ppimgr)
 {
       // Create the PlugIn icons
       initialize_images();
+
+	  wxString shareLocn = *GetpSharedDataLocation() +
+		  "plugins" + wxFileName::GetPathSeparator() +
+		  "SAR_pi" + wxFileName::GetPathSeparator()
+		  + "data" + wxFileName::GetPathSeparator();
+	  wxImage panelIcon(shareLocn + "sar_panel_icon.png");
+
+	  if (panelIcon.IsOk())
+		  m_panelBitmap = wxBitmap(panelIcon);
+	  else
+		  wxLogMessage(_("    SAR panel icon has NOT been loaded"));
+
+	  m_bShowSAR = false;
 }
 
 int SAR_pi::Init(void)
@@ -85,15 +98,20 @@ int SAR_pi::Init(void)
       LoadConfig();
 
       //    This PlugIn needs a toolbar icon, so request its insertion
+#ifdef SAR_USE_SVG
+	  m_leftclick_tool_id = InsertPlugInToolSVG("SAR", _svg_sar, _svg_sar, _svg_sar_toggled,
+		  wxITEM_CHECK, _("SAR"), "", NULL, CALCULATOR_TOOL_POSITION, 0, this);
+#else
       m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_rescue, _img_rescue, wxITEM_NORMAL,
             _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
+#endif
 
 	  wxMenu dummy_menu;
 	  m_position_menu_id = AddCanvasContextMenuItem
 
 	  (new wxMenuItem(&dummy_menu, -1, _("Select SAR Datum Point")), this);
-	  SetCanvasContextMenuItemViz(m_position_menu_id, true);
+	  SetCanvasContextMenuItemViz(m_position_menu_id, false);
 
       m_pDialog = NULL;
 
@@ -118,6 +136,9 @@ bool SAR_pi::DeInit(void)
             m_pDialog->Close();
             delete m_pDialog;
             m_pDialog = NULL;
+
+			m_bShowSAR = false;
+			SetToolbarItemState(m_leftclick_tool_id, m_bShowSAR);
       }
       SaveConfig();
       return true;
@@ -145,7 +166,7 @@ int SAR_pi::GetPlugInVersionMinor()
 
 wxBitmap *SAR_pi::GetPlugInBitmap()
 {
-      return _img_rescue;
+	return &m_panelBitmap;
 }
 
 wxString SAR_pi::GetCommonName()
@@ -186,8 +207,27 @@ void SAR_pi::OnToolbarToolCallback(int id)
             m_pDialog->plugin = this;
             m_pDialog->Move(wxPoint(m_route_dialog_x, m_route_dialog_y));
       }
- m_pDialog->Fit();
-      m_pDialog->Show(!m_pDialog->IsShown());
+	  m_pDialog->Fit();
+
+	  //Toggle 
+	  m_bShowSAR = !m_bShowSAR;
+
+	  //    Toggle dialog? 
+	  if (m_bShowSAR) {
+		  m_pDialog->Show();
+		  SetCanvasContextMenuItemViz(m_position_menu_id, true);
+	  }
+	  else {
+		  m_pDialog->Hide();
+		  SetCanvasContextMenuItemViz(m_position_menu_id, false);
+	  }	 
+
+	  // Toggle is handled by the toolbar but we must keep plugin manager b_toggle updated
+	  // to actual status to ensure correct status upon toolbar rebuild
+	  SetToolbarItemState(m_leftclick_tool_id, m_bShowSAR);
+
+	  RequestRefresh(m_parent_window); // refresh main window
+
 }
 
 bool SAR_pi::LoadConfig(void)
@@ -263,11 +303,11 @@ void SAR_pi::SetCursorLatLon(double lat, double lon)
 
 void SAR_pi::SetPositionFix(PlugIn_Position_Fix &pfix)
 {
-    if (m_bCaptureCursor){ //Option to save CPU
+    //if (m_bCaptureCursor){ //Option to save CPU
         m_ship_lon = pfix.Lon;
         m_ship_lat = pfix.Lat;
         //std::cout<<"Ship--> Lat: "<<m_ship_lat<<" Lon: "<<m_ship_lon<<std::endl;
-    }
+    //}
 }
 
 void SAR_pi::OnContextMenuItemCallback(int id)
@@ -282,3 +322,15 @@ void SAR_pi::OnContextMenuItemCallback(int id)
 	}
 }
 
+void SAR_pi::OnSARDialogClose() {
+
+	m_bShowSAR = false;
+	SetToolbarItemState(m_leftclick_tool_id, m_bShowSAR);
+	m_pDialog->Hide();
+	SaveConfig();
+
+	SetCanvasContextMenuItemViz(m_position_menu_id, false);
+
+	RequestRefresh(m_parent_window); // refresh main window
+
+}

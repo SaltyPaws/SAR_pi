@@ -19,17 +19,18 @@
 #include <wx/textctrl.h>
 #include <wx/sizer.h>
 #include <wx/choice.h>
+#include <wx/statline.h>
+#include <wx/checkbox.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
 #include <wx/button.h>
+#include <wx/statbox.h>
 #include <wx/panel.h>
 #include <wx/statbmp.h>
 #include <wx/notebook.h>
-#include <wx/statbox.h>
 #include <wx/dialog.h>
 #include <wx/slider.h>
-#include <wx/checkbox.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -63,9 +64,12 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText33111111;
 		wxStaticText* m_staticText32111111;
 		wxChoice* m_Nship;
-		wxButton* m_button311;
+		wxStaticLine* m_staticline13;
+		wxTextCtrl* m_Route1;
+		wxCheckBox* m_checkBox1;
 		wxButton* m_button3111;
 		wxStaticBitmap* m_bitmap_trackln;
+		wxStaticBitmap* m_bitmap_trackln1;
 		wxPanel* m_panel2;
 		wxPanel* m_panel7;
 		wxStaticText* m_staticText151;
@@ -81,7 +85,9 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText321111121;
 		wxTextCtrl* m_Speed_ES;
 		wxStaticText* m_staticText331111111;
-		wxButton* m_button3112;
+		wxStaticLine* m_staticline12;
+		wxTextCtrl* m_Route2;
+		wxCheckBox* m_checkBox2;
 		wxButton* m_button31111;
 		wxStaticBitmap* m_bitmap_exp_sq;
 		wxPanel* m_panel3;
@@ -98,7 +104,9 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331111112;
 		wxStaticText* m_staticText321111111;
 		wxChoice* m_Ncycles;
-		wxButton* m_button31121;
+		wxStaticLine* m_staticline11;
+		wxTextCtrl* m_Route3;
+		wxCheckBox* m_checkBox3;
 		wxButton* m_button311111;
 		wxStaticBitmap* m_bitmap_sector;
 		wxPanel* m_panek4;
@@ -116,7 +124,9 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText321111123;
 		wxTextCtrl* m_Speed_OR;
 		wxStaticText* m_staticText331111113;
-		wxButton* m_button31122;
+		wxStaticLine* m_staticline1;
+		wxTextCtrl* m_Route4;
+		wxCheckBox* m_checkBox4;
 		wxButton* m_button311112;
 		wxStaticBitmap* m_bitmap_oil_rig;
 		wxNotebook* m_wxNotebook234;
@@ -130,8 +140,6 @@ class DlgDef : public wxDialog
 		wxPanel* m_panel14;
 		wxButton* m_button11;
 		wxButton* m_Cursor;
-		wxStaticText* m_staticText323122;
-		wxTextCtrl* m_Route;
 		wxPanel* m_panelDegreesMinutes;
 		wxStaticText* m_staticText323131;
 		wxTextCtrl* m_Lat1_d1;
@@ -175,13 +183,12 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText331121;
 
 		// Virtual event handlers, overide them in your derived class
-		virtual void OnPSCalc( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnClose( wxCloseEvent& event ) { event.Skip(); }
+		virtual void OnSelectNumberShips( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnPSGPX( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnESCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnESGPX( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnSSCalc( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnSelectNumberCycles( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnSSGPX( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnORCalc( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnORGPX( wxCommandEvent& event ) { event.Skip(); }
 		virtual void key_shortcut( wxKeyEvent& event ) { event.Skip(); }
 		virtual void OnNoteBookFit( wxNotebookEvent& event ) { event.Skip(); }
@@ -193,7 +200,7 @@ class DlgDef : public wxDialog
 	public:
 		wxBoxSizer* bSframe;
 
-		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
+		DlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxMINIMIZE_BOX|wxRESIZE_BORDER );
 		~DlgDef();
 
 };
@@ -216,7 +223,7 @@ class CfgDlgDef : public wxDialog
 		wxCheckBox* m_CaptureShip;
 		wxCheckBox* m_CaptureCursor;
 
-		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE | wxMINIMIZE_BOX | wxRESIZE_BORDER);
+		CfgDlgDef( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~CfgDlgDef();
 
 };
