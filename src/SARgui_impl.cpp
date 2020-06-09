@@ -529,6 +529,10 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 	TiXmlElement * gpxxDisplayColor2 = new TiXmlElement("gpxx:DisplayColor");
 	TiXmlText * textDisplayColor2;
 
+	TiXmlElement * Speed;
+	TiXmlText * textSpeed;
+	wxString mySpeed;	
+
 	bool writeWaypointNames;
 	TiXmlText * text4 = new TiXmlText("");
 	switch (Pattern) {
@@ -593,43 +597,40 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		Extensions->LinkEndChild(EndN);
 		EndN->LinkEndChild(text6);
 
-		TiXmlElement * Speed = new TiXmlElement("opencpn:planned_speed");
-		TiXmlText * textSpeed;
-		wxString mySpeed;
+		
 
 		switch (Pattern) {
-		case 1:
-		{
-			mySpeed = m_Speed_PS->GetValue();
-			textSpeed = new TiXmlText(mySpeed);
-			break;
-		}
-		case 2:
-		{
-			mySpeed = m_Speed_ES->GetValue();
-			textSpeed = new TiXmlText(mySpeed);
-			break;
-		}
-		case 3:
-		{
-			mySpeed = m_Speed_SS->GetValue();
-			textSpeed = new TiXmlText(mySpeed);
-			break;
-		}
-		case 4:
-		{
-			mySpeed = m_Speed_OR->GetValue();
-			textSpeed = new TiXmlText(mySpeed);
-			break;
-		}
-		default:
-		{
-			mySpeed = "0";
-			textSpeed = new TiXmlText(mySpeed);
-		}
-		}
-		Extensions->LinkEndChild(Speed);
-		Speed->LinkEndChild(textSpeed);
+			case 1:
+			{
+				mySpeed = m_Speed_PS->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 2:
+			{
+				mySpeed = m_Speed_ES->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 3:
+			{
+				mySpeed = m_Speed_SS->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			case 4:
+			{
+				mySpeed = m_Speed_OR->GetValue();
+				textSpeed = new TiXmlText(mySpeed);
+				break;
+			}
+			default:
+			{
+				mySpeed = "0";
+				textSpeed = new TiXmlText(mySpeed);
+			}
+		}	
+		
 		
 	}
 
@@ -724,7 +725,13 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			switch (shipsAvailable) {
 			case 0:
 			{
+				Speed = new TiXmlElement("opencpn:planned_speed");
+				Extensions->LinkEndChild(Speed);
+				Speed->LinkEndChild(textSpeed);
+
 				textDisplayColor = new TiXmlText("Black");
+
+				if (nlegs < 3) nlegs = 3;
 
 				gpxxDisplayColor->LinkEndChild(textDisplayColor);
 				gpxx->LinkEndChild(gpxxDisplayColor);
@@ -794,6 +801,11 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 
 			case 1:
 			{
+				
+				Speed = new TiXmlElement("opencpn:planned_speed");
+				Extensions->LinkEndChild(Speed);
+				Speed->LinkEndChild(textSpeed);
+
 				textDisplayColor = new TiXmlText("Green");
 
 				gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -885,6 +897,10 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			case 2:
 			{
 
+			Speed = new TiXmlElement("opencpn:planned_speed");
+			Extensions->LinkEndChild(Speed);
+			Speed->LinkEndChild(textSpeed);
+
 			textDisplayColor = new TiXmlText("Red");
 
 			gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -974,6 +990,10 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			// end 2 units Ship B
 			case 3:
 			{
+				Speed = new TiXmlElement("opencpn:planned_speed");
+				Extensions->LinkEndChild(Speed);
+				Speed->LinkEndChild(textSpeed);
+				
 				textDisplayColor = new TiXmlText("Red");
 
 				gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -1085,6 +1105,10 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 						RouteName2->LinkEndChild(text4);
 						Route2->LinkEndChild(RouteName2);
 
+						Speed = new TiXmlElement("opencpn:planned_speed");
+						Extensions2->LinkEndChild(Speed);
+						Speed->LinkEndChild(textSpeed);
+
 						textDisplayColor2 = new TiXmlText("Green");
 
 						gpxxDisplayColor2->LinkEndChild(textDisplayColor2);
@@ -1100,13 +1124,17 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 				break;
 			}
 
-			
+			// end two units both on same GPX
 			}
 			//Expanding Parallel search End
 			break;
 		}
 		case 2:            // Note the colon, not a semicolon
 		{
+			Speed = new TiXmlElement("opencpn:planned_speed");
+			Extensions->LinkEndChild(Speed);
+			Speed->LinkEndChild(textSpeed);
+
 			textDisplayColor = new TiXmlText("Blue");
 			
 			gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -1189,6 +1217,10 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		case 3: // Vector search start
 		{
 
+			Speed = new TiXmlElement("opencpn:planned_speed");
+			Extensions->LinkEndChild(Speed);
+			Speed->LinkEndChild(textSpeed);
+			
 			textDisplayColor = new TiXmlText("Red");						
 			
 			gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -1360,12 +1392,17 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					text4 = new TiXmlText(routeNameText);
 					RouteName2->LinkEndChild(text4);
 					Route2->LinkEndChild(RouteName2);	
+															
+					Speed = new TiXmlElement("opencpn:planned_speed");
+					Extensions2->LinkEndChild(Speed);
+					Speed->LinkEndChild(textSpeed);
 
 					textDisplayColor2 = new TiXmlText("Blue");
 
 					gpxxDisplayColor2->LinkEndChild(textDisplayColor2);
-					gpxx2->LinkEndChild(gpxxDisplayColor2);
+					gpxx2->LinkEndChild(gpxxDisplayColor2);	
 					Extensions2->LinkEndChild(gpxx2);
+										
 					Route2->LinkEndChild(Extensions2);
 
 				} else {
@@ -1386,7 +1423,11 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		case 4:            // Note the colon, not a semicolon
 		{
 			// Oil rig search start
-
+			
+			Speed = new TiXmlElement("opencpn:planned_speed");
+			Extensions->LinkEndChild(Speed);
+			Speed->LinkEndChild(textSpeed);			
+			
 			textDisplayColor = new TiXmlText("Blue");
 			
 			gpxxDisplayColor->LinkEndChild(textDisplayColor);
@@ -1496,7 +1537,7 @@ void Dlg::OnSelectNumberShips(wxCommandEvent& event) {
 
 	
 	if (s == 2) {
-		m_bitmap_trackln1->SetBitmap(*_img_trackln2_2);
+		m_bitmap_trackln1->SetBitmap(*_img_trackln2_1);
 	}else
 	if (s == 3) {
 			m_bitmap_trackln1->SetBitmap(*_img_trackln_both);
@@ -1512,7 +1553,7 @@ void Dlg::OnSelectNumberShips(wxCommandEvent& event) {
 		}
 		case 1:
 		{
-			m_bitmap_trackln1->SetBitmap(*_img_trackln2_1);
+			m_bitmap_trackln1->SetBitmap(*_img_trackln2_2);
 			m_Route1->SetValue("PS");
 			break;
 		}
