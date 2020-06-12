@@ -52,7 +52,7 @@ public:
 class Dlg : public DlgDef
 {
 public:
-        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION| wxDEFAULT_DIALOG_STYLE | wxMINIMIZE_BOX | wxRESIZE_BORDER);
+        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws/Rasbats"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION| wxDEFAULT_DIALOG_STYLE | wxMINIMIZE_BOX | wxRESIZE_BORDER);
         //void OnToggle( wxCommandEvent& event );
         void OnConvertToDegree( wxCommandEvent& event );
 		void ConvertToDegree();
@@ -74,6 +74,9 @@ public:
 
 		void OnSelectNumberShips(wxCommandEvent& event);
 		void Dlg::OnSelectNumberCycles(wxCommandEvent& event);
+		void Dlg::OnSelectVectorMethod(wxCommandEvent& event);
+		void Dlg::OnSelectPortStarboard(wxCommandEvent& event);
+
 
 
         void OnShip( wxCommandEvent& event );
@@ -92,8 +95,7 @@ public:
 
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);
 
-        void Expanding_Square (double lat, double lon);
-        //friend class function;
+		//friend class function;
         SAR_pi *plugin;
         double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 
