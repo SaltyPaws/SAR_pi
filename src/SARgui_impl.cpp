@@ -445,13 +445,18 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 */
 {
 	wxString defaultFileName;
-
+	int df = this->m_NPortStbd->GetCurrentSelection();
 	switch (Pattern) {
 	case 1: {
 		int ch = this->m_Nship->GetCurrentSelection();
 		wxString chText;
 		if (ch == 0) {
-			defaultFileName = "PS";
+			if (df == 0) {
+				defaultFileName = "PS-Starboard";
+			}
+			else if (df == 1) {
+				defaultFileName = "PS-Port";
+			}
 		}else
 		if (ch == 1) {
 			chText = "PS-AB";
@@ -551,8 +556,9 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 	TiXmlText * textSpeed;
 	wxString mySpeed;	
 
-	bool writeWaypointNames;
-	bool showMarkIcons;
+	bool writeWaypointNames = true;
+	bool showMarkIcons = true;
+
 	TiXmlText * text4 = new TiXmlText("");
 	switch (Pattern) {
 		case 1:
@@ -565,7 +571,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			}
 			
 			wxString text = "PS";
-			text = text + AB;
+			text = defaultFileName + AB;
 			text4 = new TiXmlText(text);			
 			writeWaypointNames = this->m_checkBox1->GetValue();
 			showMarkIcons = this->m_checkBoxIcons1->GetValue();
@@ -573,14 +579,20 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		}
 		case 2:
 		{
-			text4 = new TiXmlText("SS");
+			text4 = new TiXmlText(defaultFileName);
 			writeWaypointNames = this->m_checkBox2->GetValue();
 			showMarkIcons = this->m_checkBoxIcons2->GetValue();
 			break;
 		}
 		case 3:
 		{			
-			text4 = new TiXmlText("VS-First Pass");			
+			int nc = this->m_Ncycles->GetCurrentSelection();
+			if (nc == 0) {
+				text4 = new TiXmlText(defaultFileName);
+			}
+			else if (nc == 1) {
+				text4 = new TiXmlText(defaultFileName + "-FirstPass");
+			}
 			
 			writeWaypointNames = this->m_checkBox3->GetValue();
 			showMarkIcons = this->m_checkBoxIcons3->GetValue();
@@ -588,7 +600,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		}
 		case 4:
 		{
-			text4 = new TiXmlText("QS");
+			text4 = new TiXmlText(defaultFileName);
 			writeWaypointNames = this->m_checkBox4->GetValue();
 			showMarkIcons = this->m_checkBoxIcons4->GetValue();
 			break;
@@ -963,7 +975,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					if (i == 1) {
 						if (write_file){
 							wxString routeNameText = "PS";
-							routeNameText = routeNameText + "-B";
+							routeNameText = defaultFileName + "-B";
 							text4 = new TiXmlText(routeNameText);
 							RouteName2->LinkEndChild(text4);
 							Route2->LinkEndChild(RouteName2);
@@ -1273,11 +1285,13 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					if (write_file) {
 						if (x == 8 && two_cycles) {
 							if (write_file){
-								wxString routeNameText;
+								wxString routeNameText = "";
+								text4 = new TiXmlText(defaultFileName + routeNameText);
 								if (this->m_Ncycles->GetCurrentSelection() == 1) {
-									routeNameText = "VS-SecondPass";
+									routeNameText = "-SecondPass";
+									text4 = new TiXmlText(defaultFileName + routeNameText);
 								}
-								text4 = new TiXmlText(routeNameText);
+								
 								RouteName2->LinkEndChild(text4);
 								Route2->LinkEndChild(RouteName2);
 
@@ -1509,11 +1523,13 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 						
 							if (x == 8 && two_cycles) {
 								if (write_file) {
-								wxString routeNameText;
+								wxString routeNameText = "";
+								text4 = new TiXmlText(defaultFileName + routeNameText);
 								if (this->m_Ncycles->GetCurrentSelection() == 1) {
-									routeNameText = "VS-SecondPass";
+									routeNameText = "-SecondPass";
+									text4 = new TiXmlText(defaultFileName + routeNameText);
 								}
-								text4 = new TiXmlText(routeNameText);
+								
 								RouteName2->LinkEndChild(text4);
 								Route2->LinkEndChild(RouteName2);
 
