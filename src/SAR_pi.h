@@ -99,6 +99,7 @@ public:
       double GetCursorLat(void) {return m_cursor_lat;}
 
 	  int m_position_menu_id;
+	  
 
 private:
       wxFileConfig      *m_pconfig;

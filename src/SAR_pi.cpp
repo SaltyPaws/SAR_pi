@@ -107,6 +107,8 @@ int SAR_pi::Init(void)
              CALCULATOR_TOOL_POSITION, 0, this);
 #endif
 
+	  
+
 	  wxMenu dummy_menu;
 	  m_position_menu_id = AddCanvasContextMenuItem
 
@@ -129,7 +131,9 @@ bool SAR_pi::DeInit(void)
       //    Record the dialog position
       if (NULL != m_pDialog)
       {
-            //Capture dialog position
+		  
+
+		  //Capture dialog position
             wxPoint p = m_pDialog->GetPosition();
             SetCalculatorDialogX(p.x);
             SetCalculatorDialogY(p.y);

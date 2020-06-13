@@ -32,6 +32,7 @@
 #include <wx/dialog.h>
 #include <wx/slider.h>
 
+
 ///////////////////////////////////////////////////////////////////////////
 
 
@@ -61,8 +62,7 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText32111112;
 		wxTextCtrl* m_Speed_PS;
 		wxStaticText* m_staticText33111111;
-		wxStaticLine* m_staticline13;
-		wxTextCtrl* m_Route1;
+		wxStaticLine* m_staticline8;
 		wxButton* m_button3111;
 		wxStaticBitmap* m_bitmap_trackln1;
 		wxStaticLine* m_staticline7;
@@ -71,13 +71,14 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticTextPortStbd;
 		wxChoice* m_NPortStbd;
 		wxCheckBox* m_checkBox1;
+		wxCheckBox* m_checkBoxIcons1;
 		wxPanel* m_panel2;
 		wxPanel* m_panel7;
 		wxStaticText* m_staticText322;
 		wxTextCtrl* m_Approach_ES;
 		wxStaticText* m_staticText332;
 		wxStaticText* m_staticText3211;
-		wxTextCtrl* m_dx_ES;
+		wxChoice* m_dx_ES;
 		wxStaticText* m_staticText3311;
 		wxStaticText* m_staticText32111;
 		wxTextCtrl* m_n_ES;
@@ -86,8 +87,8 @@ class DlgDef : public wxDialog
 		wxTextCtrl* m_Speed_ES;
 		wxStaticText* m_staticText331111111;
 		wxStaticLine* m_staticline12;
-		wxTextCtrl* m_Route2;
 		wxCheckBox* m_checkBox2;
+		wxCheckBox* m_checkBoxIcons2;
 		wxButton* m_button31111;
 		wxStaticBitmap* m_bitmap_exp_sq;
 		wxPanel* m_panel3;
@@ -96,7 +97,7 @@ class DlgDef : public wxDialog
 		wxTextCtrl* m_Approach_SS;
 		wxStaticText* m_staticText33;
 		wxStaticText* m_staticText321;
-		wxTextCtrl* m_dx_SS;
+		wxChoice* m_dx_SS;
 		wxStaticText* m_staticText331;
 		wxStaticText* m_staticText321111122;
 		wxTextCtrl* m_Speed_SS;
@@ -104,19 +105,19 @@ class DlgDef : public wxDialog
 		wxStaticText* m_staticText321111111;
 		wxChoice* m_Ncycles;
 		wxStaticLine* m_staticline11;
-		wxTextCtrl* m_Route3;
+		wxCheckBox* m_checkBox3;
+		wxCheckBox* m_checkBoxIcons3;
 		wxButton* m_button311111;
 		wxStaticBitmap* m_bitmap_sector;
 		wxStaticText* m_staticText3211111111;
 		wxChoice* m_VSMethod;
-		wxCheckBox* m_checkBox3;
 		wxPanel* m_panek4;
 		wxPanel* m_panel10;
 		wxStaticText* m_staticText323;
 		wxTextCtrl* m_Approach_OR;
 		wxStaticText* m_staticText333;
 		wxStaticText* m_staticText3212;
-		wxTextCtrl* m_dx_OR;
+		wxChoice* m_dx_OR;
 		wxStaticText* m_staticText3312;
 		wxStaticText* m_staticText32121;
 		wxTextCtrl* m_NLegs_OR;
@@ -125,8 +126,8 @@ class DlgDef : public wxDialog
 		wxTextCtrl* m_Speed_OR;
 		wxStaticText* m_staticText331111113;
 		wxStaticLine* m_staticline1;
-		wxTextCtrl* m_Route4;
 		wxCheckBox* m_checkBox4;
+		wxCheckBox* m_checkBoxIcons4;
 		wxButton* m_button311112;
 		wxStaticBitmap* m_bitmap_oil_rig;
 		wxNotebook* m_wxNotebook234;
@@ -173,8 +174,7 @@ class DlgDef : public wxDialog
 		wxChoice* m_Lon1_EW;
 		wxButton* m_button81;
 		wxPanel* m_panel111;
-		wxPanel* m_panel61;
-		wxStaticText* m_staticText15111;
+		wxButton* m_button9;
 		wxStaticText* m_staticText32211;
 		wxTextCtrl* m_Distance;
 		wxStaticText* m_staticText33211;
@@ -188,7 +188,6 @@ class DlgDef : public wxDialog
 		virtual void OnSelectNumberShips( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnSelectPortStarboard( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnESGPX( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnSelectNumberCycles( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnSSGPX( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnSelectVectorMethod( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnORGPX( wxCommandEvent& event ) { event.Skip(); }
@@ -197,6 +196,7 @@ class DlgDef : public wxDialog
 		virtual void OnShip( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCursorSelect( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnConvertToDegree( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnCalculate( wxCommandEvent& event ) { event.Skip(); }
 
 
 	public:

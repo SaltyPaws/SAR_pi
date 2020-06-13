@@ -60,6 +60,8 @@ public:
         void OnNoteBookFit( wxCommandEvent& event );
         void OnFit( wxCommandEvent& event );
 
+		void OnCalculate(wxCommandEvent& event);
+
         void OnPSCalc( wxCommandEvent& event );
         void OnPSGPX( wxCommandEvent& event );
 
@@ -73,9 +75,8 @@ public:
         void OnORGPX( wxCommandEvent& event );
 
 		void OnSelectNumberShips(wxCommandEvent& event);
-		void Dlg::OnSelectNumberCycles(wxCommandEvent& event);
-		void Dlg::OnSelectVectorMethod(wxCommandEvent& event);
-		void Dlg::OnSelectPortStarboard(wxCommandEvent& event);
+		void OnSelectVectorMethod(wxCommandEvent& event);
+		void OnSelectPortStarboard(wxCommandEvent& event);
 
 
 
