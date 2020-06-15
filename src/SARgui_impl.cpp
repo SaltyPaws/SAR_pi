@@ -391,44 +391,24 @@ void Dlg::OnCalculate(wxCommandEvent& event) {
 	}	
 }
 
-
-void Dlg::OnPSCalc( wxCommandEvent& event )
-{
-   // wxMessageBox(_("Function not yet implemented :p")) ;
-   Calculate(event, false, 1);
-}
-
 void Dlg::OnPSGPX( wxCommandEvent& event )
 {
    // wxMessageBox(_("Function not yet implemented :p")) ;
    Calculate(event, true, 1);
 }
-void Dlg::OnESCalc( wxCommandEvent& event )
-{
-   // wxMessageBox(_("Function not yet implemented :p")) ;
-   Calculate(event, false, 2);
-}
+
 void Dlg::OnESGPX( wxCommandEvent& event )
 {
     //wxMessageBox(_("Function not yet implemented :p")) ;
     Calculate(event, true, 2);
 }
-void Dlg::OnSSCalc( wxCommandEvent& event )
-{
-   // wxMessageBox(_("Function not yet implemented :p")) ;
-   Calculate(event, false, 3);
-}
+
 void Dlg::OnSSGPX( wxCommandEvent& event )
 {
    // wxMessageBox(_("Function not yet implemented :p")) ;
    Calculate(event, true, 3);
 }
 
-void Dlg::OnORCalc( wxCommandEvent& event )
-{
-   // wxMessageBox(_("Function not yet implemented :p")) ;
-   Calculate(event, false, 4);
-}
 void Dlg::OnORGPX( wxCommandEvent& event )
 {
    // wxMessageBox(_("Function not yet implemented :p")) ;
@@ -452,16 +432,17 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		wxString chText;
 		if (ch == 0) {
 			if (df == 0) {
-				defaultFileName = "PS-Starboard";
+				defaultFileName = "PS-1";
 			}
 			else if (df == 1) {
-				defaultFileName = "PS-Port";
+				defaultFileName = "PS-2";
+				m_NPortStbd->SetSelection(1);
+				m_bitmap_trackln1->SetBitmap(*_img_trackln1_port);
 			}
 		}else
 		if (ch == 1) {
 			chText = "PS-AB";
-			defaultFileName = chText;
-			this->m_NPortStbd->SetSelection(0);
+			defaultFileName = chText;			
 		}			
 		break;
 	}
@@ -473,11 +454,11 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		int vh = this->m_Ncycles->GetCurrentSelection();
 		wxString chText;
 		if (vh == 0) {
-			defaultFileName = "VS-SinglePass";
+			defaultFileName = "VS";
 		}
 		else
 		if(vh == 1){
-			defaultFileName = "VS-TwoPasses";
+			defaultFileName = "VS-12";
 		}
 		break;
 	}
@@ -565,9 +546,8 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 		{		
 			wxString AB = "";
 			int sl = m_Nship->GetCurrentSelection();
-			if (sl == 1) {
-				this->m_NPortStbd->SetSelection(0);
-				AB = "-A";
+			if (sl == 1) {				
+				AB = "-1";
 			}
 			
 			wxString text = "PS";
@@ -591,7 +571,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 				text4 = new TiXmlText(defaultFileName);
 			}
 			else if (nc == 1) {
-				text4 = new TiXmlText(defaultFileName + "-FirstPass");
+				text4 = new TiXmlText(defaultFileName + "-1");
 			}
 			
 			writeWaypointNames = this->m_checkBox3->GetValue();
@@ -779,7 +759,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 
 				//distRhumb(latDatum, lonDatum, lati, loni, &startSARdist, &startCse);
 				
-				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T(".      CSP"), _T("diamond"), _T("WPT")); }
+				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T("CSP"), _T("diamond"), _T("WPT")); }
 				
 				int ps = this->m_NPortStbd->GetCurrentSelection();
 							
@@ -854,7 +834,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					Extensions->LinkEndChild(Speed);
 					Speed->LinkEndChild(textSpeed);
 				
-					textDisplayColor = new TiXmlText("Red");
+					textDisplayColor = new TiXmlText("Green");
 
 					gpxxDisplayColor->LinkEndChild(textDisplayColor);
 					gpxx->LinkEndChild(gpxxDisplayColor);
@@ -867,7 +847,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					
 
 					if (i == 1) {
-						if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), latDatum), wxString::Format(wxT("%f"), lonDatum), _T(".     Datum"), _T("diamond"), _T("WPT")); }
+						if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), latDatum), wxString::Format(wxT("%f"), lonDatum), _T("Datum"), _T("diamond"), _T("WPT")); }
 						ESheading = approach - 90.0;
 						ESdistance = leg_distancey / 2;
 						destRhumb(latTemp, lonTemp, -ESheading, ESdistance, &lati, &loni);
@@ -975,7 +955,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					if (i == 1) {
 						if (write_file){
 							wxString routeNameText = "PS";
-							routeNameText = defaultFileName + "-B";
+							routeNameText = defaultFileName + "-2";
 							text4 = new TiXmlText(routeNameText);
 							RouteName2->LinkEndChild(text4);
 							Route2->LinkEndChild(RouteName2);
@@ -984,7 +964,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 							Extensions2->LinkEndChild(Speed);
 							Speed->LinkEndChild(textSpeed);
 
-							textDisplayColor2 = new TiXmlText("Green");
+							textDisplayColor2 = new TiXmlText("Red");
 
 							gpxxDisplayColor2->LinkEndChild(textDisplayColor2);
 							gpxx2->LinkEndChild(gpxxDisplayColor2);
@@ -1049,7 +1029,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			*/
 
 			//add  datum			
-			if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T(".     Datum"), _T("diamond"), _T("WPT")); }
+			if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T("Datum"), _T("diamond"), _T("WPT")); }
 			
 			int multiplier = 0;
 			double lati, loni;
@@ -1169,8 +1149,8 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 				lonDatum = lon1;
 
 				// Add the CSP to the pattern
-				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lati), wxString::Format(wxT("%f"), loni), _T(".     CSP"), _T("circle"), _T("WPT")); }
-				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T(".     Datum"), _T("diamond"), _T("WPT")); }
+				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lati), wxString::Format(wxT("%f"), loni), _T("CSP"), _T("circle"), _T("WPT")); }
+				if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T("Datum"), _T("diamond"), _T("WPT")); }
 
 
 				lat1 = lati;
@@ -1219,7 +1199,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					if (x == 7 || x == 9) {
 						wpt_title = wxT("");
 						if (writeWaypointNames) {
-							wpt_title = _T(".      Datum");
+							wpt_title = _T("Datum");
 						}
 					}
 
@@ -1234,7 +1214,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 					if (x == 16) {
 						wpt_title = wxT("");
 						if (writeWaypointNames) {
-							wpt_title = _T(".      Datum");
+							wpt_title = _T("Datum");
 						}
 					}
 
@@ -1288,7 +1268,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 								wxString routeNameText = "";
 								text4 = new TiXmlText(defaultFileName + routeNameText);
 								if (this->m_Ncycles->GetCurrentSelection() == 1) {
-									routeNameText = "-SecondPass";
+									routeNameText = "-2";
 									text4 = new TiXmlText(defaultFileName + routeNameText);
 								}
 								
@@ -1393,7 +1373,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 
 					// Add the CSP to the pattern
 					//if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lati), wxString::Format(wxT("%f"), loni), _T("CSP"), _T("circle"), _T("WPT")); }
-					if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T(".     Datum"), _T("diamond"), _T("WPT")); }
+					if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T("Datum"), _T("diamond"), _T("WPT")); }
 
 					for (int x = 1; x <= ((two_cycles) ? 16 : 8); x++) { //Loop over the legs
 
@@ -1440,7 +1420,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 						if (x == 7 || x == 9) {
 							wpt_title = wxT("");
 							if (writeWaypointNames) {
-								wpt_title = _T(".      Datum");
+								wpt_title = _T("Datum");
 							}
 						}
 
@@ -1455,7 +1435,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 						if (x == 16) {
 							wpt_title = wxT("");
 							if (writeWaypointNames) {
-								wpt_title = _T(".      Datum");
+								wpt_title = _T("Datum");
 							}
 						}
 
@@ -1526,7 +1506,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 								wxString routeNameText = "";
 								text4 = new TiXmlText(defaultFileName + routeNameText);
 								if (this->m_Ncycles->GetCurrentSelection() == 1) {
-									routeNameText = "-SecondPass";
+									routeNameText = "-2";
 									text4 = new TiXmlText(defaultFileName + routeNameText);
 								}
 								
@@ -1609,7 +1589,7 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			*/
 
 			//add  datum
-			if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T(".     Datum"), _T("diamond"), _T("WPT")); }
+			if (write_file) { Addpoint(Route, wxString::Format(wxT("%f"), lat1), wxString::Format(wxT("%f"), lon1), _T("Datum"), _T("diamond"), _T("WPT")); }
 			int n = 0;
 			int multiplier = 1;
 			double lati, loni, ESheading, ESdistance;
@@ -1684,6 +1664,15 @@ void Dlg::Calculate(wxCommandEvent& event, bool write_file, int Pattern)
 			wxMessageBox(_("Error in calculation. Please check input!"));
 		}
 	}
+	if (this->m_Nship->GetCurrentSelection() == 1) {		
+		this->m_bitmap_trackln1->SetBitmap(*_img_trackln_both);
+		this->m_NPortStbd->SetSelection(0);
+	}
+	else {
+		this->m_NPortStbd->SetSelection(0);
+		this->m_bitmap_trackln1->SetBitmap(*_img_trackln1);
+	}
+	this->Fit();
 }
 
 
@@ -1696,14 +1685,14 @@ void Dlg::OnSelectNumberShips(wxCommandEvent& event) {
 		{
 			m_bitmap_trackln1->SetBitmap(*_img_trackln1);			
 			m_staticTextPortStbd->Show();
-			m_NPortStbd->Show();
+			m_NPortStbd->Show();			
+			m_NPortStbd->SetSelection(0);
 			break;
 		}
 		case 1: 
 		{
 			m_bitmap_trackln1->SetBitmap(*_img_trackln_both);			
 			m_staticTextPortStbd->Hide();
-			m_NPortStbd->SetSelection(0);
 			m_NPortStbd->Hide();
 			break;
 		}
@@ -1713,7 +1702,8 @@ void Dlg::OnSelectNumberShips(wxCommandEvent& event) {
 			break;
 		}
 	}
-
+	
+	this->Fit(); // refresh
 }
 
 void Dlg::OnSelectVectorMethod(wxCommandEvent& event) {
@@ -1835,7 +1825,7 @@ void Dlg::OnCursorSelect(wxCommandEvent& event){
 	m_Lat1->Clear();
 	m_Lon1->Clear();
 
-    wxMessageBox(_("To copy the cursor location press <CTRL>+S") );
+    wxMessageBox(_("To copy the cursor location place the cursor on the chart \n     ...and press <CTRL>+S") );
    // wxMessageBox(_("While this button is selected, or the cursor is in the lattitude or longitude box, you can copy the cursor location with <CTRL>+S") );
     event.Skip();
 }

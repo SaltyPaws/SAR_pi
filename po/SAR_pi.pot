@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: sar_pi 2.2\n"
+"Project-Id-Version: sar_pi 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-09 11:11+0100\n"
+"POT-Creation-Date: 2020-06-15 07:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,293 +17,304 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/SARgui.h:203 src/SAR_pi.cpp:103 src/SAR_pi.cpp:106 src/SAR_pi.cpp:174
+#: src/SARgui.h:205 src/SAR_pi.cpp:103 src/SAR_pi.cpp:106 src/SAR_pi.cpp:178
 msgid "SAR"
 msgstr ""
 
-#: src/SARgui.h:226 src/SARgui_impl.h:49
+#: src/SARgui.h:228 src/SARgui_impl.h:49
 msgid "SAR preferences"
 msgstr ""
 
-#: src/SARgui.cpp:30
-msgid "Parallel Track Search"
-msgstr ""
-
-#: src/SARgui.cpp:42
+#: src/SARgui.cpp:36
 msgid "Initial leg course        "
 msgstr ""
 
-#: src/SARgui.cpp:49 src/SARgui.cpp:220 src/SARgui.cpp:349 src/SARgui.cpp:477
-#: src/SARgui.cpp:511
+#: src/SARgui.cpp:43 src/SARgui.cpp:233 src/SARgui.cpp:366 src/SARgui.cpp:520
 msgid "Degrees"
 msgstr ""
 
-#: src/SARgui.cpp:59
+#: src/SARgui.cpp:53
 msgid "Search Leg length     "
 msgstr ""
 
-#: src/SARgui.cpp:66 src/SARgui.cpp:83 src/SARgui.cpp:237 src/SARgui.cpp:366
-#: src/SARgui.cpp:494 src/SARgui.cpp:890
+#: src/SARgui.cpp:60 src/SARgui.cpp:77 src/SARgui.cpp:253 src/SARgui.cpp:386
+#: src/SARgui.cpp:540 src/SARgui.cpp:939
 msgid "NM"
 msgstr ""
 
-#: src/SARgui.cpp:76
+#: src/SARgui.cpp:70
 msgid "Track space (S)          "
 msgstr ""
 
-#: src/SARgui.cpp:93
+#: src/SARgui.cpp:87
 msgid "Number of Legs        "
 msgstr ""
 
-#: src/SARgui.cpp:100 src/SARgui.cpp:254
+#: src/SARgui.cpp:94 src/SARgui.cpp:270 src/SARgui.cpp:557
 msgid "n"
 msgstr ""
 
-#: src/SARgui.cpp:110
+#: src/SARgui.cpp:104
 msgid "Search Speed             "
 msgstr ""
 
-#: src/SARgui.cpp:117 src/SARgui.cpp:271 src/SARgui.cpp:383 src/SARgui.cpp:528
+#: src/SARgui.cpp:111 src/SARgui.cpp:287 src/SARgui.cpp:403 src/SARgui.cpp:574
 msgid "kts"
 msgstr ""
 
-#: src/SARgui.cpp:127
-msgid "Route for Ship           "
-msgstr ""
-
-#: src/SARgui.cpp:131
-msgid "1 unit only"
-msgstr ""
-
-#: src/SARgui.cpp:131
-msgid "2 units: Ship A"
-msgstr ""
-
-#: src/SARgui.cpp:131
-msgid "2 units: Ship B"
-msgstr ""
-
-#: src/SARgui.cpp:131
-msgid "2 units A&B"
-msgstr ""
-
-#: src/SARgui.cpp:144 src/SARgui.cpp:282 src/SARgui.cpp:410 src/SARgui.cpp:539
-msgid "GPX route name"
-msgstr ""
-
-#: src/SARgui.cpp:146
-msgid "PS"
-msgstr ""
-
-#: src/SARgui.cpp:149 src/SARgui.cpp:287 src/SARgui.cpp:415 src/SARgui.cpp:544
-msgid "Write waypoint names     "
-msgstr ""
-
-#: src/SARgui.cpp:156 src/SARgui.cpp:294 src/SARgui.cpp:422 src/SARgui.cpp:551
+#: src/SARgui.cpp:127 src/SARgui.cpp:317 src/SARgui.cpp:449 src/SARgui.cpp:604
 msgid "Generate &GPX"
 msgstr ""
 
-#: src/SARgui.cpp:190
-msgid "SAR: Parallel Track"
+#: src/SARgui.cpp:161
+msgid "Route for Ship           "
 msgstr ""
 
-#: src/SARgui.cpp:201
-msgid ""
-"Expanding Square\n"
-"         Search"
+#: src/SARgui.cpp:165
+msgid "1 unit only"
 msgstr ""
 
-#: src/SARgui.cpp:213
+#: src/SARgui.cpp:165
+msgid "2 units A&B"
+msgstr ""
+
+#: src/SARgui.cpp:177
+msgid "First turn                    "
+msgstr ""
+
+#: src/SARgui.cpp:181
+msgid "STARBOARD"
+msgstr ""
+
+#: src/SARgui.cpp:181
+msgid "PORT"
+msgstr ""
+
+#: src/SARgui.cpp:193 src/SARgui.cpp:303 src/SARgui.cpp:435
+msgid "Waypoint names     "
+msgstr ""
+
+#: src/SARgui.cpp:197 src/SARgui.cpp:307 src/SARgui.cpp:439 src/SARgui.cpp:594
+msgid "Icons "
+msgstr ""
+
+#: src/SARgui.cpp:211
+msgid "Parallel Track"
+msgstr ""
+
+#: src/SARgui.cpp:226
 msgid "Initial course    "
 msgstr ""
 
-#: src/SARgui.cpp:230
+#: src/SARgui.cpp:243
 msgid "Leg Spacing (S)       "
 msgstr ""
 
-#: src/SARgui.cpp:247
-msgid "Number of Legs      "
+#: src/SARgui.cpp:247 src/SARgui.cpp:380 src/SARgui.cpp:534
+msgid "3"
 msgstr ""
 
-#: src/SARgui.cpp:264
-msgid "Search Speed           "
-msgstr ""
-
-#: src/SARgui.cpp:284
-msgid "SS"
-msgstr ""
-
-#: src/SARgui.cpp:321
-msgid "SAR: Expanding Square"
-msgstr ""
-
-#: src/SARgui.cpp:330
-msgid "Sector Search"
-msgstr ""
-
-#: src/SARgui.cpp:342 src/SARgui.cpp:470
-msgid "Initial course"
-msgstr ""
-
-#: src/SARgui.cpp:359
-msgid "Search Radius"
-msgstr ""
-
-#: src/SARgui.cpp:376 src/SARgui.cpp:521
-msgid "Search Speed       "
-msgstr ""
-
-#: src/SARgui.cpp:393
-msgid "Number of passes"
-msgstr ""
-
-#: src/SARgui.cpp:397
-msgid "1"
-msgstr ""
-
-#: src/SARgui.cpp:397
+#: src/SARgui.cpp:247 src/SARgui.cpp:380 src/SARgui.cpp:417 src/SARgui.cpp:534
 msgid "2"
 msgstr ""
 
-#: src/SARgui.cpp:412
-msgid "VS"
+#: src/SARgui.cpp:247 src/SARgui.cpp:380 src/SARgui.cpp:417 src/SARgui.cpp:534
+msgid "1"
 msgstr ""
 
-#: src/SARgui.cpp:449
-msgid "SAR: Sector Search"
+#: src/SARgui.cpp:247 src/SARgui.cpp:380 src/SARgui.cpp:534
+msgid "0.5"
 msgstr ""
 
-#: src/SARgui.cpp:458
-msgid ""
-"   Oil Rig Search\n"
-"(Quadrant Single)"
+#: src/SARgui.cpp:247 src/SARgui.cpp:534
+msgid "0.2"
 msgstr ""
 
-#: src/SARgui.cpp:487
-msgid "Leg Space"
+#: src/SARgui.cpp:247 src/SARgui.cpp:534
+msgid "0.1"
 msgstr ""
 
-#: src/SARgui.cpp:504
+#: src/SARgui.cpp:263
+msgid "Number of Legs      "
+msgstr ""
+
+#: src/SARgui.cpp:280
+msgid "Search Speed           "
+msgstr ""
+
+#: src/SARgui.cpp:344
+msgid "Expanding Square"
+msgstr ""
+
+#: src/SARgui.cpp:359
+msgid "Initial course        "
+msgstr ""
+
+#: src/SARgui.cpp:376
+msgid "Search Radius      "
+msgstr ""
+
+#: src/SARgui.cpp:380
+msgid "5"
+msgstr ""
+
+#: src/SARgui.cpp:380
+msgid "4"
+msgstr ""
+
+#: src/SARgui.cpp:396 src/SARgui.cpp:567
+msgid "Search Speed       "
+msgstr ""
+
+#: src/SARgui.cpp:413
+msgid "Number of passes"
+msgstr ""
+
+#: src/SARgui.cpp:478
+msgid "Search Method  "
+msgstr ""
+
+#: src/SARgui.cpp:482
+msgid "IAMSAR"
+msgstr ""
+
+#: src/SARgui.cpp:482
+msgid "USCG"
+msgstr ""
+
+#: src/SARgui.cpp:498
+msgid "Sector Search"
+msgstr ""
+
+#: src/SARgui.cpp:513
+msgid "Initial course"
+msgstr ""
+
+#: src/SARgui.cpp:530
+msgid "Leg Space             "
+msgstr ""
+
+#: src/SARgui.cpp:550
 msgid "Number of Legs  "
 msgstr ""
 
-#: src/SARgui.cpp:541
-msgid "QS"
+#: src/SARgui.cpp:590
+msgid "Waypoint names "
 msgstr ""
 
-#: src/SARgui.cpp:578
-msgid "SAR: Oil Rig"
+#: src/SARgui.cpp:632
+msgid "Oil Rig (Quadrant Single)"
 msgstr ""
 
-#: src/SARgui.cpp:591 src/SARgui.cpp:670 src/SARgui.cpp:760
-msgid "Datum (Start of Search)"
+#: src/SARgui.cpp:645 src/SARgui.cpp:724 src/SARgui.cpp:814
+msgid "DATUM / CSP (Start of Search)"
 msgstr ""
 
-#: src/SARgui.cpp:602
-msgid "Lattitude  "
+#: src/SARgui.cpp:656
+msgid "Latitude  "
 msgstr ""
 
-#: src/SARgui.cpp:619
+#: src/SARgui.cpp:673
 msgid "Longitude"
 msgstr ""
 
-#: src/SARgui.cpp:640
+#: src/SARgui.cpp:694
 msgid "Ship"
 msgstr ""
 
-#: src/SARgui.cpp:641
+#: src/SARgui.cpp:695
 msgid "Copy ship position (GPS fix required)"
 msgstr ""
 
-#: src/SARgui.cpp:645
+#: src/SARgui.cpp:699
 msgid "Cursor"
 msgstr ""
 
-#: src/SARgui.cpp:664
-msgid "Decimal Degree"
+#: src/SARgui.cpp:718
+msgid "D.ddd"
 msgstr ""
 
-#: src/SARgui.cpp:678 src/SARgui.cpp:768
+#: src/SARgui.cpp:732 src/SARgui.cpp:822
 msgid "Lat "
 msgstr ""
 
-#: src/SARgui.cpp:692 src/SARgui.cpp:722 src/SARgui.cpp:782 src/SARgui.cpp:819
+#: src/SARgui.cpp:746 src/SARgui.cpp:776 src/SARgui.cpp:836 src/SARgui.cpp:873
 msgid "'"
 msgstr ""
 
-#: src/SARgui.cpp:696 src/SARgui.cpp:793
+#: src/SARgui.cpp:750 src/SARgui.cpp:847
 msgid "N"
 msgstr ""
 
-#: src/SARgui.cpp:696 src/SARgui.cpp:793
+#: src/SARgui.cpp:750 src/SARgui.cpp:847
 msgid "S"
 msgstr ""
 
-#: src/SARgui.cpp:708 src/SARgui.cpp:805
+#: src/SARgui.cpp:762 src/SARgui.cpp:859
 msgid "Lon"
 msgstr ""
 
-#: src/SARgui.cpp:726 src/SARgui.cpp:830
+#: src/SARgui.cpp:780 src/SARgui.cpp:884
 msgid "E"
 msgstr ""
 
-#: src/SARgui.cpp:726 src/SARgui.cpp:830
+#: src/SARgui.cpp:780 src/SARgui.cpp:884
 msgid "W"
 msgstr ""
 
-#: src/SARgui.cpp:744 src/SARgui.cpp:848
+#: src/SARgui.cpp:798 src/SARgui.cpp:902
 msgid "Convert to Degree"
 msgstr ""
 
-#: src/SARgui.cpp:754
-msgid "Degree, Minutes"
+#: src/SARgui.cpp:808
+msgid "D MM.mmm"
 msgstr ""
 
-#: src/SARgui.cpp:789 src/SARgui.cpp:826
+#: src/SARgui.cpp:843 src/SARgui.cpp:880
 msgid "\""
 msgstr ""
 
-#: src/SARgui.cpp:871
-msgid "Results"
+#: src/SARgui.cpp:912
+msgid "D MM SS"
 msgstr ""
 
-#: src/SARgui.cpp:883
-msgid "Search Distance"
+#: src/SARgui.cpp:926
+msgid "Calculate"
 msgstr ""
 
-#: src/SARgui.cpp:900
-msgid "Search Time      "
+#: src/SARgui.cpp:929
+msgid "Search Distance / Time"
 msgstr ""
 
-#: src/SARgui.cpp:907
+#: src/SARgui.cpp:952
 msgid "hr"
 msgstr ""
 
-#: src/SARgui.cpp:991
+#: src/SARgui.cpp:1037
 msgid "General settings"
 msgstr ""
 
-#: src/SARgui.cpp:998
+#: src/SARgui.cpp:1044
 msgid "Opacity"
 msgstr ""
 
-#: src/SARgui.cpp:1012
+#: src/SARgui.cpp:1058
 msgid "CPU saving settings"
 msgstr ""
 
-#: src/SARgui.cpp:1022
+#: src/SARgui.cpp:1068
 msgid "Capture Ship Position"
 msgstr ""
 
-#: src/SARgui.cpp:1024
+#: src/SARgui.cpp:1070
 msgid "Leave ticked, so you can use ship's position"
 msgstr ""
 
-#: src/SARgui.cpp:1028
+#: src/SARgui.cpp:1074
 msgid "Capture Cursor Position"
 msgstr ""
 
-#: src/SARgui.cpp:1030
+#: src/SARgui.cpp:1076
 msgid "Leave ticked, so that you can use cursor position."
 msgstr ""
 
@@ -311,52 +322,62 @@ msgstr ""
 msgid "    SAR panel icon has NOT been loaded"
 msgstr ""
 
-#: src/SAR_pi.cpp:113
+#: src/SAR_pi.cpp:115
 msgid "Select SAR Datum Point"
 msgstr ""
 
-#: src/SAR_pi.cpp:180
+#: src/SAR_pi.cpp:184
 msgid "Search and Rescue Patterns"
 msgstr ""
 
-#: src/SAR_pi.cpp:185
+#: src/SAR_pi.cpp:189
 msgid ""
 "Creates GPX files with\n"
 "Search and rescue patterns."
 msgstr ""
 
-#: src/SAR_pi.cpp:277
+#: src/SAR_pi.cpp:281
 msgid "Route Preferences"
 msgstr ""
 
-#: src/SARgui_impl.cpp:487
+#: src/SARgui_impl.cpp:489
 msgid "No Datum Point has been entered"
 msgstr ""
 
-#: src/SARgui_impl.cpp:487
+#: src/SARgui_impl.cpp:489
 msgid "Error"
 msgstr ""
 
-#: src/SARgui_impl.cpp:495
+#: src/SARgui_impl.cpp:494
+msgid "For this search pattern the Start Point entered is the CSP"
+msgstr ""
+
+#: src/SARgui_impl.cpp:494
+msgid "Start Position"
+msgstr ""
+
+#: src/SARgui_impl.cpp:499
 msgid "Export SAR track GPX file as"
 msgstr ""
 
-#: src/SARgui_impl.cpp:508
+#: src/SARgui_impl.cpp:512
 msgid "error in input range validation"
 msgstr ""
 
-#: src/SARgui_impl.cpp:641
+#: src/SARgui_impl.cpp:652
 msgid "Error occurred, aborting SAR calc!"
 msgstr ""
 
-#: src/SARgui_impl.cpp:1523 src/SARgui_impl.cpp:1524
+#: src/SARgui_impl.cpp:1663 src/SARgui_impl.cpp:1664
 msgid "Error in calculation. Please check input!"
 msgstr ""
 
-#: src/SARgui_impl.cpp:1659
-msgid "To copy the cursor location press <CTRL>+S"
+#: src/SARgui_impl.cpp:1828
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
 msgstr ""
 
 #: src/SARgui_impl.h:55
-msgid "SAR Plugin by SaltyPaws"
+msgid "SAR Plugin by SaltyPaws/Rasbats"
 msgstr ""

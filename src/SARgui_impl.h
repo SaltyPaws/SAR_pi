@@ -62,16 +62,9 @@ public:
 
 		void OnCalculate(wxCommandEvent& event);
 
-        void OnPSCalc( wxCommandEvent& event );
         void OnPSGPX( wxCommandEvent& event );
-
-        void OnESCalc( wxCommandEvent& event );
         void OnESGPX( wxCommandEvent& event );
-
-        void OnSSCalc( wxCommandEvent& event );
         void OnSSGPX( wxCommandEvent& event );
-
-        void OnORCalc( wxCommandEvent& event );
         void OnORGPX( wxCommandEvent& event );
 
 		void OnSelectNumberShips(wxCommandEvent& event);
