@@ -1,0 +1,329 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-06 14:43+0100\n"
+"PO-Revision-Date: 2016-02-27 08:05-0500\n"
+"Last-Translator: nohal <pavel@kalian.cz>\n"
+"Language-Team: Portuguese, Brazilian\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid ""
+"   Oil Rig Search\n"
+"(Quadrant Single)"
+msgstr ""
+#
+msgid "\""
+msgstr "\""
+#
+msgid "'"
+msgstr "'"
+#
+msgid "1"
+msgstr "1"
+#
+msgid "2"
+msgstr "2"
+#
+msgid "Approach course"
+msgstr "Rumo de aproximação"
+#
+#, fuzzy
+msgid "Approach course    "
+msgstr "Rumo de aproximação     "
+#
+#, fuzzy
+msgid "Approach course      "
+msgstr "Rumo de aproximação     "
+#
+msgid "CPU saving settings"
+msgstr "Salvar as configurações de CPU"
+#
+msgid "Capture Cursor Position"
+msgstr "Capturar posição do cursor"
+#
+msgid "Capture Ship Position"
+msgstr "Capturar posição do navio"
+#
+msgid "Convert to Degree"
+msgstr "Converter para grau"
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr "Copiar posição do navio (necessário sinal GPS)"
+#
+msgid ""
+"Creates GPX files with\n"
+"Search and rescue patterns."
+msgstr ""
+"Criar arquivos GPX com\n"
+"padrões de busca e salvamento."
+#
+msgid "Cursor"
+msgstr "Cursor"
+#
+msgid "Datum (Start of Search)"
+msgstr "Datum (Início de busca)"
+#
+msgid "Decimal Degree"
+msgstr "Graus decimais"
+#
+#, fuzzy
+msgid "Degree, Minutes"
+msgstr "Graus"
+#
+msgid "Degrees"
+msgstr "Graus"
+#
+msgid "E"
+msgstr "E"
+#
+#, fuzzy
+msgid "ES"
+msgstr "S"
+#
+msgid "Error"
+msgstr ""
+#
+msgid "Error in calculation. Please check input!"
+msgstr "Erro no cálculo. Por favor, verifique a entrada!"
+#
+#, fuzzy
+msgid "Error occurred, aborting SAR calc!"
+msgstr "Ocorreu um erro, abortando o calculo do SAR!"
+#
+msgid ""
+"Expanding Square\n"
+"         Search"
+msgstr ""
+"Expandir Square\n"
+"Pesquisar"
+#
+msgid "Export SAR track GPX file as"
+msgstr "Exportar SAR faixa de arquivo GPX como"
+#
+msgid "GPX route name (Edit?)"
+msgstr ""
+#
+msgid "General settings"
+msgstr "Definições gerais"
+#
+msgid "Generate &GPX"
+msgstr "Gerar &GPX"
+#
+msgid "Lat "
+msgstr "Lat "
+#
+msgid "Lattitude  "
+msgstr "Latitude  "
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr "Deixar marcado, para que possa usar a posição do cursor."
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr "Deixar marcada, então você pode usar a posição do navio"
+#
+#, fuzzy
+msgid "Leg Distance        "
+msgstr "Comprimento da perna          "
+#
+msgid "Leg Space"
+msgstr ""
+#
+#, fuzzy
+msgid "Leg Spacing (S)       "
+msgstr "Distancia entre pernas                "
+#
+msgid "Lon"
+msgstr "Lon"
+#
+msgid "Longitude"
+msgstr "Longitude"
+#
+msgid "N"
+msgstr "N"
+#
+msgid "NM"
+msgstr "NM"
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+#, fuzzy
+msgid "Number of Legs  "
+msgstr "Numero de pernas   "
+#
+#, fuzzy
+msgid "Number of Legs      "
+msgstr "Numero de pernas       "
+#
+#, fuzzy
+msgid "Number of Legs        "
+msgstr "Numero de pernas       "
+#
+msgid "Number of cycles"
+msgstr "Número de ciclos"
+#
+msgid "OR"
+msgstr ""
+#
+msgid "Opacity"
+msgstr "Opacidade"
+#
+#, fuzzy
+msgid "PS"
+msgstr "S"
+#
+#, fuzzy
+msgid "Parallel Track Search"
+msgstr "Busca paralela"
+#
+msgid "Results"
+msgstr "Resultados"
+#
+msgid "Route Preferences"
+msgstr "Preferências de rota"
+#
+msgid "S"
+msgstr "S"
+#
+msgid "SAR"
+msgstr "SAR"
+#
+msgid "SAR Plugin by SaltyPaws"
+msgstr "SAR Plugin por SaltyPaws"
+#
+msgid "SAR preferences"
+msgstr "Preferências SAR"
+#
+msgid "SAR: Expanding Square"
+msgstr "SAR: Expandindo quadrados"
+#
+msgid "SAR: Oil Rig"
+msgstr "SAR: Plataforma Petrolífera"
+#
+#, fuzzy
+msgid "SAR: Parallel Track"
+msgstr "Busca paralela"
+#
+msgid "SAR: Sector Search"
+msgstr "SAR: Busca por setores"
+#
+msgid "Search Distance"
+msgstr "Distancia de busca"
+#
+#, fuzzy
+msgid "Search Leg length     "
+msgstr "Tempo de busca        "
+#
+#, fuzzy
+msgid "Search Speed       "
+msgstr "Velocidade de busca        "
+#
+#, fuzzy
+msgid "Search Speed           "
+msgstr "Velocidade de busca             "
+#
+msgid "Search Speed             "
+msgstr "Velocidade de busca             "
+#
+#, fuzzy
+msgid "Search Time      "
+msgstr "Tempo de busca        "
+#
+msgid "Search and Rescue Patterns"
+msgstr "Padrões de Busca e Salvamento"
+#
+msgid "Sector Search"
+msgstr "Busca por sector"
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr "Navio"
+#
+msgid "Ships available           "
+msgstr ""
+#
+msgid "To copy the cursor location press <CTRL>+S"
+msgstr ""
+#
+#, fuzzy
+msgid "Track space (S)          "
+msgstr "Velocidade de busca             "
+#
+#, fuzzy
+msgid "VS"
+msgstr "S"
+#
+msgid "W"
+msgstr "W"
+#
+msgid "Write waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr "erro na validação de intervalo de entrada"
+#
+msgid "hr"
+msgstr "hr"
+#
+msgid "kts"
+msgstr "KTs"
+#
+msgid "n"
+msgstr "n"
+#
+#~ msgid "Calculate"
+#~ msgstr "Calcular"
+#
+#~ msgid "For Ship Number      "
+#~ msgstr "Para número do barco      "
+#
+#~ msgid ""
+#~ "In order to copy the cursor location, select either the Lattitude or "
+#~ "Longitude coordinate box, and press <CTRL>+S."
+#~ msgstr ""
+#~ "Para copiar a localização do cursor, escolha a Latitude ou Longitude na "
+#~ "caixa e pressione <CTRL>+S."
+#
+#~ msgid "Leg Distance              "
+#~ msgstr "Comprimento da perna              "
+#
+#~ msgid "Leg Distance               "
+#~ msgstr "Comprimento da perna               "
+#
+#~ msgid "Number of Squares"
+#~ msgstr "Numero de quadrados"
+#
+#~ msgid "Oil Rig Search"
+#~ msgstr "Procurar Plataforma Petrolifera"
+#
+#~ msgid "Route"
+#~ msgstr "Rota"
+#
+#~ msgid "SAR: Trackline"
+#~ msgstr "SAR: Linha de rumo"
+#
+#~ msgid "Search Pattern name for GPX file"
+#~ msgstr "Busca o nome padrão para o arquivo GPX"
+#
+#~ msgid "Search Speed         "
+#~ msgstr "Velocidade de busca         "
+#
+#~ msgid "\\u00b0"
+#~ msgstr "\\u00b0"
+#
+#~ msgid "\\u00b0 ' \""
+#~ msgstr "\\u00b0 ' \""
