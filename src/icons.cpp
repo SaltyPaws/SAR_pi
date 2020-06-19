@@ -41,5 +41,6 @@ void initialize_images(void)
 #endif
 
 
+
 	return;
 }
