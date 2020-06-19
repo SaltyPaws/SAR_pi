@@ -9,12 +9,12 @@
 
 wxBitmap *_img_rescue;
 
-#ifdef SAR_USE_SVG
+
+#ifdef PLUGIN_USE_SVG
 #include "ocpn_plugin.h"
 wxString _svg_sar;
 wxString _svg_sar_toggled;
 #endif
-
 
 void initialize_images(void)
 {
@@ -23,17 +23,23 @@ void initialize_images(void)
 		_img_rescue = new wxBitmap(wxImage(sm));
 	}
 
-#ifdef SAR_USE_SVG
+
 	wxFileName fn;
-	fn.SetPath(*GetpSharedDataLocation());
-	fn.AppendDir("plugins");
-	fn.AppendDir("SAR_pi");
-	fn.AppendDir("data");
+	wxString tmp_path;
+
+	tmp_path = GetPluginDataDir("SAR_pi");
+	fn.SetPath(tmp_path);
+	fn.AppendDir(_T("data"));
+	
+	
+
+#ifdef PLUGIN_USE_SVG
 	fn.SetFullName("sar_pi.svg");
 	_svg_sar = fn.GetFullPath();
 	fn.SetFullName("sar_pi_toggled.svg");
 	_svg_sar_toggled = fn.GetFullPath();
 #endif
+
 
 	return;
 }

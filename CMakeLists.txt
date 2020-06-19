@@ -151,10 +151,29 @@ SET(SRCS
 #	  src/OpenCPN
 #)
 
+IF(UNIX)
+ INCLUDE("cmake/FindTinyXML.cmake")
+ FIND_PACKAGE(TinyXML QUIET)
+ENDIF(UNIX)
+
+IF(TINYXML_FOUND)
+ message (STATUS "Building with system tinyxml")
+ INCLUDE_DIRECTORIES(${TINYXML_INCLUDE_DIR})
+ ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_SAR})
+ TARGET_LINK_LIBRARIES(${PACKAGE_NAME} ${TINYXML_LIBRARIES})
+ELSE(TINYXML_FOUND)
+	 message (STATUS "Building with embedded tinyxml")
+	 INCLUDE_DIRECTORIES(src/tinyxml/)
+	 SET(SRC_LTINYXML
+				src/tinyxml/tinyxml.cpp
+				src/tinyxml/tinyxmlparser.cpp
+				src/tinyxml/tinyxmlerror.cpp
+	 )
+	add_library(${PACKAGE_NAME} SHARED ${SRCS} ${SRC_LTINYXML})
+ENDIF(TINYXML_FOUND)
+
+
 add_definitions(-DPLUGIN_USE_SVG)
-
-
-add_library(${PACKAGE_NAME} SHARED ${SRCS})
 
 add_definitions(-DTIXML_USE_STL)
 

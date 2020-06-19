@@ -65,17 +65,6 @@ SAR_pi::SAR_pi(void *ppimgr)
       // Create the PlugIn icons
       initialize_images();
 
-	  wxString shareLocn = *GetpSharedDataLocation() +
-		  "plugins" + wxFileName::GetPathSeparator() +
-		  "SAR_pi" + wxFileName::GetPathSeparator()
-		  + "data" + wxFileName::GetPathSeparator();
-	  wxImage panelIcon(shareLocn + "sar_panel_icon.png");
-
-	  if (panelIcon.IsOk())
-		  m_panelBitmap = wxBitmap(panelIcon);
-	  else
-		  wxLogMessage(_("    SAR panel icon has NOT been loaded"));
-
 	  m_bShowSAR = false;
 }
 
@@ -98,14 +87,10 @@ int SAR_pi::Init(void)
       LoadConfig();
 
       //    This PlugIn needs a toolbar icon, so request its insertion
-#ifdef SAR_USE_SVG
-	  m_leftclick_tool_id = InsertPlugInToolSVG("SAR", _svg_sar, _svg_sar, _svg_sar_toggled,
-		  wxITEM_CHECK, _("SAR"), "", NULL, CALCULATOR_TOOL_POSITION, 0, this);
-#else
+
       m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_rescue, _img_rescue, wxITEM_NORMAL,
             _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
-#endif
 
 	  
 
@@ -170,7 +155,7 @@ int SAR_pi::GetPlugInVersionMinor()
 
 wxBitmap *SAR_pi::GetPlugInBitmap()
 {
-	return &m_panelBitmap;
+	return _img_rescue;
 }
 
 wxString SAR_pi::GetCommonName()

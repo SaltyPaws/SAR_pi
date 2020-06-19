@@ -117,6 +117,7 @@ private:
 	  bool				m_bShowSAR;
 	  wxBitmap			m_panelBitmap;
 	 
+	 
 };
 
 #endif
