@@ -88,7 +88,7 @@ int SAR_pi::Init(void)
 
       //    This PlugIn needs a toolbar icon, so request its insertion
 
-      m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_rescue, _img_rescue, wxITEM_NORMAL,
+      m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_sar_pi, _img_sar_pi_toggled, wxITEM_NORMAL,
             _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
 
@@ -155,7 +155,7 @@ int SAR_pi::GetPlugInVersionMinor()
 
 wxBitmap *SAR_pi::GetPlugInBitmap()
 {
-	return _img_rescue;
+	return _img_sar_panel_icon;
 }
 
 wxString SAR_pi::GetCommonName()
