@@ -36,7 +36,7 @@ SET(PACKAGE "SAR")
 
 
 SET(VERSION_MAJOR "2")
-SET(VERSION_MINOR "5")
+SET(VERSION_MINOR "6")
 
 set(VERSION_PATCH "0")
 set(VERSION_TWEAK "0")
@@ -57,7 +57,7 @@ set(BETA "beta") # Standard Repos
 set(ALPHA "alpha") # Standard Repos
 
 set(CLOUDSMITH_USER "mike-rossiter")
-# set this if your cloudsmith repository name does not match your git repository name set(CLOUDSMITH_BASE_REPOSITORY "testplugin_pi")
+# set this if your cloudsmith repository name does not match your git repository name set(CLOUDSMITH_BASE_REPOSITORY "SAR_pi")
 set(CLOUDSMITH_BASE_REPOSITORY "SAR")
 
 set(XML_INFO_URL "https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:supplementary_software:chart_work:sar_search_patterns")
@@ -144,12 +144,9 @@ SET(SRCS
 	    src/NavFunc.cpp
 	    src/bitmaps.h
 	    src/bitmaps.cpp
+		src/SVGicons.cpp
+		src/SVGicons.h
 	)
-
-#INCLUDE_DIRECTORIES(
-#	  src
-#	  src/OpenCPN
-#)
 
 IF(UNIX)
  INCLUDE("cmake/FindTinyXML.cmake")
