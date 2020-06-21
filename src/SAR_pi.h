@@ -39,6 +39,7 @@
 
 #include "ocpn_plugin.h" //Required for OCPN plugin functions
 #include "SARgui_impl.h"
+#include "SVGicons.h"
 
 #include "version.h"
 
@@ -46,7 +47,7 @@
 #define     MY_API_VERSION_MINOR    16
 
 class Dlg;
-
+class SVGicons;
 //----------------------------------------------------------------------------------------------------------
 //    The PlugIn Class Definition
 //----------------------------------------------------------------------------------------------------------
@@ -100,6 +101,7 @@ public:
 
 	  int m_position_menu_id;
 	  
+	  SVGicons *m_pSVGicons;
 
 private:
       wxFileConfig      *m_pconfig;
@@ -116,6 +118,7 @@ private:
 	  bool				m_bSARShowIcon;
 	  bool				m_bShowSAR;
 	  wxBitmap			m_panelBitmap;
+	 
 	 
 };
 

@@ -10,11 +10,17 @@
 extern void initialize_images(void);
 
 extern wxBitmap *_img_rescue;
+extern wxBitmap *_img_sar_panel_icon;
+extern wxBitmap *_img_sar_pi;
+extern wxBitmap *_img_sar_pi_toggled;
 
-#ifdef SAR_USE_SVG
+#ifdef PLUGIN_USE_SVG
 extern wxString _svg_sar;
 extern wxString _svg_sar_toggled;
 #endif
+
+
+
 
 
 #endif /* ICONS_H */

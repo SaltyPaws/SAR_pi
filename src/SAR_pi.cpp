@@ -52,7 +52,7 @@ extern "C" DECL_EXP void destroy_pi(opencpn_plugin* p)
 //---------------------------------------------------------------------------------------------------------
 
 #include "icons.h"
-
+wxString	*g_SData_Locn;
 //---------------------------------------------------------------------------------------------------------
 //
 //          PlugIn initialization and de-init
@@ -64,17 +64,6 @@ SAR_pi::SAR_pi(void *ppimgr)
 {
       // Create the PlugIn icons
       initialize_images();
-
-	  wxString shareLocn = *GetpSharedDataLocation() +
-		  "plugins" + wxFileName::GetPathSeparator() +
-		  "SAR_pi" + wxFileName::GetPathSeparator()
-		  + "data" + wxFileName::GetPathSeparator();
-	  wxImage panelIcon(shareLocn + "sar_panel_icon.png");
-
-	  if (panelIcon.IsOk())
-		  m_panelBitmap = wxBitmap(panelIcon);
-	  else
-		  wxLogMessage(_("    SAR panel icon has NOT been loaded"));
 
 	  m_bShowSAR = false;
 }
@@ -96,17 +85,17 @@ int SAR_pi::Init(void)
 
       //    And load the configuration items
       LoadConfig();
+	  m_pSVGicons = new SVGicons();
 
       //    This PlugIn needs a toolbar icon, so request its insertion
-#ifdef SAR_USE_SVG
-	  m_leftclick_tool_id = InsertPlugInToolSVG("SAR", _svg_sar, _svg_sar, _svg_sar_toggled,
-		  wxITEM_CHECK, _("SAR"), "", NULL, CALCULATOR_TOOL_POSITION, 0, this);
+#ifdef PLUGIN_USE_SVG
+	  m_leftclick_tool_id = InsertPlugInToolSVG(_("SAR"), m_pSVGicons->m_s_SAR_grey_pi, m_pSVGicons->m_s_SAR_pi, m_pSVGicons->m_s_SAR_toggled_pi, wxITEM_CHECK,
+		  _("SAR"), wxS(""), NULL, CALCULATOR_TOOL_POSITION, 0, this);
 #else
-      m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_rescue, _img_rescue, wxITEM_NORMAL,
+      m_leftclick_tool_id  = InsertPlugInTool(_T(""), _img_sar_pi, _img_sar_pi_toggled, wxITEM_NORMAL,
             _("SAR"), _T(""), NULL,
              CALCULATOR_TOOL_POSITION, 0, this);
 #endif
-
 	  
 
 	  wxMenu dummy_menu;
@@ -170,7 +159,7 @@ int SAR_pi::GetPlugInVersionMinor()
 
 wxBitmap *SAR_pi::GetPlugInBitmap()
 {
-	return &m_panelBitmap;
+	return &m_pSVGicons->m_bm_SAR_pi;
 }
 
 wxString SAR_pi::GetCommonName()
