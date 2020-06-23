@@ -28,11 +28,11 @@ endif(COMMAND cmake_policy)
 
 # define plugin name, owner and versions
 
-SET(VERBOSE_NAME "SAR")
-set(COMMON_NAME "SAR")
-SET(TITLE_NAME "SAR")
+SET(VERBOSE_NAME "sar")
+set(COMMON_NAME "sar")
+SET(TITLE_NAME "sar")
 SET(PACKAGE_CONTACT "Rasbats")
-SET(PACKAGE "SAR")
+SET(PACKAGE "sar")
 
 
 SET(VERSION_MAJOR "2")
@@ -143,9 +143,7 @@ SET(SRCS
 	    src/NavFunc.h
 	    src/NavFunc.cpp
 	    src/bitmaps.h
-	    src/bitmaps.cpp
-		src/SVGicons.cpp
-		src/SVGicons.h
+	    src/bitmaps.cpp		
 	)
 
 IF(UNIX)

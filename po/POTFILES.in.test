@@ -10,5 +10,3 @@ src/NavFunc.h
 src/NavFunc.cpp
 src/bitmaps.h
 src/bitmaps.cpp
-src/SVGicons.cpp
-src/SVGicons.h

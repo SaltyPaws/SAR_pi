@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-06 14:43+0100\n"
+"POT-Creation-Date: 2020-06-17 16:32+0200\n"
 "PO-Revision-Date: 2015-09-20 20:30-0400\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Hungarian\n"
@@ -19,33 +19,46 @@ msgstr ""
 msgid "    SAR panel icon has NOT been loaded"
 msgstr ""
 #
-msgid ""
-"   Oil Rig Search\n"
-"(Quadrant Single)"
-msgstr ""
-#
 msgid "\""
 msgstr ""
 #
 msgid "'"
 msgstr ""
 #
+msgid "0.1"
+msgstr ""
+#
+msgid "0.2"
+msgstr ""
+#
+msgid "0.5"
+msgstr ""
+#
 msgid "1"
+msgstr ""
+#
+msgid "1 unit only"
 msgstr ""
 #
 msgid "2"
 msgstr ""
 #
-msgid "Approach course"
+msgid "2 units A&B"
 msgstr ""
 #
-msgid "Approach course    "
+msgid "3"
 msgstr ""
 #
-msgid "Approach course      "
+msgid "4"
+msgstr ""
+#
+msgid "5"
 msgstr ""
 #
 msgid "CPU saving settings"
+msgstr ""
+#
+msgid "Calculate"
 msgstr ""
 #
 msgid "Capture Cursor Position"
@@ -68,22 +81,22 @@ msgstr ""
 msgid "Cursor"
 msgstr ""
 #
-msgid "Datum (Start of Search)"
+msgid "D MM SS"
 msgstr ""
 #
-msgid "Decimal Degree"
+msgid "D MM.mmm"
 msgstr ""
 #
-msgid "Degree, Minutes"
+msgid "D.ddd"
+msgstr ""
+#
+msgid "DATUM / CSP (Start of Search)"
 msgstr ""
 #
 msgid "Degrees"
 msgstr ""
 #
 msgid "E"
-msgstr ""
-#
-msgid "ES"
 msgstr ""
 #
 msgid "Error"
@@ -95,15 +108,16 @@ msgstr ""
 msgid "Error occurred, aborting SAR calc!"
 msgstr ""
 #
-msgid ""
-"Expanding Square\n"
-"         Search"
+msgid "Expanding Square"
 msgstr ""
 #
 msgid "Export SAR track GPX file as"
 msgstr ""
 #
-msgid "GPX route name (Edit?)"
+msgid "First turn                    "
+msgstr ""
+#
+msgid "For this search pattern the Start Point entered is the CSP"
 msgstr ""
 #
 msgid "General settings"
@@ -112,10 +126,28 @@ msgstr ""
 msgid "Generate &GPX"
 msgstr ""
 #
+msgid "IAMSAR"
+msgstr ""
+#
+msgid "Icons "
+msgstr ""
+#
+msgid "Initial course"
+msgstr ""
+#
+msgid "Initial course    "
+msgstr ""
+#
+msgid "Initial course        "
+msgstr ""
+#
+msgid "Initial leg course        "
+msgstr ""
+#
 msgid "Lat "
 msgstr ""
 #
-msgid "Lattitude  "
+msgid "Latitude  "
 msgstr ""
 #
 msgid "Leave ticked, so that you can use cursor position."
@@ -124,10 +156,7 @@ msgstr ""
 msgid "Leave ticked, so you can use ship's position"
 msgstr ""
 #
-msgid "Leg Distance        "
-msgstr ""
-#
-msgid "Leg Space"
+msgid "Leg Space             "
 msgstr ""
 #
 msgid "Leg Spacing (S)       "
@@ -157,25 +186,25 @@ msgstr ""
 msgid "Number of Legs        "
 msgstr ""
 #
-msgid "Number of cycles"
+msgid "Number of passes"
 msgstr ""
 #
-msgid "OR"
+msgid "Oil Rig (Quadrant Single)"
 msgstr ""
 #
 msgid "Opacity"
 msgstr ""
 #
-msgid "PS"
+msgid "PORT"
 msgstr ""
 #
-msgid "Parallel Track Search"
-msgstr ""
-#
-msgid "Results"
+msgid "Parallel Track"
 msgstr ""
 #
 msgid "Route Preferences"
+msgstr ""
+#
+msgid "Route for Ship           "
 msgstr ""
 #
 msgid "S"
@@ -184,28 +213,25 @@ msgstr ""
 msgid "SAR"
 msgstr ""
 #
-msgid "SAR Plugin by SaltyPaws"
+msgid "SAR Plugin by SaltyPaws/Rasbats"
 msgstr ""
 #
 msgid "SAR preferences"
 msgstr ""
 #
-msgid "SAR: Expanding Square"
+msgid "STARBOARD"
 msgstr ""
 #
-msgid "SAR: Oil Rig"
-msgstr ""
-#
-msgid "SAR: Parallel Track"
-msgstr ""
-#
-msgid "SAR: Sector Search"
-msgstr ""
-#
-msgid "Search Distance"
+msgid "Search Distance / Time"
 msgstr ""
 #
 msgid "Search Leg length     "
+msgstr ""
+#
+msgid "Search Method  "
+msgstr ""
+#
+msgid "Search Radius      "
 msgstr ""
 #
 msgid "Search Speed       "
@@ -215,9 +241,6 @@ msgid "Search Speed           "
 msgstr ""
 #
 msgid "Search Speed             "
-msgstr ""
-#
-msgid "Search Time      "
 msgstr ""
 #
 msgid "Search and Rescue Patterns"
@@ -232,22 +255,27 @@ msgstr ""
 msgid "Ship"
 msgstr ""
 #
-msgid "Ships available           "
+msgid "Start Position"
 msgstr ""
 #
-msgid "To copy the cursor location press <CTRL>+S"
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
 msgstr ""
 #
 msgid "Track space (S)          "
 msgstr ""
 #
-msgid "VS"
+msgid "USCG"
 msgstr ""
 #
 msgid "W"
 msgstr ""
 #
-msgid "Write waypoint names     "
+msgid "Waypoint names "
+msgstr ""
+#
+msgid "Waypoint names     "
 msgstr ""
 #
 msgid "error in input range validation"

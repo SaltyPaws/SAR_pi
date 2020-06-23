@@ -870,14 +870,14 @@ DlgDef::DlgDef( wxWindow* parent, wxWindowID id, const wxString& title, const wx
 	m_Lon1_m = new wxTextCtrl( sbSizer72->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	bSizer143112->Add( m_Lon1_m, 0, wxALL, 5 );
 
-	m_staticText11412 = new wxStaticText( sbSizer72->GetStaticBox(), wxID_ANY, _T("'"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11412 = new wxStaticText( sbSizer72->GetStaticBox(), wxID_ANY, _("'"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText11412->Wrap( -1 );
 	bSizer143112->Add( m_staticText11412, 0, wxALL, 5 );
 
 	m_Lon1_s = new wxTextCtrl( sbSizer72->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	bSizer143112->Add( m_Lon1_s, 0, wxALL, 5 );
 
-	m_staticText11512 = new wxStaticText( sbSizer72->GetStaticBox(), wxID_ANY, _T("\""), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11512 = new wxStaticText( sbSizer72->GetStaticBox(), wxID_ANY, _("\""), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText11512->Wrap( -1 );
 	bSizer143112->Add( m_staticText11512, 0, wxALL, 5 );
 
