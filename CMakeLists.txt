@@ -58,7 +58,7 @@ set(ALPHA "alpha") # Standard Repos
 
 set(CLOUDSMITH_USER "mike-rossiter")
 # set this if your cloudsmith repository name does not match your git repository name set(CLOUDSMITH_BASE_REPOSITORY "SAR_pi")
-set(CLOUDSMITH_BASE_REPOSITORY "SAR")
+set(CLOUDSMITH_BASE_REPOSITORY "sar")
 
 set(XML_INFO_URL "https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:supplementary_software:chart_work:sar_search_patterns")
 set(XML_SUMMARY "Plugin to create search patterns for Search and Rescue")
@@ -154,7 +154,7 @@ ENDIF(UNIX)
 IF(TINYXML_FOUND)
  message (STATUS "Building with system tinyxml")
  INCLUDE_DIRECTORIES(${TINYXML_INCLUDE_DIR})
- ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRC_SAR})
+ ADD_LIBRARY(${PACKAGE_NAME} SHARED ${SRCS})
  TARGET_LINK_LIBRARIES(${PACKAGE_NAME} ${TINYXML_LIBRARIES})
 ELSE(TINYXML_FOUND)
 	 message (STATUS "Building with embedded tinyxml")
