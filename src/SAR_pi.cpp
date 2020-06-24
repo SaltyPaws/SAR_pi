@@ -172,14 +172,14 @@ int SAR_pi::GetPlugInVersionMinor()
       return PLUGIN_VERSION_MINOR;
 }
 
+wxString SAR_pi::GetCommonName()
+{
+	return _T(PLUGIN_COMMON_NAME);
+}
+
 wxBitmap *SAR_pi::GetPlugInBitmap()
 {
 	return &m_panelBitmap;
-}
-
-wxString SAR_pi::GetCommonName()
-{
-      return _("SAR");
 }
 
 

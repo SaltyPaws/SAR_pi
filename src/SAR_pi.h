@@ -66,8 +66,8 @@ public:
       int GetAPIVersionMinor();
       int GetPlugInVersionMajor();
       int GetPlugInVersionMinor();
+	  wxString GetCommonName();
       wxBitmap *GetPlugInBitmap();
-      wxString GetCommonName();
       wxString GetShortDescription();
       wxString GetLongDescription();
 
