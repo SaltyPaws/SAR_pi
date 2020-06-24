@@ -190,8 +190,7 @@ wxString SAR_pi::GetShortDescription()
 
 wxString SAR_pi::GetLongDescription()
 {
-      return _("Creates GPX files with\n\
-Search and rescue patterns.");
+      return _("Creates GPX files with Search and Rescue patterns");
 }
 
 int SAR_pi::GetToolbarToolCount(void)
