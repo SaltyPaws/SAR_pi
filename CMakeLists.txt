@@ -172,8 +172,6 @@ add_definitions(-DPLUGIN_USE_SVG)
 
 add_definitions(-DTIXML_USE_STL)
 
-
-
 ##
 ## ----- Change above to match project requirements ----- ##
 ##
