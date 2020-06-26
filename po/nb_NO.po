@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 16:32+0200\n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
 "PO-Revision-Date: 2016-02-25 08:05-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -73,9 +73,8 @@ msgstr "Konverter til grader"
 msgid "Copy ship position (GPS fix required)"
 msgstr "Kopier skipsposisjon (GPS-lås er påkrevd)"
 #
-msgid ""
-"Creates GPX files with\n"
-"Search and rescue patterns."
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
 msgstr ""
 "Oppretter GPX filer med\n"
 "Søk og rednings mønstre."
@@ -320,12 +319,18 @@ msgid "n"
 msgstr "n"
 #
 #
+#
+#
 #~ msgid "Approach course"
 #~ msgstr "Anløpskurs"
 #
 #
+#
+#
 #~ msgid "Decimal Degree"
 #~ msgstr "Desimal grader"
+#
+#
 #
 #
 #, fuzzy
@@ -333,9 +338,13 @@ msgstr "n"
 #~ msgstr "Grader"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "ES"
 #~ msgstr "S"
+#
+#
 #
 #
 #~ msgid ""
@@ -346,8 +355,12 @@ msgstr "n"
 #~ " søk"
 #
 #
+#
+#
 #~ msgid "For Ship Number      "
 #~ msgstr "For skip nummer      "
+#
+#
 #
 #
 #, fuzzy
@@ -355,12 +368,18 @@ msgstr "n"
 #~ msgstr "Leggdistanse          "
 #
 #
+#
+#
 #~ msgid "Number of cycles"
 #~ msgstr "Antall sykluser"
 #
 #
+#
+#
 #~ msgid "Oil Rig Search"
 #~ msgstr "Oljerigg søk"
+#
+#
 #
 #
 #, fuzzy
@@ -368,37 +387,55 @@ msgstr "n"
 #~ msgstr "S"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "Parallel Track Search"
 #~ msgstr "Parallellsøk"
+#
+#
 #
 #
 #~ msgid "Results"
 #~ msgstr "Resultat"
 #
 #
+#
+#
 #~ msgid "Route"
 #~ msgstr "Rute"
+#
+#
 #
 #
 #~ msgid "SAR: Oil Rig"
 #~ msgstr "SAR: Oljerigg"
 #
 #
+#
+#
 #~ msgid "SAR: Sector Search"
 #~ msgstr "SAR: Sektorsøk"
+#
+#
 #
 #
 #~ msgid "SAR: Trackline"
 #~ msgstr "SAR: Sporings-strek"
 #
 #
+#
+#
 #~ msgid "Search Pattern name for GPX file"
 #~ msgstr "Søkemønster navn for GPX-fil"
 #
 #
+#
+#
 #~ msgid "Search Speed         "
 #~ msgstr "Søkefart         "
+#
+#
 #
 #
 #, fuzzy
@@ -406,8 +443,12 @@ msgstr "n"
 #~ msgstr "S"
 #
 #
+#
+#
 #~ msgid "\\u00b0"
 #~ msgstr "\\u00b0"
+#
+#
 #
 #
 #~ msgid "\\u00b0 ' \""

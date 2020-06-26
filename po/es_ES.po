@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 16:32+0200\n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
 "PO-Revision-Date: 2016-02-18 16:08-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Spanish\n"
@@ -73,9 +73,8 @@ msgstr "Convertir a grados"
 msgid "Copy ship position (GPS fix required)"
 msgstr "Copiar posición del barco (necesario señal GPS)"
 #
-msgid ""
-"Creates GPX files with\n"
-"Search and rescue patterns."
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
 msgstr ""
 "Crear archivos GPX con\n"
 "patrones de búsqueda y rescate."
@@ -320,12 +319,18 @@ msgid "n"
 msgstr "n"
 #
 #
+#
+#
 #~ msgid "Approach course"
 #~ msgstr "Rumbo de aproximación"
 #
 #
+#
+#
 #~ msgid "Decimal Degree"
 #~ msgstr "Grados decimales"
+#
+#
 #
 #
 #, fuzzy
@@ -333,9 +338,13 @@ msgstr "n"
 #~ msgstr "Grados"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "ES"
 #~ msgstr "S"
+#
+#
 #
 #
 #~ msgid ""
@@ -346,8 +355,12 @@ msgstr "n"
 #~ "Búsqueda"
 #
 #
+#
+#
 #~ msgid "For Ship Number      "
 #~ msgstr "Para barco número      "
+#
+#
 #
 #
 #, fuzzy
@@ -355,12 +368,18 @@ msgstr "n"
 #~ msgstr "Distancia etapa          "
 #
 #
+#
+#
 #~ msgid "Number of cycles"
 #~ msgstr "Número de ciclos"
 #
 #
+#
+#
 #~ msgid "Oil Rig Search"
 #~ msgstr "Búsqueda Oil Rig"
+#
+#
 #
 #
 #, fuzzy
@@ -368,37 +387,55 @@ msgstr "n"
 #~ msgstr "S"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "Parallel Track Search"
 #~ msgstr "Búsqueda en paralelo"
+#
+#
 #
 #
 #~ msgid "Results"
 #~ msgstr "Resultados"
 #
 #
+#
+#
 #~ msgid "Route"
 #~ msgstr "Ruta"
+#
+#
 #
 #
 #~ msgid "SAR: Oil Rig"
 #~ msgstr "SAR: Oil Rig"
 #
 #
+#
+#
 #~ msgid "SAR: Sector Search"
 #~ msgstr "SAR: Sector de búsqueda"
+#
+#
 #
 #
 #~ msgid "SAR: Trackline"
 #~ msgstr "SAR: Línea de derrota"
 #
 #
+#
+#
 #~ msgid "Search Pattern name for GPX file"
 #~ msgstr "Nombre del patrón de búsqueda para el archivo GPX"
 #
 #
+#
+#
 #~ msgid "Search Speed         "
 #~ msgstr "Velocidad de búsqueda         "
+#
+#
 #
 #
 #, fuzzy
@@ -406,8 +443,12 @@ msgstr "n"
 #~ msgstr "S"
 #
 #
+#
+#
 #~ msgid "\\u00b0"
 #~ msgstr "\\u00b0"
+#
+#
 #
 #
 #~ msgid "\\u00b0 ' \""

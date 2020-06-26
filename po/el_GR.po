@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: opencpn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 16:32+0200\n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
 "PO-Revision-Date: 2016-02-18 16:08-0500\n"
 "Last-Translator: nohal <pavel@kalian.cz>\n"
 "Language-Team: Greek\n"
@@ -73,9 +73,8 @@ msgstr "Μετατροπή σε μοίρες"
 msgid "Copy ship position (GPS fix required)"
 msgstr "Αντίγραφο θέσης πλοίου (απαιτείται στίγμα GPS)"
 #
-msgid ""
-"Creates GPX files with\n"
-"Search and rescue patterns."
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
 msgstr ""
 "Δημιουργεί αρχεία GPX με\n"
 "μοτίβα Έρευνας και Διάσωσης."
@@ -320,12 +319,18 @@ msgid "n"
 msgstr "n"
 #
 #
+#
+#
 #~ msgid "Approach course"
 #~ msgstr "Πορεία προσέγγισης"
 #
 #
+#
+#
 #~ msgid "Decimal Degree"
 #~ msgstr "Μοίρες με δεκαδικά"
+#
+#
 #
 #
 #, fuzzy
@@ -333,9 +338,13 @@ msgstr "n"
 #~ msgstr "Μοίρες"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "ES"
 #~ msgstr "Ν"
+#
+#
 #
 #
 #~ msgid ""
@@ -346,8 +355,12 @@ msgstr "n"
 #~ " έρευνας"
 #
 #
+#
+#
 #~ msgid "For Ship Number      "
 #~ msgstr "Για το πλοίο #      "
+#
+#
 #
 #
 #, fuzzy
@@ -355,12 +368,18 @@ msgstr "n"
 #~ msgstr "Μήκος σκέλους          "
 #
 #
+#
+#
 #~ msgid "Number of cycles"
 #~ msgstr "Αριθμός κύκλων"
 #
 #
+#
+#
 #~ msgid "Oil Rig Search"
 #~ msgstr "Αναζήτηση πλατφόρμας πετρελαίου"
+#
+#
 #
 #
 #, fuzzy
@@ -368,37 +387,55 @@ msgstr "n"
 #~ msgstr "Ν"
 #
 #
+#
+#
 #, fuzzy
 #~ msgid "Parallel Track Search"
 #~ msgstr "Παράλληλη έρευνα"
+#
+#
 #
 #
 #~ msgid "Results"
 #~ msgstr "Αποτελέσματα"
 #
 #
+#
+#
 #~ msgid "Route"
 #~ msgstr "Διαδρομή"
+#
+#
 #
 #
 #~ msgid "SAR: Oil Rig"
 #~ msgstr "SAR: Πλατφόρμα πετρελαίου"
 #
 #
+#
+#
 #~ msgid "SAR: Sector Search"
 #~ msgstr "SAR: Τομέας έρευνας"
+#
+#
 #
 #
 #~ msgid "SAR: Trackline"
 #~ msgstr "SAR: ίχνος"
 #
 #
+#
+#
 #~ msgid "Search Pattern name for GPX file"
 #~ msgstr "Όνομα μοτίβου αναζήτησης για το αρχείο GPX"
 #
 #
+#
+#
 #~ msgid "Search Speed         "
 #~ msgstr "Ταχύτητα αναζήτησης         "
+#
+#
 #
 #
 #, fuzzy
@@ -406,8 +443,12 @@ msgstr "n"
 #~ msgstr "Ν"
 #
 #
+#
+#
 #~ msgid "\\u00b0"
 #~ msgstr "\\u00b0"
+#
+#
 #
 #
 #~ msgid "\\u00b0 ' \""
