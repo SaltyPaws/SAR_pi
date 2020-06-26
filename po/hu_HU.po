@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
+"PO-Revision-Date: 2015-09-20 20:30-0400\n"
+"Last-Translator: nohal <pavel@kalian.cz>\n"
+"Language-Team: Hungarian\n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: hu\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid "\""
+msgstr ""
+#
+msgid "'"
+msgstr ""
+#
+msgid "0.1"
+msgstr ""
+#
+msgid "0.2"
+msgstr ""
+#
+msgid "0.5"
+msgstr ""
+#
+msgid "1"
+msgstr ""
+#
+msgid "1 unit only"
+msgstr ""
+#
+msgid "2"
+msgstr ""
+#
+msgid "2 units A&B"
+msgstr ""
+#
+msgid "3"
+msgstr ""
+#
+msgid "4"
+msgstr ""
+#
+msgid "5"
+msgstr ""
+#
+msgid "CPU saving settings"
+msgstr ""
+#
+msgid "Calculate"
+msgstr ""
+#
+msgid "Capture Cursor Position"
+msgstr ""
+#
+msgid "Capture Ship Position"
+msgstr ""
+#
+msgid "Convert to Degree"
+msgstr ""
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr ""
+#
+msgid "Creates GPX files with Search and Rescue patterns"
+msgstr ""
+#
+msgid "Cursor"
+msgstr ""
+#
+msgid "D MM SS"
+msgstr ""
+#
+msgid "D MM.mmm"
+msgstr ""
+#
+msgid "D.ddd"
+msgstr ""
+#
+msgid "DATUM / CSP (Start of Search)"
+msgstr ""
+#
+msgid "Degrees"
+msgstr ""
+#
+msgid "E"
+msgstr ""
+#
+msgid "Error"
+msgstr ""
+#
+msgid "Error in calculation. Please check input!"
+msgstr ""
+#
+msgid "Error occurred, aborting SAR calc!"
+msgstr ""
+#
+msgid "Expanding Square"
+msgstr ""
+#
+msgid "Export SAR track GPX file as"
+msgstr ""
+#
+msgid "First turn                    "
+msgstr ""
+#
+msgid "For this search pattern the Start Point entered is the CSP"
+msgstr ""
+#
+msgid "General settings"
+msgstr ""
+#
+msgid "Generate &GPX"
+msgstr ""
+#
+msgid "IAMSAR"
+msgstr ""
+#
+msgid "Icons "
+msgstr ""
+#
+msgid "Initial course"
+msgstr ""
+#
+msgid "Initial course    "
+msgstr ""
+#
+msgid "Initial course        "
+msgstr ""
+#
+msgid "Initial leg course        "
+msgstr ""
+#
+msgid "Lat "
+msgstr ""
+#
+msgid "Latitude  "
+msgstr ""
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr ""
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr ""
+#
+msgid "Leg Space             "
+msgstr ""
+#
+msgid "Leg Spacing (S)       "
+msgstr ""
+#
+msgid "Lon"
+msgstr ""
+#
+msgid "Longitude"
+msgstr ""
+#
+msgid "N"
+msgstr ""
+#
+msgid "NM"
+msgstr ""
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+msgid "Number of Legs  "
+msgstr ""
+#
+msgid "Number of Legs      "
+msgstr ""
+#
+msgid "Number of Legs        "
+msgstr ""
+#
+msgid "Number of passes"
+msgstr ""
+#
+msgid "Oil Rig (Quadrant Single)"
+msgstr ""
+#
+msgid "Opacity"
+msgstr ""
+#
+msgid "PORT"
+msgstr ""
+#
+msgid "Parallel Track"
+msgstr ""
+#
+msgid "Route Preferences"
+msgstr ""
+#
+msgid "Route for Ship           "
+msgstr ""
+#
+msgid "S"
+msgstr ""
+#
+msgid "SAR"
+msgstr ""
+#
+msgid "SAR Plugin by SaltyPaws/Rasbats"
+msgstr ""
+#
+msgid "SAR preferences"
+msgstr ""
+#
+msgid "STARBOARD"
+msgstr ""
+#
+msgid "Search Distance / Time"
+msgstr ""
+#
+msgid "Search Leg length     "
+msgstr ""
+#
+msgid "Search Method  "
+msgstr ""
+#
+msgid "Search Radius      "
+msgstr ""
+#
+msgid "Search Speed       "
+msgstr ""
+#
+msgid "Search Speed           "
+msgstr ""
+#
+msgid "Search Speed             "
+msgstr ""
+#
+msgid "Search and Rescue Patterns"
+msgstr ""
+#
+msgid "Sector Search"
+msgstr ""
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr ""
+#
+msgid "Start Position"
+msgstr ""
+#
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
+msgstr ""
+#
+msgid "Track space (S)          "
+msgstr ""
+#
+msgid "USCG"
+msgstr ""
+#
+msgid "W"
+msgstr ""
+#
+msgid "Waypoint names "
+msgstr ""
+#
+msgid "Waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr ""
+#
+msgid "hr"
+msgstr ""
+#
+msgid "kts"
+msgstr ""
+#
+msgid "n"
+msgstr ""

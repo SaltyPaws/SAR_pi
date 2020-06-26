@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
+"PO-Revision-Date: 2016-02-27 08:04-0500\n"
+"Last-Translator: nohal <pavel@kalian.cz>\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid "\""
+msgstr "\""
+#
+msgid "'"
+msgstr "'"
+#
+msgid "0.1"
+msgstr ""
+#
+msgid "0.2"
+msgstr ""
+#
+msgid "0.5"
+msgstr ""
+#
+msgid "1"
+msgstr "1"
+#
+msgid "1 unit only"
+msgstr ""
+#
+msgid "2"
+msgstr "2"
+#
+msgid "2 units A&B"
+msgstr ""
+#
+msgid "3"
+msgstr ""
+#
+msgid "4"
+msgstr ""
+#
+msgid "5"
+msgstr ""
+#
+msgid "CPU saving settings"
+msgstr "CPU instellingen opslaan"
+#
+msgid "Calculate"
+msgstr "Bereken"
+#
+msgid "Capture Cursor Position"
+msgstr "Vastleggen cursorpositie"
+#
+msgid "Capture Ship Position"
+msgstr "Vastleggen eigen positie"
+#
+msgid "Convert to Degree"
+msgstr "Converteer naar graden"
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr "Kopieer eigen positie (GPS-fix vereist)"
+#
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
+msgstr ""
+"SAR PlugIn voor OpenCPN\n"
+"\n"
+"Maakt GPX-bestanden met SAR zoekpatronen."
+#
+msgid "Cursor"
+msgstr "Cursor"
+#
+msgid "D MM SS"
+msgstr ""
+#
+msgid "D MM.mmm"
+msgstr ""
+#
+msgid "D.ddd"
+msgstr ""
+#
+#, fuzzy
+msgid "DATUM / CSP (Start of Search)"
+msgstr "Startpositie van zoekpatroon (datum)"
+#
+msgid "Degrees"
+msgstr "graden"
+#
+msgid "E"
+msgstr "O"
+#
+msgid "Error"
+msgstr ""
+#
+msgid "Error in calculation. Please check input!"
+msgstr "Fout in berekening. Controleer de input!"
+#
+#, fuzzy
+msgid "Error occurred, aborting SAR calc!"
+msgstr "Fout opgetreden, SAR-berekening afgebroken!"
+#
+#, fuzzy
+msgid "Expanding Square"
+msgstr "SAR: Vierkant zoekpatroon"
+#
+msgid "Export SAR track GPX file as"
+msgstr "Exporteer GPX-zoekpatroonbestand als"
+#
+#, fuzzy
+msgid "First turn                    "
+msgstr "Lijnlengte             "
+#
+msgid "For this search pattern the Start Point entered is the CSP"
+msgstr ""
+#
+msgid "General settings"
+msgstr "Algemene instellingen"
+#
+msgid "Generate &GPX"
+msgstr "Maak &GPX"
+#
+msgid "IAMSAR"
+msgstr ""
+#
+msgid "Icons "
+msgstr ""
+#
+msgid "Initial course"
+msgstr ""
+#
+#, fuzzy
+msgid "Initial course    "
+msgstr "Naderingskoers   "
+#
+#, fuzzy
+msgid "Initial course        "
+msgstr "Naderingskoers   "
+#
+msgid "Initial leg course        "
+msgstr ""
+#
+msgid "Lat "
+msgstr "Br"
+#
+#, fuzzy
+msgid "Latitude  "
+msgstr "Breedte "
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr "Laat geselcteerd, zodat u de cursorpositie kunt gebruiken"
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr "Laat geselecteerd, zodat u uw scheepspositie kunt gebruiken "
+#
+#, fuzzy
+msgid "Leg Space             "
+msgstr "Lijnlengte             "
+#
+#, fuzzy
+msgid "Leg Spacing (S)       "
+msgstr "Lijnafstand          "
+#
+msgid "Lon"
+msgstr "Le"
+#
+msgid "Longitude"
+msgstr "Lengte   "
+#
+msgid "N"
+msgstr "N"
+#
+msgid "NM"
+msgstr "NM"
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+#, fuzzy
+msgid "Number of Legs  "
+msgstr "Aantal lijnen        "
+#
+#, fuzzy
+msgid "Number of Legs      "
+msgstr "Aantal lijnen        "
+#
+#, fuzzy
+msgid "Number of Legs        "
+msgstr "Aantal lijnen        "
+#
+#, fuzzy
+msgid "Number of passes"
+msgstr "Aantal vierkanten"
+#
+msgid "Oil Rig (Quadrant Single)"
+msgstr ""
+#
+msgid "Opacity"
+msgstr "Transparantie"
+#
+msgid "PORT"
+msgstr ""
+#
+#, fuzzy
+msgid "Parallel Track"
+msgstr "Lijn zoekpatroon"
+#
+msgid "Route Preferences"
+msgstr "Routevoorkeuren"
+#
+#, fuzzy
+msgid "Route for Ship           "
+msgstr "Zoeksnelheid        "
+#
+msgid "S"
+msgstr "Z"
+#
+msgid "SAR"
+msgstr "SAR"
+#
+#, fuzzy
+msgid "SAR Plugin by SaltyPaws/Rasbats"
+msgstr "SAR PlugIn door SaltyPaws"
+#
+msgid "SAR preferences"
+msgstr "Voorkeuren SAR"
+#
+msgid "STARBOARD"
+msgstr ""
+#
+#, fuzzy
+msgid "Search Distance / Time"
+msgstr "Zoekafstand"
+#
+#, fuzzy
+msgid "Search Leg length     "
+msgstr "Zoektijd       "
+#
+#, fuzzy
+msgid "Search Method  "
+msgstr "Zoektijd       "
+#
+#, fuzzy
+msgid "Search Radius      "
+msgstr "Zoektijd       "
+#
+#, fuzzy
+msgid "Search Speed       "
+msgstr "Zoeksnelheid        "
+#
+#, fuzzy
+msgid "Search Speed           "
+msgstr "Zoeksnelheid        "
+#
+msgid "Search Speed             "
+msgstr "Zoeksnelheid        "
+#
+msgid "Search and Rescue Patterns"
+msgstr "Search and Rescue PlugIn voor zoekpatronen in OpenCPN"
+#
+msgid "Sector Search"
+msgstr "Sector zoekpatroon"
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr "Vaartuig"
+#
+#, fuzzy
+msgid "Start Position"
+msgstr "Vastleggen eigen positie"
+#
+#, fuzzy
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
+msgstr ""
+"Om de cursorlocatie te kopiëren: selecteer het Breedte- of Lengteveld en druk "
+"op <CTRL>+S."
+#
+#, fuzzy
+msgid "Track space (S)          "
+msgstr "Zoeksnelheid        "
+#
+msgid "USCG"
+msgstr ""
+#
+msgid "W"
+msgstr "W"
+#
+msgid "Waypoint names "
+msgstr ""
+#
+msgid "Waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr "fout bij invoervalidatie"
+#
+msgid "hr"
+msgstr "u"
+#
+msgid "kts"
+msgstr "knopen"
+#
+msgid "n"
+msgstr " "
+#
+#
+#
+#
+#~ msgid "Approach course"
+#~ msgstr "Naderingskoers   "
+#
+#
+#
+#
+#~ msgid "Decimal Degree"
+#~ msgstr "Decimale graden"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Degree, Minutes"
+#~ msgstr "graden"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "ES"
+#~ msgstr "Z"
+#
+#
+#
+#
+#~ msgid ""
+#~ "Expanding Square\n"
+#~ "         Search"
+#~ msgstr "Vierkant zoekpatroon"
+#
+#
+#
+#
+#~ msgid "For Ship Number      "
+#~ msgstr "Voor vaartuig nr "
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Leg Distance        "
+#~ msgstr "Lijnlengte             "
+#
+#
+#
+#
+#~ msgid "Number of cycles"
+#~ msgstr "Aantal cycli          "
+#
+#
+#
+#
+#~ msgid "Oil Rig Search"
+#~ msgstr "Platform zoekpatroon"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "PS"
+#~ msgstr "Z"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Parallel Track Search"
+#~ msgstr "Lijn zoekpatroon"
+#
+#
+#
+#
+#~ msgid "Results"
+#~ msgstr "Resultaten"
+#
+#
+#
+#
+#~ msgid "Route"
+#~ msgstr "Route    "
+#
+#
+#
+#
+#~ msgid "SAR: Oil Rig"
+#~ msgstr "SAR: Platform zoekpatroon"
+#
+#
+#
+#
+#~ msgid "SAR: Sector Search"
+#~ msgstr "SAR: Sector zoekpatroon"
+#
+#
+#
+#
+#~ msgid "SAR: Trackline"
+#~ msgstr "SAR: Lijn zoekpatroon"
+#
+#
+#
+#
+#~ msgid "Search Pattern name for GPX file"
+#~ msgstr "Naam zoekpatroon voor GPX-bestand"
+#
+#
+#
+#
+#~ msgid "Search Speed         "
+#~ msgstr "Zoeksnelheid        "
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "VS"
+#~ msgstr "Z"
+#
+#
+#
+#
+#~ msgid "\\u00b0"
+#~ msgstr "\\u00b0"
+#
+#
+#
+#
+#~ msgid "\\u00b0 ' \""
+#~ msgstr "\\u00b0 ' \""

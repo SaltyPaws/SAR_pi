@@ -43,7 +43,7 @@
 #include "version.h"
 
 #define     MY_API_VERSION_MAJOR    1
-#define     MY_API_VERSION_MINOR    8
+#define     MY_API_VERSION_MINOR    16
 
 class Dlg;
 
@@ -53,7 +53,7 @@ class Dlg;
 
 #define CALCULATOR_TOOL_POSITION    -1          // Request default positioning of toolbar tool
 
-class SAR_pi : public opencpn_plugin_18
+class SAR_pi : public opencpn_plugin_116
 {
 public:
       SAR_pi(void *ppimgr);
@@ -66,8 +66,8 @@ public:
       int GetAPIVersionMinor();
       int GetPlugInVersionMajor();
       int GetPlugInVersionMinor();
+	  wxString GetCommonName();
       wxBitmap *GetPlugInBitmap();
-      wxString GetCommonName();
       wxString GetShortDescription();
       wxString GetLongDescription();
 
@@ -77,6 +77,10 @@ public:
       void OnToolbarToolCallback(int id);
       void SetCursorLatLon(double lat, double lon);
       void SetPositionFix(PlugIn_Position_Fix &pfix);
+	  
+	  // For right click datum selection
+	  void OnContextMenuItemCallback(int id);
+	  void OnSARDialogClose();
 
 //    Optional plugin overrides
       void SetColorScheme(PI_ColorScheme cs);
@@ -94,8 +98,8 @@ public:
       double GetCursorLon(void) {return m_cursor_lon;}
       double GetCursorLat(void) {return m_cursor_lat;}
 
-
-      void OnSurveyDialogClose();
+	  int m_position_menu_id;
+	  
 
 private:
       wxFileConfig      *m_pconfig;
@@ -109,6 +113,10 @@ private:
       int               m_leftclick_tool_id;
       bool              m_ShowHelp,m_bCaptureCursor,m_bCaptureShip;
       double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
+	  bool				m_bSARShowIcon;
+	  bool				m_bShowSAR;
+	  wxBitmap			m_panelBitmap;
+	 
 };
 
 #endif

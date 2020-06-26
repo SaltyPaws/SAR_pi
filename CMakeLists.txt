@@ -13,12 +13,16 @@ PROJECT(SAR_pi)
 SET(PACKAGE_NAME sar_pi)
 SET(VERBOSE_NAME SAR)
 SET(TITLE_NAME SAR)
-SET(CPACK_PACKAGE_CONTACT "SaltyPaws")
+SET(CPACK_PACKAGE_CONTACT "Rasbats")
 
-SET(VERSION_MAJOR "1")
-SET(VERSION_MINOR "1")
+SET(VERSION_MAJOR "2")
+SET(VERSION_MINOR "6")
+
+SET(NAME_SUFFIX "ov50")
+SET(CMAKE_CXX_STANDARD 11)
 
 #SET(CMAKE_BUILD_TYPE Debug)
+
 
 # Definitions
 add_definitions (
@@ -30,14 +34,19 @@ add_definitions (
 -DSILENT
 )
 
+OPTION(PLUGIN_USE_SVG "Use SVG graphics" ON)
+
 INCLUDE("cmake/PluginConfigure.cmake")
 
+IF(PLUGIN_USE_SVG)
+  ADD_DEFINITIONS(-DPLUGIN_USE_SVG)
+ENDIF(PLUGIN_USE_SVG)
 
 SET(SRC_SAR
-            src/SAR_pi.h
-            src/SAR_pi.cpp
-            src/icons.h
-            src/icons.cpp
+		src/SAR_pi.h
+        src/SAR_pi.cpp
+        src/icons.h
+        src/icons.cpp         
 	    src/SARgui.h
 	    src/SARgui.cpp
 	    src/SARgui_impl.cpp
@@ -49,8 +58,8 @@ SET(SRC_SAR
 	)
 
 INCLUDE_DIRECTORIES(
-  src
-  src/OpenCPN
+	  src
+	  src/OpenCPN
 )
 
 IF(UNIX)

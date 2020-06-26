@@ -1,0 +1,416 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
+"PO-Revision-Date: 2016-01-16 20:59-0500\n"
+"Last-Translator: nohal <pavel@kalian.cz>\n"
+"Language-Team: Danish\n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: da\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid "\""
+msgstr ""
+#
+msgid "'"
+msgstr ""
+#
+msgid "0.1"
+msgstr ""
+#
+msgid "0.2"
+msgstr ""
+#
+msgid "0.5"
+msgstr ""
+#
+msgid "1"
+msgstr ""
+#
+msgid "1 unit only"
+msgstr ""
+#
+msgid "2"
+msgstr ""
+#
+msgid "2 units A&B"
+msgstr ""
+#
+msgid "3"
+msgstr ""
+#
+msgid "4"
+msgstr ""
+#
+msgid "5"
+msgstr ""
+#
+msgid "CPU saving settings"
+msgstr "Gemmer indstillinger"
+#
+msgid "Calculate"
+msgstr "Beregn"
+#
+msgid "Capture Cursor Position"
+msgstr "Gem markørpositionen"
+#
+msgid "Capture Ship Position"
+msgstr "Gem skibets position"
+#
+msgid "Convert to Degree"
+msgstr "Konverter til grader"
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr "Kopier skibets position (GPS fix kræves)"
+#
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
+msgstr ""
+"Skaber GPX filer med\n"
+"eftersøgningsmønstre."
+#
+msgid "Cursor"
+msgstr "Markør"
+#
+msgid "D MM SS"
+msgstr ""
+#
+msgid "D MM.mmm"
+msgstr ""
+#
+msgid "D.ddd"
+msgstr ""
+#
+msgid "DATUM / CSP (Start of Search)"
+msgstr ""
+#
+msgid "Degrees"
+msgstr "Grader"
+#
+msgid "E"
+msgstr "Ø"
+#
+msgid "Error"
+msgstr ""
+#
+msgid "Error in calculation. Please check input!"
+msgstr "Fejl i beregningen. Tjek venligst input!"
+#
+msgid "Error occurred, aborting SAR calc!"
+msgstr ""
+#
+msgid "Expanding Square"
+msgstr ""
+#
+msgid "Export SAR track GPX file as"
+msgstr "Eksporter SAR spor som GPX fil"
+#
+#, fuzzy
+msgid "First turn                    "
+msgstr "Længde af ben               "
+#
+msgid "For this search pattern the Start Point entered is the CSP"
+msgstr ""
+#
+msgid "General settings"
+msgstr "Generelle instillinger"
+#
+msgid "Generate &GPX"
+msgstr "Generer &GPX"
+#
+msgid "IAMSAR"
+msgstr ""
+#
+msgid "Icons "
+msgstr ""
+#
+msgid "Initial course"
+msgstr ""
+#
+#, fuzzy
+msgid "Initial course    "
+msgstr "Indfaldskurs     "
+#
+#, fuzzy
+msgid "Initial course        "
+msgstr "Indfaldskurs     "
+#
+msgid "Initial leg course        "
+msgstr ""
+#
+msgid "Lat "
+msgstr "Brd "
+#
+#, fuzzy
+msgid "Latitude  "
+msgstr "Breddegrad  "
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr ""
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr ""
+#
+#, fuzzy
+msgid "Leg Space             "
+msgstr "Længde på ben              "
+#
+#, fuzzy
+msgid "Leg Spacing (S)       "
+msgstr "Afstand mellem ben                "
+#
+msgid "Lon"
+msgstr "Lngd"
+#
+msgid "Longitude"
+msgstr "Længdegrad"
+#
+msgid "N"
+msgstr ""
+#
+msgid "NM"
+msgstr "sømil"
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+#, fuzzy
+msgid "Number of Legs  "
+msgstr "Antal ben   "
+#
+#, fuzzy
+msgid "Number of Legs      "
+msgstr "Antal ben       "
+#
+#, fuzzy
+msgid "Number of Legs        "
+msgstr "Antal ben       "
+#
+#, fuzzy
+msgid "Number of passes"
+msgstr "Antal ben   "
+#
+msgid "Oil Rig (Quadrant Single)"
+msgstr ""
+#
+msgid "Opacity"
+msgstr "Gennemsigtighed"
+#
+msgid "PORT"
+msgstr ""
+#
+#, fuzzy
+msgid "Parallel Track"
+msgstr "Parallel søgning"
+#
+msgid "Route Preferences"
+msgstr "Ruteindstillinger"
+#
+#, fuzzy
+msgid "Route for Ship           "
+msgstr "Søgehastighed             "
+#
+msgid "S"
+msgstr ""
+#
+msgid "SAR"
+msgstr ""
+#
+#, fuzzy
+msgid "SAR Plugin by SaltyPaws/Rasbats"
+msgstr "SAR-Plugin af SaltyPaws"
+#
+msgid "SAR preferences"
+msgstr "SAR Indstillinger"
+#
+msgid "STARBOARD"
+msgstr ""
+#
+#, fuzzy
+msgid "Search Distance / Time"
+msgstr "Søgeafstand"
+#
+#, fuzzy
+msgid "Search Leg length     "
+msgstr "Søgetid        "
+#
+#, fuzzy
+msgid "Search Method  "
+msgstr "Søgetid        "
+#
+#, fuzzy
+msgid "Search Radius      "
+msgstr "Søgetid        "
+#
+#, fuzzy
+msgid "Search Speed       "
+msgstr "Søgehastighed        "
+#
+#, fuzzy
+msgid "Search Speed           "
+msgstr "Søgehastighed             "
+#
+msgid "Search Speed             "
+msgstr "Søgehastighed             "
+#
+msgid "Search and Rescue Patterns"
+msgstr "Eftersøgningsmønstre"
+#
+msgid "Sector Search"
+msgstr "Sektorsøgning"
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr "Skib"
+#
+#, fuzzy
+msgid "Start Position"
+msgstr "Gem skibets position"
+#
+#, fuzzy
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
+msgstr ""
+"For at kopiere markørens position, vælg enten bredde- eller længde-"
+"koordinatboksen, og tryk <CTRL>+ S."
+#
+#, fuzzy
+msgid "Track space (S)          "
+msgstr "Søgehastighed             "
+#
+msgid "USCG"
+msgstr ""
+#
+msgid "W"
+msgstr "W"
+#
+msgid "Waypoint names "
+msgstr ""
+#
+msgid "Waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr "fejl i inputvalidering"
+#
+msgid "hr"
+msgstr "timer"
+#
+msgid "kts"
+msgstr "knob"
+#
+msgid "n"
+msgstr "n"
+#
+#
+#
+#
+#~ msgid "Approach course"
+#~ msgstr "Indfaldskurs"
+#
+#
+#
+#
+#~ msgid "Decimal Degree"
+#~ msgstr "Decimalgrader"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Degree, Minutes"
+#~ msgstr "Grader"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "ES"
+#~ msgstr "Ø"
+#
+#
+#
+#
+#~ msgid "For Ship Number      "
+#~ msgstr "For skip nummer      "
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Leg Distance        "
+#~ msgstr "Afstand mellem ben          "
+#
+#
+#
+#
+#~ msgid "Number of cycles"
+#~ msgstr "Antal gentagelser"
+#
+#
+#
+#
+#~ msgid "Oil Rig Search"
+#~ msgstr "Borerig-søgning"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Parallel Track Search"
+#~ msgstr "Parallel søgning"
+#
+#
+#
+#
+#~ msgid "Results"
+#~ msgstr "Resultater"
+#
+#
+#
+#
+#~ msgid "Route"
+#~ msgstr "Rute"
+#
+#
+#
+#
+#~ msgid "SAR: Oil Rig"
+#~ msgstr "SAR: Borerig"
+#
+#
+#
+#
+#~ msgid "SAR: Sector Search"
+#~ msgstr "SAR: Sektorsøgning"
+#
+#
+#
+#
+#~ msgid "SAR: Trackline"
+#~ msgstr "SAR: Spor"
+#
+#
+#
+#
+#~ msgid "Search Speed         "
+#~ msgstr "Søgehastighed         "
+#
+#
+#
+#
+#~ msgid "\\u00b0 ' \""
+#~ msgstr "\\u00b0 ' \""

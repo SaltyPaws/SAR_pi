@@ -52,23 +52,26 @@ public:
 class Dlg : public DlgDef
 {
 public:
-        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxDEFAULT_DIALOG_STYLE|wxMAXIMIZE_BOX|wxRESIZE_BORDER );
+        Dlg( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("SAR Plugin by SaltyPaws/Rasbats"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION| wxDEFAULT_DIALOG_STYLE | wxMINIMIZE_BOX | wxRESIZE_BORDER);
         //void OnToggle( wxCommandEvent& event );
-        void OnConverttoDegree( wxCommandEvent& event );
+        void OnConvertToDegree( wxCommandEvent& event );
+		void ConvertToDegree();
+
         void OnNoteBookFit( wxCommandEvent& event );
         void OnFit( wxCommandEvent& event );
 
-        void OnPSCalc( wxCommandEvent& event );
+		void OnCalculate(wxCommandEvent& event);
+
         void OnPSGPX( wxCommandEvent& event );
-
-        void OnESCalc( wxCommandEvent& event );
         void OnESGPX( wxCommandEvent& event );
-
-        void OnSSCalc( wxCommandEvent& event );
         void OnSSGPX( wxCommandEvent& event );
-
-        void OnORCalc( wxCommandEvent& event );
         void OnORGPX( wxCommandEvent& event );
+
+		void OnSelectNumberShips(wxCommandEvent& event);
+		void OnSelectVectorMethod(wxCommandEvent& event);
+		void OnSelectPortStarboard(wxCommandEvent& event);
+
+
 
         void OnShip( wxCommandEvent& event );
         void OnCursor( wxCommandEvent& event );
@@ -76,20 +79,26 @@ public:
         void OnCursor( void );
         void key_shortcut(wxKeyEvent& event);
         void OnCursorSelect( wxCommandEvent& event );
-        //void mouse_shortcut(wxMouseEvent& event);
+
+		// For right click datum selection
+		void getDatum(double m_lat, double m_lon);
+        
+		//void mouse_shortcut(wxMouseEvent& event);
 
         void Calculate( wxCommandEvent& event, bool Export, int Pattern );
 
         void Addpoint(TiXmlElement* Route, wxString ptlat, wxString ptlon, wxString ptname, wxString ptsym, wxString pttype);
 
-        void Expanding_Square (double lat, double lon);
-        //friend class function;
+		//friend class function;
         SAR_pi *plugin;
         double m_ship_lon,m_ship_lat,m_cursor_lon,m_cursor_lat;
 
+		void setDDMM();
+		void OnClose(wxCloseEvent& event);
 
 private:
-        wxPoint xy;
+        
+	    wxPoint xy;
         wxSize  wh;
         double lat1, lon1, lat2, lon2, targetAz;
         //double F(double x);

@@ -11,4 +11,10 @@ extern void initialize_images(void);
 
 extern wxBitmap *_img_rescue;
 
+#ifdef PLUGIN_USE_SVG
+extern wxString _svg_sar;
+extern wxString _svg_sar_toggled;
+#endif
+
+
 #endif /* ICONS_H */

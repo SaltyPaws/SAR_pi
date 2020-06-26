@@ -1,0 +1,455 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 10:53+0100\n"
+"PO-Revision-Date: 2015-12-31 15:36-0500\n"
+"Last-Translator: nohal <pavel@kalian.cz>\n"
+"Language-Team: Catalan\n"
+"Language: ca_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: opencpn\n"
+"X-Crowdin-Language: ca\n"
+"X-Crowdin-File: /plugins/SAR_pi/po/SAR_pi.pot\n"
+#
+msgid "    SAR panel icon has NOT been loaded"
+msgstr ""
+#
+msgid "\""
+msgstr "\""
+#
+msgid "'"
+msgstr "'"
+#
+msgid "0.1"
+msgstr ""
+#
+msgid "0.2"
+msgstr ""
+#
+msgid "0.5"
+msgstr ""
+#
+msgid "1"
+msgstr "1"
+#
+msgid "1 unit only"
+msgstr ""
+#
+msgid "2"
+msgstr "2"
+#
+msgid "2 units A&B"
+msgstr ""
+#
+msgid "3"
+msgstr ""
+#
+msgid "4"
+msgstr ""
+#
+msgid "5"
+msgstr ""
+#
+msgid "CPU saving settings"
+msgstr "Ajustos d'estalvi de CPU"
+#
+msgid "Calculate"
+msgstr "Calcula"
+#
+msgid "Capture Cursor Position"
+msgstr "Capturar la posició del Cursor"
+#
+msgid "Capture Ship Position"
+msgstr "Captura posició del vaixell"
+#
+msgid "Convert to Degree"
+msgstr "Convertir a graus"
+#
+msgid "Copy ship position (GPS fix required)"
+msgstr "Copiar posició del vaixell (Necessari GPS fix)"
+#
+#, fuzzy
+msgid "Creates GPX files with Search and Rescue patterns"
+msgstr ""
+"Crea fitxers GPX amb les plantilles\n"
+"Cerca i rescat."
+#
+msgid "Cursor"
+msgstr "Cursor"
+#
+msgid "D MM SS"
+msgstr ""
+#
+msgid "D MM.mmm"
+msgstr ""
+#
+msgid "D.ddd"
+msgstr ""
+#
+#, fuzzy
+msgid "DATUM / CSP (Start of Search)"
+msgstr "Datum (Inici de la cerca)"
+#
+msgid "Degrees"
+msgstr "Graus"
+#
+msgid "E"
+msgstr "E"
+#
+msgid "Error"
+msgstr ""
+#
+msgid "Error in calculation. Please check input!"
+msgstr "Error de càlcul. Si us plau, comproveu l'entrada!"
+#
+#, fuzzy
+msgid "Error occurred, aborting SAR calc!"
+msgstr "Error, abandonant càlcul SAR!"
+#
+#, fuzzy
+msgid "Expanding Square"
+msgstr "SAR: Quadrats augmentats"
+#
+msgid "Export SAR track GPX file as"
+msgstr "Exportar recorregut SAR del fitxer GPX com a"
+#
+#, fuzzy
+msgid "First turn                    "
+msgstr "Longitud el segment               "
+#
+msgid "For this search pattern the Start Point entered is the CSP"
+msgstr ""
+#
+msgid "General settings"
+msgstr "Ajustos generals"
+#
+msgid "Generate &GPX"
+msgstr "Genera &GPX"
+#
+msgid "IAMSAR"
+msgstr ""
+#
+msgid "Icons "
+msgstr ""
+#
+msgid "Initial course"
+msgstr ""
+#
+#, fuzzy
+msgid "Initial course    "
+msgstr "Rumb d'aproximació     "
+#
+#, fuzzy
+msgid "Initial course        "
+msgstr "Rumb d'aproximació     "
+#
+msgid "Initial leg course        "
+msgstr ""
+#
+msgid "Lat "
+msgstr "Lat "
+#
+#, fuzzy
+msgid "Latitude  "
+msgstr "Latitud  "
+#
+msgid "Leave ticked, so that you can use cursor position."
+msgstr "Deixar marcat, per poder utilitzar la posició del cursor."
+#
+msgid "Leave ticked, so you can use ship's position"
+msgstr "Deixar marcat, per poder utilitzar la posició del vaixell"
+#
+#, fuzzy
+msgid "Leg Space             "
+msgstr "Longitud del segment              "
+#
+#, fuzzy
+msgid "Leg Spacing (S)       "
+msgstr "Espai entre segments                "
+#
+msgid "Lon"
+msgstr "Lon"
+#
+msgid "Longitude"
+msgstr "Longitud"
+#
+msgid "N"
+msgstr "N"
+#
+msgid "NM"
+msgstr "NM"
+#
+msgid "No Datum Point has been entered"
+msgstr ""
+#
+#, fuzzy
+msgid "Number of Legs  "
+msgstr "Nombre de segments   "
+#
+#, fuzzy
+msgid "Number of Legs      "
+msgstr "Nombre de segments       "
+#
+#, fuzzy
+msgid "Number of Legs        "
+msgstr "Nombre de segments       "
+#
+#, fuzzy
+msgid "Number of passes"
+msgstr "Nombre de Quadrats"
+#
+msgid "Oil Rig (Quadrant Single)"
+msgstr ""
+#
+msgid "Opacity"
+msgstr "Opacitat"
+#
+msgid "PORT"
+msgstr ""
+#
+#, fuzzy
+msgid "Parallel Track"
+msgstr "Cerca Paral·lela"
+#
+msgid "Route Preferences"
+msgstr "Preferències de ruta"
+#
+#, fuzzy
+msgid "Route for Ship           "
+msgstr "Buscar velocitat             "
+#
+msgid "S"
+msgstr "S"
+#
+msgid "SAR"
+msgstr "SAR"
+#
+#, fuzzy
+msgid "SAR Plugin by SaltyPaws/Rasbats"
+msgstr "Connector SAR per SaltyPaws"
+#
+msgid "SAR preferences"
+msgstr "Configuració SAR"
+#
+msgid "STARBOARD"
+msgstr ""
+#
+#, fuzzy
+msgid "Search Distance / Time"
+msgstr "Buscar distància"
+#
+#, fuzzy
+msgid "Search Leg length     "
+msgstr "Buscar temps        "
+#
+#, fuzzy
+msgid "Search Method  "
+msgstr "Buscar temps        "
+#
+#, fuzzy
+msgid "Search Radius      "
+msgstr "Buscar temps        "
+#
+#, fuzzy
+msgid "Search Speed       "
+msgstr "Buscar velocitat        "
+#
+#, fuzzy
+msgid "Search Speed           "
+msgstr "Buscar velocitat             "
+#
+msgid "Search Speed             "
+msgstr "Buscar velocitat             "
+#
+msgid "Search and Rescue Patterns"
+msgstr "Plantilles de Cerca i Rescat"
+#
+msgid "Sector Search"
+msgstr "Cerca de Sector"
+#
+msgid "Select SAR Datum Point"
+msgstr ""
+#
+msgid "Ship"
+msgstr "Vaixell"
+#
+#, fuzzy
+msgid "Start Position"
+msgstr "Captura posició del vaixell"
+#
+#, fuzzy
+msgid ""
+"To copy the cursor location place the cursor on the chart \n"
+"     ...and press <CTRL>+S"
+msgstr ""
+"Per poder copiar la ubicació de cursor, seleccioneu caixa de coordenades "
+"latitud o longitud i premeu <CTRL>+ S."
+#
+#, fuzzy
+msgid "Track space (S)          "
+msgstr "Buscar velocitat             "
+#
+msgid "USCG"
+msgstr ""
+#
+msgid "W"
+msgstr "W"
+#
+msgid "Waypoint names "
+msgstr ""
+#
+msgid "Waypoint names     "
+msgstr ""
+#
+msgid "error in input range validation"
+msgstr "error en la validació de la distància d'entrada"
+#
+msgid "hr"
+msgstr "hr"
+#
+msgid "kts"
+msgstr "kts"
+#
+msgid "n"
+msgstr "n"
+#
+#
+#
+#
+#~ msgid "Approach course"
+#~ msgstr "Rumb d'aproximació"
+#
+#
+#
+#
+#~ msgid "Decimal Degree"
+#~ msgstr "Graus decimals"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Degree, Minutes"
+#~ msgstr "Graus"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "ES"
+#~ msgstr "S"
+#
+#
+#
+#
+#~ msgid ""
+#~ "Expanding Square\n"
+#~ "         Search"
+#~ msgstr ""
+#~ "Recercar Augmentant\n"
+#~ " el Quadrat"
+#
+#
+#
+#
+#~ msgid "For Ship Number      "
+#~ msgstr "Per al vaixell número      "
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Leg Distance        "
+#~ msgstr "Longitud del segment          "
+#
+#
+#
+#
+#~ msgid "Number of cycles"
+#~ msgstr "Nombre de cicles"
+#
+#
+#
+#
+#~ msgid "Oil Rig Search"
+#~ msgstr "Cerca de Plataforma petroliera"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "PS"
+#~ msgstr "S"
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "Parallel Track Search"
+#~ msgstr "Cerca Paral·lela"
+#
+#
+#
+#
+#~ msgid "Results"
+#~ msgstr "Resultats"
+#
+#
+#
+#
+#~ msgid "Route"
+#~ msgstr "Ruta"
+#
+#
+#
+#
+#~ msgid "SAR: Oil Rig"
+#~ msgstr "SAR: Plataforma petroliera"
+#
+#
+#
+#
+#~ msgid "SAR: Sector Search"
+#~ msgstr "SAR: Cerca de Sector"
+#
+#
+#
+#
+#~ msgid "SAR: Trackline"
+#~ msgstr "SAR: Línia de recorregut"
+#
+#
+#
+#
+#~ msgid "Search Pattern name for GPX file"
+#~ msgstr "Buscar nom de plantilla per al fitxer GPX"
+#
+#
+#
+#
+#~ msgid "Search Speed         "
+#~ msgstr "Buscar velocitat         "
+#
+#
+#
+#
+#, fuzzy
+#~ msgid "VS"
+#~ msgstr "S"
+#
+#
+#
+#
+#~ msgid "\\u00b0"
+#~ msgstr "\\u00b0"
+#
+#
+#
+#
+#~ msgid "\\u00b0 ' \""
+#~ msgstr "\\u00b0 ' \""
